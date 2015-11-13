@@ -1,11 +1,11 @@
-REQUIREMENTS
+####REQUIREMENTS
 ------------
 
 First you must have the base environment for CodeLabs.
 Read the following sections to create a base environment and Install CodeLabs
 
 
-SERVER CONFIGURATION
+####SERVER CONFIGURATION
 --------------------
 
 You should have a LAMP(Linux+Apache+MySql+Php) server running on your system 
@@ -25,7 +25,7 @@ If you get any errors try searching online.
 Go to localhost/phpmyadmin and put your username as "root" and for password try "root" or ""
 checkout which one works and remember it. 
 
-INSTALLATION
+####INSTALLATION
 ------------
 
 1. COPY CodeLabs
@@ -65,7 +65,7 @@ INSTALLATION
 
 
 
-CodeLabs! ADMINISTRATION
+####CodeLabs! ADMINISTRATION
 ----------------------
 
 To create a new contest go to create_contest.php
