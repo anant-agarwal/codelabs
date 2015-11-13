@@ -1,0 +1,1362 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- saved from url=(0086)http://community.topcoder.com/tc?module=Static&d1=tutorials&d2=standardTemplateLibrary -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Algorithm Tutorials</title>
+
+
+<script type="text/javascript" async="" src="./standardTemplateLibrary_files/ga.js"></script><script language="JavaScript" type="text/javascript" src="./standardTemplateLibrary_files/tcscript.js"></script><link type="image/x-icon" rel="shortcut icon" href="http://community.topcoder.com/i/favicon.ico">
+
+
+
+
+
+
+<link type="text/css" rel="stylesheet" href="./standardTemplateLibrary_files/style.css">
+<link type="text/css" rel="stylesheet" href="./standardTemplateLibrary_files/coders.css">
+<link type="text/css" rel="stylesheet" href="./standardTemplateLibrary_files/tcStyles20080219.css">
+<link type="text/css" rel="stylesheet" href="./standardTemplateLibrary_files/jobsRemix.css">
+
+
+<script language="JavaScript" src="./standardTemplateLibrary_files/print.js"></script>
+<style type="text/css">
+.code
+{
+   width: 550;
+   padding: 10px;
+   margin: 20px;
+   color: #333;
+   font-size: 11px;
+   font-weight: normal;
+   line-height: 14px;
+   background-color: #EEEEEE;
+   border: 1px solid #999;
+}
+.math
+{
+   font-family: times, times new roman, serif;
+   font-weight: normal;
+   font-style: italic;
+   font-size: 14px;
+}
+</style>
+</head>
+<body>
+<div id="onTop" class="invisible">
+    
+
+
+
+
+
+
+<script type="text/javascript" src="./standardTemplateLibrary_files/popup.js"></script>
+
+<div id="shortcutBar">
+    <div class="icon"><a href="http://www.topcoder.com/tc"><img src="./standardTemplateLibrary_files/scHome.png" alt="" onmouseover="postPopUpText(&#39;globalPopupText&#39;,&#39;Home&#39;); popUp(this,&#39;globalPopup&#39;);" onmouseout="popHide()"></a></div>
+    <div class="icon"><a href="javascript:arena();"><img src="./standardTemplateLibrary_files/scAlgo.png" alt="" onmouseover="postPopUpText(&#39;globalPopupText&#39;,&#39;Algorithm Competitions&#39;); popUp(this,&#39;globalPopup&#39;);" onmouseout="popHide()"></a></div>
+    <div class="icon"><a href="http://www.topcoder.com/tc?module=ActiveContests&pt=23"><img src="./standardTemplateLibrary_files/scConceptualization.png" alt="" onmouseover="postPopUpText(&#39;globalPopupText&#39;,&#39;Software Conceptualization Competitions&#39;); popUp(this,&#39;globalPopup&#39;);" onmouseout="popHide()"></a></div>
+    <div class="icon"><a href="http://www.topcoder.com/tc?module=ActiveContests&pt=6"><img src="./standardTemplateLibrary_files/scSpecification.png" alt="" onmouseover="postPopUpText(&#39;globalPopupText&#39;,&#39;Software Specification Competitions&#39;); popUp(this,&#39;globalPopup&#39;);" onmouseout="popHide()"></a></div>
+    <div class="icon"><a href="http://www.topcoder.com/tc?module=ActiveContests&pt=7"><img src="./standardTemplateLibrary_files/scArchitecture.png" alt="" onmouseover="postPopUpText(&#39;globalPopupText&#39;,&#39;Software Architecture Competitions&#39;); popUp(this,&#39;globalPopup&#39;);" onmouseout="popHide()"></a></div>
+    <div class="icon"><a href="http://www.topcoder.com/tc?module=ViewActiveContests&ph=112"><img src="./standardTemplateLibrary_files/scDesign.png" alt="" onmouseover="postPopUpText(&#39;globalPopupText&#39;,&#39;Component Design Competitions&#39;); popUp(this,&#39;globalPopup&#39;);" onmouseout="popHide()"></a></div>
+    <div class="icon"><a href="http://www.topcoder.com/tc?module=ViewActiveContests&ph=113"><img src="./standardTemplateLibrary_files/scDevelopment.png" alt="" onmouseover="postPopUpText(&#39;globalPopupText&#39;,&#39;Component Development Competitions&#39;); popUp(this,&#39;globalPopup&#39;);" onmouseout="popHide()"></a></div>
+
+    <div class="icon"><a href="http://www.topcoder.com/tc?module=ViewAssemblyActiveContests"><img src="./standardTemplateLibrary_files/scAssembly.png" alt="" onmouseover="postPopUpText(&#39;globalPopupText&#39;,&#39;Software Assembly Competitions&#39;); popUp(this,&#39;globalPopup&#39;);" onmouseout="popHide()"></a></div>
+    <div class="icon"><a href="http://www.topcoder.com/tc?module=ActiveContests&pt=13"><img src="./standardTemplateLibrary_files/scTesting.png" alt="" onmouseover="postPopUpText(&#39;globalPopupText&#39;,&#39;Testing Competitions&#39;); popUp(this,&#39;globalPopup&#39;);" onmouseout="popHide()"></a></div>
+    <div class="icon"><a href="http://www.topcoder.com/tc?module=ActiveContests&pt=35"><img src="./standardTemplateLibrary_files/scContentCreation.gif" alt="" onmouseover="postPopUpText(&#39;globalPopupText&#39;,&#39;Content Creation Competitions&#39;); popUp(this,&#39;globalPopup&#39;);" onmouseout="popHide()"></a></div>
+    <div class="icon"><a href="javascript:arena();"><img src="./standardTemplateLibrary_files/scTCHS.png" alt="" onmouseover="postPopUpText(&#39;globalPopupText&#39;,&#39;High School Competitions&#39;); popUp(this,&#39;globalPopup&#39;);" onmouseout="popHide()"></a></div>
+    <div class="icon"><a href="http://www.topcoder.com/longcontest/?module=ViewActiveContests"><img src="./standardTemplateLibrary_files/scMarathon.png" alt="" onmouseover="postPopUpText(&#39;globalPopupText&#39;,&#39;Marathon Matches&#39;); popUp(this,&#39;globalPopup&#39;);" onmouseout="popHide()"></a></div>
+    <div class="icon"><a href="http://studio.topcoder.com/?module=ViewActiveContests"><img src="./standardTemplateLibrary_files/scStudio.png" alt="" onmouseover="postPopUpText(&#39;globalPopupText&#39;,&#39;TopCoder Studio Competitions&#39;); popUp(this,&#39;globalPopup&#39;);" onmouseout="popHide()"></a></div>
+</div>
+
+<div id="globalPopup" class="popUp"><div id="globalPopupText"></div></div>
+
+
+<div style="position: absolute; right:0px; top:31px;"><a href="http://www.topcoder.com/reg/"><img src="./standardTemplateLibrary_files/register_now.gif" alt="Register Now" style="display:block;"></a></div>
+
+
+<div align="center" style="margin: 0px 290px 0px 280px;">
+   <div id="outerLogo">
+      <div id="innerLogo">
+      <a href="http://www.topcoder.com/"><img src="./standardTemplateLibrary_files/topcoder.gif" alt="TopCoder" style="display: block;"></a>
+      </div>
+   </div>
+</div>
+
+<div class="memberCountBox">
+Member Count: 316,431 - 
+
+
+October 24, 2011
+
+&nbsp;<a class="gMetal" href="Javascript:tcTime()">[Get Time]</a>
+</div>
+
+<div class="topBar">
+    <div style="float: right; margin: 5px 0px 0px 0px;">
+        
+                <a class="gMetal" href="http://www.topcoder.com/tc?&module=Login">Login</a>
+            
+        
+    </div>
+</div>
+</div>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+    <tbody><tr valign="top">
+        <!-- Left Column Begins-->
+        <td width="180" id="onLeft" class="invisible">
+
+
+
+
+
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+<script language="JavaScript" type="text/javascript" src="./standardTemplateLibrary_files/arena.js"></script>
+
+
+<script language="JavaScript" type="text/javascript">
+<!--
+function toggleMenu(menuTitle,menuID){
+   var menu = document.getElementById(menuID);
+   if(menu.style.display == 'block') menu.className = 'CLOSED';
+   else if(menu.className == 'OPEN' && menu.style.display != 'none') menu.className = 'CLOSED';
+   else {
+      menu.className = 'OPEN';
+   }
+   if(menuTitle.blur)menuTitle.blur();
+   if(menuTitle.className == 'exp') menuTitle.className = 'exp_ed';
+   else menuTitle.className = 'exp';
+   return;
+}
+function flipMenu(myMenuName){
+   var menuName = document.getElementById(myMenuName);
+   menuName.className = 'exp_ed';
+}
+
+// -->
+</script>
+
+<div style="padding: 0px;"><img src="./standardTemplateLibrary_files/leftnav_top.gif" alt=""></div>
+<div id="navbar">
+    
+<ul>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_competitions&#39;)">Competitions</a>
+<ul id="m_competitions">
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_competitions_overview&#39;)">Overview</a>
+<ul id="m_competitions_overview">
+<li><a href="http://apps.topcoder.com/wiki/x/MQD9Ag">Reliability</a></li>
+<li><a href="http://apps.topcoder.com/wiki/x/lYE_/">Ratings</a></li>
+<li><a href="http://apps.topcoder.com/wiki/x/aoE_/">How to Get Paid</a></li>
+<li><a href="http://apps.topcoder.com/wiki/x/2gRmAw">Administrative Overview </a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_copilot_opportunities&#39;)">Copilot Opportunities</a>
+<ul id="m_copilot_opportunities">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Copilot+Overview">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_copilot_support&#39;)">Track Information</a>
+<ul id="m_copilot_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Copilot+Opportunities">How to Compete</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Copilot+Opportunities">Documentation</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Copilot+Opportunities">Tutorial</a></li>
+</ul></li>
+<li><a href="http://www.topcoder.com/tc?module=ActiveContests&pt=29">Active Contests</a></li>
+<li><a href="http://www.topcoder.com/tc?module=CompList&ph=140">Past Contests</a></li>
+<li><a href="http://www.topcoder.com/tc?module=ViewCopilotPool&size=20&view=0&sort=12">Copilot Pool</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;competition_design&#39;)">Design</a>
+<ul id="competition_design">
+<li><a href="http://studio.topcoder.com/">Studio</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_conceptualization_competitions&#39;)">Conceptualization</a>
+<ul id="m_conceptualization_competitions">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/TopCoder+Conceptualization+Contests">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_conceptualization_support&#39;)">Track Information</a>
+<ul id="m_conceptualization_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Conceptualization+Competitions">How to Compete</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Conceptualization+Documentation">Documentation</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Conceptualization+Submission+Instructions">Tutorial</a></li>
+</ul></li>
+<li><a href="http://community.topcoder.com/tc?module=ActiveContests&pt=23">Active Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ContestStatus&pt=23">Contest Status</a></li>
+<li><a href="http://community.topcoder.com/tc?module=CompList&ph=134">Past Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ViewReviewProjects&pt=23">Review Opportunities</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ReviewBoard&pt=23">Meet the Review Board</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_specification_competitions&#39;)">Specification</a>
+<ul id="m_specification_competitions">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/TopCoder+Specification+Contests">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_specification_support&#39;)">Track Information</a>
+<ul id="m_specification_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Specification+Competitions">How to Compete</a></li>
+</ul></li>
+<li><a href="http://community.topcoder.com/tc?module=ActiveContests&pt=6">Active Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ContestStatus&pt=6">Contest Status</a></li>
+<li><a href="http://community.topcoder.com/tc?module=CompList&ph=117">Past Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ViewReviewProjects&pt=6">Review Opportunities</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ReviewBoard&pt=6">Meet the Review Board</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_architecture_competitions&#39;)">Architecture</a>
+<ul id="m_architecture_competitions">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Architecture+Overview">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_architecture_support&#39;)">Track Information</a>
+<ul id="m_architecture_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Architecture+Competitions">How to Compete</a></li>
+</ul></li>
+<li><a href="http://community.topcoder.com/tc?module=ActiveContests&pt=7">Active Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ContestStatus&pt=7">Contest Status</a></li>
+<li><a href="http://community.topcoder.com/tc?module=CompList&ph=118">Past Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ViewReviewProjects&pt=7">Review Opportunities</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ReviewBoard&pt=7">Meet the Review Board</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_des_competitions&#39;)">Component Design</a>
+<ul id="m_des_competitions">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Component+Design+Overview">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_des_support&#39;)">Track Information</a>
+<ul id="m_des_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Component+Design+Competitions">How to Compete</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Component+Design+Documentation">Documentation</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ColorChange&ph=112">Recent Color Changes</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Component+Design+Data+Feeds">Data Feeds</a></li>
+</ul></li>
+<li><a href="http://community.topcoder.com/tc?module=ViewActiveContests&ph=112">Active Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ContestStatus&pt=1">Contest Status</a></li>
+<li><a href="http://community.topcoder.com/tc?module=CompList&ph=112">Past Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ViewReviewProjects&pt=1">Review Opportunities</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ReviewBoard&pt=1">Meet the Review Board</a></li>
+</ul></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;competition_dev&#39;)">Development</a>
+<ul id="competition_dev">
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_dev_competitions&#39;)">Component Development</a>
+<ul id="m_dev_competitions">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Component+Development+Competitions">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_dev_support&#39;)">Track Information</a>
+<ul id="m_dev_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Component+Development+Competitions">How to Compete</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Component+Development+Documentation">Documentation</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ColorChange&ph=113">Recent Color Changes</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Component+Development+Data+Feeds">Data Feeds</a></li>
+</ul></li>
+<li><a href="http://community.topcoder.com/tc?module=ViewActiveContests&ph=113">Active Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ContestStatus&pt=2">Contest Status</a></li>
+<li><a href="http://community.topcoder.com/tc?module=CompList&ph=113">Past Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ViewReviewProjects&pt=2">Review Opportunities</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ReviewBoard&pt=2">Meet the Review Board</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_assembly_competitions&#39;)">Assembly</a>
+<ul id="m_assembly_competitions">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Assembly">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_assembly_support&#39;)">Track Information</a>
+<ul id="m_assembly_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Assembly+Competitions">How to Compete</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Assembly+Competition+Tutorial">Tutorial</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Assembly+Competition+Documentation">Documentation</a></li>
+</ul></li>
+<li><a href="http://community.topcoder.com/tc?module=ViewAssemblyActiveContests">Active Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ContestStatus&pt=14">Contest Status</a></li>
+<li><a href="http://community.topcoder.com/tc?module=CompList&ph=125">Past Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ViewReviewProjects&pt=14">Review Opportunities</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ReviewBoard&pt=14">Meet the Review Board</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_test_suites_competitions&#39;)">Test Suites</a>
+<ul id="m_test_suites_competitions">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Test+Scenarios+and+Scripts">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_test_suites_support&#39;)">Track Information</a>
+<ul id="m_test_suites_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Testing+Competitions">How to Compete</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Testing+Competition+Tutorial">Tutorial</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Testing+Competition+Documentation">Documentation</a></li>
+</ul></li>
+<li><a href="http://community.topcoder.com/tc?module=ActiveContests&pt=13">Active Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ContestStatus&pt=13">Contest Status</a></li>
+<li><a href="http://community.topcoder.com/tc?module=CompList&pt=13">Past Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ViewReviewProjects&pt=13">Review Opportunities</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ReviewBoard&pt=13">Meet the Review Board</a></li>
+</ul></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;competition_ui_dev&#39;)">UI Development</a>
+<ul id="competition_ui_dev">
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_ui_prototype_competitions&#39;)">UI Prototype</a>
+<ul id="m_ui_prototype_competitions">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/UI+Prototype+Competitions">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_ui_prototype_support&#39;)">Track Information</a>
+<ul id="m_ui_prototype_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+UI+Prototype+Competitions">How to Compete</a></li>
+</ul></li>
+<li><a href="http://community.topcoder.com/tc?module=ActiveContests&pt=19">Active Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ContestStatus&pt=19">Contest Status</a></li>
+<li><a href="http://community.topcoder.com/tc?module=CompList&pt=19">Past Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ViewReviewProjects&pt=19">Review Opportunities</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ReviewBoard&pt=19">Meet the Review Board</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_ria_build_competitions&#39;)">RIA Build</a>
+<ul id="m_ria_build_competitions">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/RIA+Build+Competitions">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_ria_build_support&#39;)">Track Information</a>
+<ul id="m_ria_build_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+RIA+Builds">How to Compete</a></li>
+</ul></li>
+<li><a href="http://community.topcoder.com/tc?module=ActiveContests&pt=24">Active Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ContestStatus&pt=24">Contest Status</a></li>
+<li><a href="http://community.topcoder.com/tc?module=CompList&pt=24">Past Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ViewReviewProjects&pt=24">Review Opportunities</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ReviewBoard&pt=24">Meet the Review Board</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_content_creation_competitions&#39;)">Content Creation</a>
+<ul id="m_content_creation_competitions">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Content+Contests+Overview">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_content_creation_support&#39;)">Track Information</a>
+<ul id="m_content_creation_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Content+Creation+Competitions">How to Compete</a></li>
+</ul></li>
+<li><a href="http://community.topcoder.com/tc?module=ActiveContests&pt=35">Active Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ContestStatus&pt=35">Contest Status</a></li>
+<li><a href="http://community.topcoder.com/tc?module=CompList&pt=35">Past Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ViewReviewProjects&pt=35">Review Opportunities</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ReviewBoard&pt=35">Meet the Review Board</a></li>
+</ul></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;competition_qa&#39;)">QA and Maintenance</a>
+<ul id="competition_qa">
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_test_scenarios_competitions&#39;)">Test Scenarios</a>
+<ul id="m_test_scenarios_competitions">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Test+Scenarios+and+Scripts">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_test_scenarios_support&#39;)">Track Information</a>
+<ul id="m_test_scenarios_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Testing+Competitions">How to Compete</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Testing+Competition+Tutorial">Tutorial</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Testing+Competition+Documentation">Documentation</a></li>
+</ul></li>
+<li><a href="http://community.topcoder.com/tc?module=ActiveContests&pt=26">Active Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ContestStatus&pt=26">Contest Status</a></li>
+<li><a href="http://community.topcoder.com/tc?module=CompList&pt=26">Past Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ViewReviewProjects&pt=26">Review Opportunities</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ReviewBoard&pt=26">Meet the Review Board</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_bugraces_competitions&#39;)">Bug Race</a>
+<ul id="m_bugraces_competitions">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Bug+Race+Competition+Overview">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_bugraces_support&#39;)">Track Information</a>
+<ul id="m_bugraces_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Bug+Race+Competitions">How to Compete</a></li>
+</ul></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Active+Bug+Race+Competitions">Active Contests</a></li>
+<li><a href="http://apps.topcoder.com/wiki/x/FQG2AQ">Review Opportunities</a></li>
+</ul></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;competition_algo&#39;)">Algorithm</a>
+<ul id="competition_algo">
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_algo_competitions&#39;)">Single Round Matches (SRM)</a>
+<ul id="m_algo_competitions">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Algorithm+Overview">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_algo_support&#39;)">Track Information</a>
+<ul id="m_algo_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+SRM+Algorithm+Competitions">How to Compete</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/SRM+Algorithm+Competition+FAQs">FAQs</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Algorithm+Competition+Rating+System">Rating System</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Write+Problems+for+TopCoder">Write Problems</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_algo_stats&#39;)">Statistics</a>
+<ul id="m_algo_stats">
+<li><a href="http://community.topcoder.com/tc?module=MatchList">Match Archive</a></li>
+<li><a href="http://community.topcoder.com/stat?c=round_overview">Match Overviews</a></li>
+<li><a href="http://community.topcoder.com/tc?module=SrmDivisionWins">Match Winners</a></li>
+<li><a href="http://community.topcoder.com/stat?c=last_match">Match Results</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Algorithm+Problem+Set+Analysis">Match Editorials</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ProblemArchive">Problem Archive</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ColorChange&ratid=1">Recent Color Changes</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Algorithm+Data+Feeds">Data Feeds</a></li>
+</ul></li>
+<li><a href="javascript:arena();">Launch Arena</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_long_contests&#39;)">Marathon Match</a>
+<ul id="m_long_contests">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Marathon+Match+Overview">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_long_support&#39;)">Track Information</a>
+<ul id="m_long_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Marathon+Match+Events">How to Compete</a></li>
+<li><a href="http://community.topcoder.com/longcontest/?module=Static&d1=support&d2=ratings">Rating System</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_long_stats&#39;)">Statistics</a>
+<ul id="m_long_stats">
+<li><a href="http://community.topcoder.com/longcontest/stats/?module=MatchList">Match Archive</a></li>
+<li><a href="http://community.topcoder.com/longcontest/stats/?module=ViewOverview">Match Overview</a></li>
+<li><a href="http://community.topcoder.com/longcontest/stats/?module=MatchWinners">Match Winners</a></li>
+<li><a href="http://community.topcoder.com/longcontest/?module=Static&d1=match_editorials&d2=archive">Match Editorials</a></li>
+<li><a href="http://community.topcoder.com/longcontest/?module=Static&d1=support&d2=dataFeed">Data Feeds</a></li>
+</ul></li>
+<li><a href="http://community.topcoder.com/longcontest/?module=ViewActiveContests">Active Contests</a></li>
+<li><a href="http://community.topcoder.com/longcontest/?module=ViewPractice">Practice</a></li>
+<li><a href="http://community.topcoder.com/longcontest/?module=ViewQueue">Queue Status</a></li>
+</ul></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_hs_competitions&#39;)">High School</a>
+<ul id="m_hs_competitions">
+<li><a href="http://community.topcoder.com/tc?module=Static&d1=hs&d2=home">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_hs_stats&#39;)">Statistics</a>
+<ul id="m_hs_stats">
+<li><a href="http://community.topcoder.com/tc?module=HSRoundOverview">Match Overview</a></li>
+<li><a href="http://community.topcoder.com/tc?module=HSRoundStatsTeam">Match Results (Team)</a></li>
+<li><a href="http://community.topcoder.com/tc?module=HSRoundStatsInd">Match Results (Indiv.)</a></li>
+<li><a href="http://community.topcoder.com/tc?module=Static&d1=hs&d2=match_editorials&d3=archive">Match Editorials</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ColorChange&ratid=2">Recent Color Changes</a></li>
+<li><a href="http://community.topcoder.com/tc?module=Static&d1=hs&d2=support&d3=dataFeed">Data Feeds</a></li>
+</ul></li>
+<li><a href="http://community.topcoder.com/tc?module=Static&d1=hs&d2=spotlightSessions">Spotlight Sessions</a></li>
+<li><a href="javascript:arena();">Launch Arena</a></li>
+</ul></li>
+<li><a href="http://community.topcoder.com/dr">The Digital Run</a></li>
+<li><a href="http://software.topcoder.com/review">Submit &amp; Review</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_topcoder_networks&#39;)">TopCoder Networks</a>
+<ul id="m_topcoder_networks">
+<li><a href="http://community.topcoder.com/alcatel/">Alcatel Lucent</a></li>
+<li><a href="http://community.topcoder.com/amdapp/">AMD OpenCL</a></li>
+<li><a href="http://community.topcoder.com/darpacs/">DARPA CS-STEM</a></li>
+<li><a href="http://community.topcoder.com/ntl/">NASA Tournament Lab</a></li>
+<li><a href="http://community.topcoder.com/x/">PayPalX</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_events&#39;)">Events</a>
+<ul id="m_events">
+<li><a href="http://community.topcoder.com/tc?module=Static&d1=calendar&d2=thisMonth">Event Calendar</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_tournaments&#39;)">Tournaments</a>
+<ul id="m_tournaments">
+<li><a href="http://community.topcoder.com/tc?module=Static&d1=tournaments&d2=home">TopCoder</a></li>
+<li><a href="http://community.topcoder.com/pl/">Powered by TopCoder</a></li>
+<li><a href="http://community.topcoder.com/tc?module=CRPFStatic&d1=crpf&d2=crpf_overview">Charity</a></li>
+</ul></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_stats&#39;)">Statistics</a>
+<ul id="m_stats">
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_competitor_stats&#39;)">The Tops</a>
+<ul id="m_competitor_stats">
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_top_rated_competitors&#39;)">Top Ranked</a>
+<ul id="m_top_rated_competitors">
+<li><a href="http://community.topcoder.com/tc?module=AlgoRank">Algorithm</a></li>
+<li><a href="http://community.topcoder.com/tc?module=HSRank">High School</a></li>
+<li><a href="http://community.topcoder.com/longcontest/stats/?module=CoderRank">Marathon Match</a></li>
+<li><a href="http://community.topcoder.com/stat?c=top_conceptors">Conceptualization</a></li>
+<li><a href="http://community.topcoder.com/stat?c=top_specificators">Specification</a></li>
+<li><a href="http://community.topcoder.com/stat?c=top_architects">Architecture</a></li>
+<li><a href="http://community.topcoder.com/stat?c=top_designers">Design</a></li>
+<li><a href="http://community.topcoder.com/stat?c=top_developers">Development</a></li>
+<li><a href="http://community.topcoder.com/stat?c=top_assemblers">Assembly</a></li>
+<li><a href="http://community.topcoder.com/stat?c=top_testers">Test Suites</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_recordbook&#39;)">Record Book</a>
+<ul id="m_recordbook">
+<li><a href="http://community.topcoder.com/tc?module=Static&d1=statistics&d2=recordbook_home">Algorithm</a></li>
+<li><a href="http://community.topcoder.com/tc?module=Static&d1=compstats&d2=comp_recordbook_home">Component</a></li>
+<li><a href="http://community.topcoder.com/longcontest/?module=Static&d1=stats&d2=recordbook_home">Marathon Match</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_com&#39;)">Coder of the Month</a>
+<ul id="m_com">
+<li><a href="http://community.topcoder.com/tc?module=COMHistory&achtid=5">Algorithm</a></li>
+<li><a href="http://community.topcoder.com/tc?module=COMHistory&achtid=6">Design</a></li>
+<li><a href="http://community.topcoder.com/tc?module=COMHistory&achtid=7">Development</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li class="exp_ed"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_edu_content&#39;)">Tutorials</a>
+<ul id="m_edu_content" class="OPEN">
+<li><a href="http://community.topcoder.com/tc?module=Static&d1=education&d2=overview">Overview</a></li>
+<li class="highlight"><a href="http://community.topcoder.com/tc?module=Static&d1=tutorials&d2=alg_index">Algorithm Tutorials</a></li>
+<li><a href="http://community.topcoder.com/tc?module=Static&d1=tutorials&d2=comp_index">Component Tutorials</a></li>
+<li><a href="http://community.topcoder.com/tc?module=Static&d1=tutorials&d2=mm_index">Marathon Tutorials</a></li>
+<li><a href="http://apps.topcoder.com/wiki/dashboard.action">Wiki</a></li>
+</ul></li>
+<li><a href="http://forums.topcoder.com/">Forums</a></li>
+<li><a href="http://community.topcoder.com/tc?&module=SurveyList">Surveys</a></li>
+<li><a href="http://community.topcoder.com/tc?module=MyHome">My TopCoder</a></li>
+<li><a href="http://www.topcoder.com/help">Help Center</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_about_tc&#39;)">About TopCoder</a>
+<ul id="m_about_tc">
+<li><a href="http://www.topcoder.com/aboutus/">Overview</a></li>
+<li><a href="http://www.topcoder.com/aboutus/">Why Join TopCoder?</a></li>
+<li><a href="http://www.topcoder.com/aboutus/careers/">Working at TopCoder</a></li>
+<li><a href="http://www.topcoder.com/aboutus/management/">Leadership</a></li>
+<li><a href="http://www.topcoder.com/aboutus/news/">Press Room</a></li>
+</ul></li></ul>
+
+    <div style="float: left; padding: 10px 0px 0px 17px;">
+        
+        <a href="http://www.topcoder.com/tc?module=LinkTracking&link=http://apps.topcoder.com/wiki/x/L4TD&refer=leftnav"><img src="./standardTemplateLibrary_files/umlTool.png" alt="UML Tool"></a>
+
+        
+        
+        
+        
+    </div>
+    
+
+<div id="navbarSearch">
+<b>Member Search:</b>
+<form action="http://www.topcoder.com/tc" method="get" name="simpleSearchForm" class="noSpace" id="simpleSearchForm">
+   <input class="noSpace" type="hidden" name="module" value="SimpleSearch">
+   <input class="noSpace" type="text" name="ha" value="Handle:" size="12" maxlength="15" onfocus="javascript: if (document.simpleSearchForm.ha.value==&#39;Handle:&#39;) document.simpleSearchForm.ha.value = &#39;&#39;;" onblur="javascript:if (document.simpleSearchForm.ha.value == &#39;&#39;)document.simpleSearchForm.ha.value = &#39;Handle:&#39;;">
+   <a class="gMetal" href="javascript:void document.simpleSearchForm.submit();">Go</a><br>
+   <a class="gMetal" href="http://www.topcoder.com/tc?module=ViewAdvanced">Advanced Search</a>
+</form>
+</div>
+</div>
+<div style="float: left; clear:left; padding: 0px 0px 23px 0px;"><img src="./standardTemplateLibrary_files/leftnav_bottom.gif" alt=""></div>
+
+
+    <div align="center" style="float: left; clear:left; width: 170px; margin: 0px;">
+        <img src="./standardTemplateLibrary_files/brackets.png" alt="" style="margin-bottom: 23px;">
+    </div>
+
+
+
+
+        </td>
+        <!-- Left Column Ends -->
+        <!-- Center Column Begins -->
+        <td width="100%" align="left" class="bodyColumn">
+            
+
+
+
+
+<table cellspacing="0" cellpadding="0" class="pageTitleTable">
+    <tbody><tr>
+        <td width="100%" class="pageTitle"><img border="0" src="./standardTemplateLibrary_files/header_alg_tut.gif" alt="alg_tut"></td>
+        <td align="right" class="pageSubtitle">&nbsp;&nbsp;</td>
+    </tr>
+</tbody></table>
+
+
+            <div class="linkBox">
+                <a href="http://community.topcoder.com/tc?module=Static&d1=tutorials&d2=alg_index">Archive</a><br>
+                <span id="printableLink" class="invisible"><a href="Javascript:makeInvisible();">Printable view</a><br></span>
+                <span id="navigableLink" class=""><a href="Javascript:makeNavigable();">Normal view</a><br></span>
+                <a href="http://forums.topcoder.com/?module=ThreadList&forumID=506253">Discuss this article</a><br>
+                <a href="http://community.topcoder.com/tc?module=Static&d1=help&d2=writeForTC">Write for TopCoder</a>
+            </div>
+
+
+<span class="bodyTitle">Power up C++ with the Standard Template Library: Part I</span>
+
+
+<img src="./standardTemplateLibrary_files/DmitryKorolev_big2.jpg" alt="" width="55" height="61" border="0" hspace="6" vspace="1" align="left" class="myStatsPhoto"><br>
+By&nbsp;<a href="http://www.topcoder.com/tc?module=MemberProfile&cr=21749340&tab=alg" class="coderTextYellow">DmitryKorolev</a><br>
+<span class="smallText"><em>TopCoder Member</em></span><br clear="all">
+
+<br>
+&nbsp;<a href="http://community.topcoder.com/tc?module=Static&d1=tutorials&d2=standardTemplateLibrary#containers">Containers</a><br>
+&nbsp;<a href="http://community.topcoder.com/tc?module=Static&d1=tutorials&d2=standardTemplateLibrary#before">Before we begin</a><br>
+&nbsp;<a href="http://community.topcoder.com/tc?module=Static&d1=tutorials&d2=standardTemplateLibrary#vector">Vector</a><br>
+&nbsp;<a href="http://community.topcoder.com/tc?module=Static&d1=tutorials&d2=standardTemplateLibrary#pairs">Pairs</a><br>
+&nbsp;<a href="http://community.topcoder.com/tc?module=Static&d1=tutorials&d2=standardTemplateLibrary#iterators">Iterators</a><br>
+&nbsp;<a href="http://community.topcoder.com/tc?module=Static&d1=tutorials&d2=standardTemplateLibrary#compiling">Compiling STL Programs</a><br>
+&nbsp;<a href="http://community.topcoder.com/tc?module=Static&d1=tutorials&d2=standardTemplateLibrary#manipulation">Data manipulation in Vector</a><br>
+&nbsp;<a href="http://community.topcoder.com/tc?module=Static&d1=tutorials&d2=standardTemplateLibrary#string">String</a><br>
+&nbsp;<a href="http://community.topcoder.com/tc?module=Static&d1=tutorials&d2=standardTemplateLibrary#set">Set</a><br>
+&nbsp;<a href="http://community.topcoder.com/tc?module=Static&d1=tutorials&d2=standardTemplateLibrary#map">Map</a><br>
+&nbsp;<a href="http://community.topcoder.com/tc?module=Static&d1=tutorials&d2=standardTemplateLibrary#notice">Notice on Map and Set</a><br>
+&nbsp;<a href="http://community.topcoder.com/tc?module=Static&d1=tutorials&d2=standardTemplateLibrary#algorithms">More on algorithms</a><br>
+&nbsp;<a href="http://community.topcoder.com/tc?module=Static&d1=tutorials&d2=standardTemplateLibrary#stringstreams">String Streams</a><br>
+&nbsp;<a href="http://community.topcoder.com/tc?module=Static&d1=tutorials&d2=standardTemplateLibrary#summary">Summary</a><br><br>
+
+
+Perhaps you are already using C++ as your main programming language to solve TopCoder problems. This means that you have already used STL in a simple way, because arrays and strings are passed to your function as STL objects. You may have noticed, though, that many coders manage to write their code much more quickly and concisely than you.
+<br><br>
+Or perhaps you are not a C++ programmer, but want to become one because of the great functionality of this language and its libraries (and, maybe, because of the very short solutions you've read in TopCoder practice rooms and competitions).
+<br><br>
+Regardless of where you're coming from, this article can help. In it, we will review some of the powerful features of the Standard Template Library (STL) – a great tool that, sometimes, can save you a lot of time in an algorithm competition.
+<br><br>
+The simplest way to get familiar with STL is to begin from its containers.
+<br><br>
+
+<span class="bodySubtitle"><a name="containers"></a>Containers</span><br>
+
+Any time you need to operate with many elements you require some kind of container. In native C (not C++) there was only one type of container: the array. 
+<br><br>
+The problem is not that arrays are limited (though, for example, it’s impossible to determine the size of array at runtime). Instead, the main problem is that many problems require a container with greater functionality.
+<br><br>
+For example, we may need one or more of the following operations:
+<ul><li>Add some string to a container.</li>
+<li>Remove a string from a container.</li>
+<li>Determine whether a string is present in the container.</li>
+<li>Return a number of distinct elements in a container.</li>
+<li>Iterate through a container and get a list of added strings in some order.</li></ul>
+
+Of course, one can implement this functionality in an ordinal array. But the trivial implementation would be very inefficient. You can create the tree- of hash- structure to solve it in a faster way, but think a bit: does the implementation of such a container depend on elements we are going to store? Do we have to re-implement the module to make it functional, for example, for points on a plane but not strings? 
+<br><br>
+If not, we can develop the interface for such a container once, and then use everywhere for data of any type. That, in short, is the idea of STL containers.
+<br><br>
+
+<span class="bodySubtitle"><a name="before"></a>Before we begin</span><br>
+When the program is using STL, it should #include the appropriate standard headers. For most containers the title of standard header matches the name of the container, and no extension is required. For example, if you are going to use stack, just add the following line at the beginning of your program:
+
+<pre class="code">#include &lt;stack&gt;</pre>
+
+Container types (and algorithms, functors and all STL as well) are defined not in global namespace, but in special namespace called “std." Add the following line after your includes and before the code begin: 
+
+<pre class="code">using namespace std;</pre>
+
+Another important thing to remember is that the type of a container is the template parameter. Template parameters are specified with the ‘&lt;’/’&gt;’ "brackets" in code. For example:
+
+<pre class="code">vector&lt;int&gt; N;</pre>
+
+When making nested constructions, make sure that the "brackets" are not directly following one another – leave a blank between them.
+
+<pre class="code">vector&lt; vector&lt;int&gt; &gt; CorrectDefinition; 
+vector&lt;vector&lt;int&gt;&gt; WrongDefinition; // Wrong: compiler may be confused by 'operator &gt;&gt;'</pre>
+
+<span class="bodySubtitle"><a name="vector"></a>Vector</span><br>
+
+The simplest STL container is vector. Vector is just an array with extended functionality. By the way, vector is the only container that is backward-compatible to native C code – this means that vector actually IS the array, but with some additional features.
+
+<pre class="code"> vector&lt;int&gt; v(10); 
+ for(int i = 0; i &lt; 10; i++) { 
+      v[i] = (i+1)*(i+1); 
+ } 
+ for(int i = 9; i &gt; 0; i--) { 
+      v[i] -= v[i-1]; 
+ } </pre>
+
+Actually, when you type
+
+<pre class="code"> vector&lt;int&gt; v; </pre>
+
+the empty vector is created. Be careful with constructions like this: 
+
+<pre class="code"> vector&lt;int&gt; v[10]; </pre>
+
+Here we declare 'v' as an array of 10 vector&lt;int&gt;’s, which are initially empty. In most cases, this is not that we want. Use parentheses instead of brackets here.
+The most frequently used feature of vector is that it can report its size.
+
+<pre class="code"> int elements_count = v.size();  </pre>
+
+Two remarks: first, size() is unsigned, which may sometimes cause problems. Accordingly, I usually define macros, something like sz(C) that returns size of C as ordinal signed int. Second, it’s not a good practice to compare v.size() to zero if you want to know whether the container is empty. You're better off using empty() function:
+
+<pre class="code"> bool is_nonempty_notgood = (v.size() &gt;= 0); // Try to avoid this
+ bool is_nonempty_ok = !v.empty(); </pre>
+
+This is because not all the containers can report their size in O(1), and you definitely should not require counting all elements in a double-linked list just to ensure that it contains at least one.
+<br><br>
+Another very popular function to use in vector is push_back. Push_back adds an element to the end of vector, increasing its size by one. Consider the following example:
+
+<pre class="code"> vector&lt;int&gt; v; 
+ for(int i = 1; i &lt; 1000000; i *= 2) { 
+      v.push_back(i); 
+ } 
+ int elements_count = v.size(); </pre>
+
+Don’t worry about memory allocation -- vector will not allocate just one element each time. Instead, vector allocates more memory then it actually needs when adding new elements with push_back. The only thing you should worry about is memory usage, but at TopCoder this may not matter. (More on vector’s memory policy later.)
+<br><br>
+When you need to resize vector, use the resize() function:
+
+<pre class="code"> vector&lt;int&gt; v(20); 
+ for(int i = 0; i &lt; 20; i++) { 
+      v[i] = i+1; 
+ } 
+ v.resize(25); 
+ for(int i = 20; i &lt; 25; i++) { 
+      v[i] = i*2; 
+ } </pre>
+
+The resize() function makes vector contain the required number of elements. If you require less elements than vector already contain, the last ones will be deleted. If you ask vector to grow, it will enlarge its size and fill the newly created elements with zeroes.
+<br><br>
+Note that if you use push_back() after resize(), it will add elements AFTER the newly allocated size, but not INTO it. In the example above the size of the resulting vector is 25, while if we use push_back() in a second loop, it would be 30.
+
+<pre class="code"> vector&lt;int&gt; v(20); 
+ for(int i = 0; i &lt; 20; i++) { 
+      v[i] = i+1; 
+ } 
+ v.resize(25); 
+ for(int i = 20; i &lt; 25; i++) { 
+      v.push_back(i*2); // Writes to elements with indices [25..30), not [20..25) ! &lt;
+ } </pre>
+
+To clear a vector use clear() member function. This function makes vector to contain 0 elements. It does not make elements zeroes -- watch out -- it completely erases the container.
+<br><br>
+There are many ways to initialize vector. You may create vector from another vector:
+
+<pre class="code"> vector&lt;int&gt; v1; 
+ // ... 
+ vector&lt;int&gt; v2 = v1; 
+ vector&lt;int&gt; v3(v1); </pre>
+
+The initialization of v2 and v3 in the example above are exactly the same.
+<br><br>
+If you want to create a vector of specific size, use the following constructor:
+
+<pre class="code"> vector&lt;int&gt; Data(1000); </pre>
+
+In the example above, the data will contain 1,000 zeroes after creation. Remember to use parentheses, not brackets. If you want vector to be initialized with something else, write it in such manner:
+
+<pre class="code"> vector&lt;string&gt; names(20, “Unknown”); </pre>
+
+Remember that you can create vectors of any type.
+<br><br>
+Multidimensional arrays are very important. The simplest way to create the two-dimensional array via vector is to create a vector of vectors.
+
+<pre class="code"> vector&lt; vector&lt;int&gt; &gt; Matrix; </pre>
+
+It should be clear to you now how to create the two-dimensional vector of given size:
+
+<pre class="code"> int N, N; 
+ // ... 
+ vector&lt; vector&lt;int&gt; &gt; Matrix(N, vector&lt;int&gt;(M, -1)); </pre>
+
+Here we create a matrix of size N*M and fill it with -1.
+<br><br>
+The simplest way to add data to vector is to use push_back(). But what if we want to add data somewhere other than the end? There is the insert() member function for this purpose. And there is also the erase() member function to erase elements, as well. But first we need to say a few words about iterators.
+<br><br>
+You should remember one more very important thing: When vector is passed as a parameter to some function, a copy of vector is actually created. It may take a lot of time and memory to create new vectors when they are not really needed. Actually, it’s hard to find a task where the copying of vector is REALLY needed when passing it as a parameter. So, you should never write:
+
+<pre class="code"> void some_function(vector&lt;int&gt; v) { // Never do it unless you’re sure what you do! 
+      // ... 
+ } </pre>
+
+Instead, use the following construction:
+
+<pre class="code"> void some_function(const vector&lt;int&gt;&amp; v) { // OK 
+      // ... 
+ } </pre>
+
+If you are going to change the contents of vector in the function, just omit the ‘const’ modifier.
+
+<pre class="code"> int modify_vector(vector&lt;int&gt;&amp; v) { // Correct 
+      V[0]++; 
+ } </pre>
+
+
+<span class="bodySubtitle"><a name="pairs"></a>Pairs</span><br>
+Before we come to iterators, let me say a few words about pairs. Pairs are widely used in STL. Simple problems, like TopCoder SRM 250 and easy 500-point problems, usually require some simple data structure that fits well with pair. STL std::pair is just a pair of elements. The simplest form would be the following:
+ 
+<pre class="code"> template&lt;typename T1, typename T2&gt; struct pair { 
+      T1 first; 
+      T2 second; 
+ }; </pre>
+
+In general pair&lt;int,int&gt; is a pair of integer values. At a more complex level, pair&lt;string, pair&lt;int, int&gt; &gt; is a pair of string and two integers. In the second case, the usage may be like this:
+
+<pre class="code"> pair&lt;string, pair&lt;int,int&gt; &gt; P; 
+ string s = P.first; // extract string 
+ int x = P.second.first; // extract first int 
+ int y = P.second.second; // extract second int </pre>
+
+The great advantage of pairs is that they have built-in operations to compare themselves. Pairs are compared first-to-second element. If the first elements are not equal, the result will be based on the comparison of the first elements only; the second elements will be compared only if the first ones are equal. The array (or vector) of pairs can easily be sorted by STL internal functions.
+<br><br>
+For example, if you want to sort the array of integer points so that they form a polygon, it’s a good idea to put them to the vector&lt; pair&lt;double, pair&lt;int,int&gt; &gt;, where each element of vector is { polar angle, { x, y } }. One call to the STL sorting function will give you the desired order of points.
+<br><br>
+Pairs are also widely used in associative containers, which we will speak about later in this article.
+<br><br>
+
+<span class="bodySubtitle"><a name="iterators"></a>Iterators</span><br>
+What are iterators? In STL iterators are the most general way to access data in containers. Consider the simple problem: Reverse the array A of N int’s. Let’s begin from a C-like solution:
+
+<pre class="code"> void reverse_array_simple(int *A, int N) { 
+      int first = 0, last = N-1; // First and last indices of elements to be swapped 
+      While(first &lt; last) { // Loop while there is something to swap 
+           swap(A[first], A[last]); // swap(a,b) is the standard STL function 
+           first++; // Move first index forward 
+           last--; // Move last index back 
+      } 
+ } </pre>
+
+This code should be clear to you. It’s pretty easy to rewrite it in terms of pointers:
+
+<pre class="code"> void reverse_array(int *A, int N) { 
+      int *first = A, *last = A+N-1; 
+      while(first &lt; last) { 
+           Swap(*first, *last); 
+           first++; 
+           last--; 
+      } 
+ } </pre>
+
+Look at this code, at its main loop. It uses only four distinct operations on pointers 'first' and 'last':
+<ul>
+<li>compare pointers (first &lt; last),</li>
+<li>get value by pointer (*first, *last),</li>
+<li>increment pointer, and</li>
+<li>decrement pointer</li>
+</ul>
+
+Now imagine that you are facing the second problem: Reverse the contents of a double-linked list, or a part of it. The first code, which uses indexing, will definitely not work. At least, it will not work in time, because it’s impossible to get element by index in a double-linked list in O(1), only in O(N), so the whole algorithm will work in O(N^2). Errr...
+<br><br>
+But look: the second code can work for ANY pointer-like object. The only restriction is that that object can perform the operations described above: take value (unary *), comparison (&lt;), and increment/decrement (++/--). Objects with these properties that are associated with containers are called iterators. Any STL container may be traversed by means of an iterator. Although not often needed for vector, it’s very important for other container types.
+<br><br>
+So, what do we have? An object with syntax very much like a pointer. The following operations are defined for iterators:
+<ul>
+<li>get value of an iterator, int x = *it;</li>
+<li>increment and decrement iterators it1++, it2--;</li>
+<li>compare iterators by '!=' and by '&lt;'</li>
+<li>add an immediate to iterator it += 20; &lt;=&gt; shift 20 elements forward</li>
+<li>get the distance between iterators, int n = it2-it1;</li>
+</ul>
+
+But instead of pointers, iterators provide much greater functionality. Not only can they operate on any container, they may also perform, for example, range checking and profiling of container usage.
+<br><br>
+And the main advantage of iterators, of course, is that they greatly increase the reuse of code: your own algorithms, based on iterators, will work on a wide range of containers, and your own containers, which provide iterators, may be passed to a wide range of standard functions.
+<br><br>
+Not all types of iterators provide all the potential functionality. In fact, there are so-called "normal iterators" and "random access iterators". Simply put, normal iterators may be compared with ‘==’ and ‘!=’, and they may also be incremented and decremented. They may not be subtracted and we can not add a value to the normal iterator. Basically, it’s impossible to implement the described operations in O(1) for all container types. In spite of this, the function that reverses array should look like this:
+
+<pre class="code"> template&lt;typename T&gt; void reverse_array(T *first, T *last) { 
+      if(first != last) { 
+           while(true) { 
+                swap(*first, *last); 
+                first++; 
+                if(first == last) { 
+                     break; 
+                } 
+                last--; 
+                if(first == last) { 
+                     break; 
+                } 
+           } 
+      } 
+ } </pre>
+
+The main difference between this code and the previous one is that we don’t use the "&lt;" comparison on iterators, just the "==" one. Again, don’t panic if you are surprised by the function prototype: template is just a way to declare a function, which works on any appropriate parameter types. This function should work perfectly on pointers to any object types and with all normal iterators.
+<br><br>
+Let's return to the STL. STL algorithms always use two iterators, called "begin" and "end." The end iterator is pointing not to the last object, however, but to the first invalid object, or the object directly following the last one. It’s often very convenient.
+<br><br>
+Each STL container has member functions begin() and end() that return the begin and end iterators for that container.
+<br><br>
+Based on these principles, c.begin() == c.end() if and only if c is empty, and c.end() – c.begin() will always be equal to c.size(). (The last sentence is valid in cases when iterators can be subtracted, i.e. begin() and end() return random access iterators, which is not true for all kinds of containers. See the prior example of the double-linked list.)
+<br><br>
+The STL-compliant reverse function should be written as follows:
+
+<pre class="code"> template&lt;typename T&gt; void reverse_array_stl_compliant(T *begin, T *end) { 
+      // We should at first decrement 'end' 
+      // But only for non-empty range 
+      if(begin != end) 
+      { 
+           end--; 
+           if(begin != end) { 
+                while(true) { 
+                     swap(*begin, *end); 
+                     begin++; 
+                     If(begin == end) { 
+                          break; 
+                     } 
+                     end--; 
+                     if(begin == end) { 
+                          break; 
+                     } 
+                } 
+           } 
+      } 
+ } </pre>
+
+Note that this function does the same thing as the standard function std::reverse(T begin, T end) that can be found in algorithms module (#include &lt;algorithm&gt;).
+<br><br>
+In addition, any object with enough functionality can be passed as an iterator to STL algorithms and functions. That is where the power of templates comes in! See the following examples:
+
+<pre class="code"> vector&lt;int&gt; v; 
+ // ... 
+ vector&lt;int&gt; v2(v); 
+ vector&lt;int&gt; v3(v.begin(), v.end()); // v3 equals to v2 
+
+ int data[] = { 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31 }; 
+ vector&lt;int&gt; primes(data, data+(sizeof(data) / sizeof(data[0]))); </pre>
+
+The last line performs a construction of vector from an ordinal C array. The term 'data' without index is treated as a pointer to the beginning of the array. The term 'data + N' points to N-th element, so, when N if the size of array, 'data + N' points to first element not in array, so 'data + length of data' can be treated as end iterator for array 'data'. The expression 'sizeof(data)/sizeof(data[0])' returns the size of the array data, but only in a few cases, so don’t use it anywhere except in such constructions. (C programmers will agree with me!)
+<br><br>
+Furthermore, we can even use the following constructions:
+
+<pre class="code"> vector&lt;int&gt; v; 
+ // ... 
+ vector&lt;int&gt; v2(v.begin(), v.begin() + (v.size()/2)); </pre>
+
+It creates the vector v2 that is equal to the first half of vector v.
+<br><br>
+Here is an example of reverse() function:
+
+<pre class="code"> int data[10] = { 1, 3, 5, 7, 9, 11, 13, 15, 17, 19 }; 
+ reverse(data+2, data+6); // the range { 5, 7, 9, 11 } is now { 11, 9, 7, 5 }; </pre>
+
+Each container also has the rbegin()/rend() functions, which return reverse iterators. Reverse iterators are used to traverse the container in backward order. Thus:
+
+<pre class="code"> vector&lt;int&gt; v; 
+ vector&lt;int&gt; v2(v.rbegin()+(v.size()/2), v.rend()); </pre>
+
+will create v2 with first half of v, ordered back-to-front.
+<br><br>
+To create an iterator object, we must specify its type. The type of iterator can be constructed by a type of container by appending “::iterator”, “::const_iterator”, “::reverse_iterator” or “::const_reverse_iterator” to it. Thus, vector can be traversed in the following way:
+
+<pre class="code"> vector&lt;int&gt; v; 
+
+ // ... 
+
+ // Traverse all container, from begin() to end() 
+ for(vector&lt;int&gt;::iterator it = v.begin(); it != v.end(); it++) { 
+      *it++; // Increment the value iterator is pointing to 
+ } </pre>
+
+I recommend you use '!=' instead of '&lt;', and 'empty()' instead of 'size() != 0' -- for some container types, it’s just very inefficient to determine which of the iterators precedes another. 
+<br><br>
+Now you know of STL algorithm reverse(). Many STL algorithms are declared in the same way: they get a pair of iterators – the beginning and end of a range – and return an iterator.
+<br><br>
+The find() algorithm looks for appropriate elements in an interval. If the element is found, the iterator pointing to the first occurrence of the element is returned. Otherwise, the return value equals the end of interval. See the code:
+
+<pre class="code"> vector&lt;int&gt; v; 
+ for(int i = 1; i &lt; 100; i++) { 
+      v.push_back(i*i); 
+ } 
+
+ if(find(v.begin(), v.end(), 49) != v.end()) { 
+      // ... 
+ } </pre>
+
+To get the index of element found, one should subtract the beginning iterator from the result of find():
+
+<pre class="code"> int i = (find(v.begin(), v.end(), 49) - v.begin(); 
+ if(i &lt; v.size()) { 
+      // ... 
+ } </pre>
+
+Remember to #include &lt;algorithm&gt; in your source when using STL algorithms.
+<br><br>
+The min_element and max_element algorithms return an iterator to the respective element. To get the value of min/max element, like in find(), use *min_element(...) or *max_element(...), to get index in array subtract the begin iterator of a container or range:
+
+<pre class="code"> int data[5] = { 1, 5, 2, 4, 3 }; 
+ vector&lt;int&gt; X(data, data+5); 
+ int v1 = *max_element(X.begin(), X.end()); // Returns value of max element in vector 
+ int i1 = min_element(X.begin(), X.end()) – X.begin; // Returns index of min element in vector 
+
+ int v2 = *max_element(data, data+5); // Returns value of max element in array 
+ int i3 = min_element(data, data+5) – data; // Returns index of min element in array </pre>
+
+Now you may see that the useful macros would be:
+
+<pre class="code"> #define all(c) c.begin(), c.end() </pre>
+
+Don’t put the whole right-hand side of these macros into parentheses -- that would be wrong!
+<br><br>
+Another good algorithm is sort(). It's very easy to use. Consider the following examples:
+
+<pre class="code"> vector&lt;int&gt; X; 
+
+ // ... 
+
+ sort(X.begin(), X.end()); // Sort array in ascending order 
+ sort(all(X)); // Sort array in ascending order, use our #define 
+ sort(X.rbegin(), X.rend()); // Sort array in descending order using with reverse iterators </pre>
+
+
+<span class="bodySubtitle"><a name="compiling"></a>Compiling STL Programs</span><br>
+One thing worth pointing out here is STL error messages. As the STL is distributed in sources, and it becomes necessary for compilers to build efficient executables, one of STL's habits is unreadable error messages.
+<br><br>
+For example, if you pass a vector&lt;int&gt; as a const reference parameter (as you should do) to some function:
+
+<pre class="code"> void f(const vector&lt;int&gt;&amp; v) { 
+      for( 
+           vector&lt;int&gt;::iterator it = v.begin(); // hm... where’s the error?.. 
+           // ... 
+      // ... 
+ } </pre>
+
+The error here is that you are trying to create the non-const iterator from a const object with the begin() member function (though identifying that error can be harder than actually correcting it). The right code looks like this:
+
+<pre class="code"> void f(const vector&lt;int&gt;&amp; v) { 
+      int r = 0; 
+      // Traverse the vector using const_iterator 
+      for(vector&lt;int&gt;::const_iterator it = v.begin(); it != v.end(); it++) { 
+           r += (*it)*(*it); 
+      } 
+      return r; 
+ } </pre>
+
+In spite of this, let me tell about very important feature of GNU C++ called 'typeof'. This operator is replaced to the type of an expression during the compilation. Consider the following example:
+
+<pre class="code"> typeof(a+b) x = (a+b); </pre>
+
+This will create the variable x of type matching the type of (a+b) expression. Beware that typeof(v.size()) is unsigned for any STL container type. But the most important application of typeof for TopCoder is traversing a container. Consider the following macros:
+
+<pre class="code"> #define tr(container, it) \ 
+      for(typeof(container.begin()) it = container.begin(); it != container.end(); it++) </pre>
+
+By using these macros we can traverse every kind of container, not only vector. This will produce const_iterator for const object and normal iterator for non-const object, and you will never get an error here.
+
+<pre class="code"> void f(const vector&lt;int&gt;&amp; v) { 
+      int r = 0; 
+      tr(v, it) { 
+           r += (*it)*(*it); 
+      } 
+      return r; 
+ } </pre>
+
+Note: I did not put additional parentheses on the #define line in order to improve its readability. See this article below for more correct #define statements that you can experiment with in practice rooms.
+<br><br>
+Traversing macros is not really necessary for vectors, but it’s very convenient for more complex data types, where indexing is not supported and iterators are the only way to access data. We will speak about this later in this article.
+<br><br>
+
+<span class="bodySubtitle"><a name="manipulation"></a>Data manipulation in vector</span><br>
+One can insert an element to vector by using the insert() function:
+
+<pre class="code"> vector&lt;int&gt; v; 
+ // ... 
+ v.insert(1, 42); // Insert value 42 after the first </pre>
+
+All elements from second (index 1) to the last will be shifted right one element to leave a place for a new element. If you are planning to add many elements, it's not good to do many shifts – you're better off calling insert() one time. So, insert() has an interval form:
+
+<pre class="code"> vector&lt;int&gt; v; 
+ vector&lt;int&gt; v2; 
+
+ // .. 
+
+ // Shift all elements from second to last to the appropriate number of elements. 
+ // Then copy the contents of v2 into v. 
+ v.insert(1, all(v2)); </pre>
+
+Vector also has a member function erase, which has two forms. Guess what they are:
+
+<pre class="code"> erase(iterator); 
+ erase(begin iterator, end iterator); </pre>
+
+At first case, single element of vector is deleted. At second case, the interval, specified by two iterators, is erased from vector.
+<br><br>
+The insert/erase technique is common, but not identical for all STL containers.
+<br><br>
+
+<span class="bodySubtitle"><a name="string"></a>String</span><br>
+There is a special container to manipulate with strings. The string container has a few differences from vector&lt;char&gt;. Most of the differences come down to string manipulation functions and memory management policy. 
+<br><br>
+String has a substring function without iterators, just indices:
+
+<pre class="code"> string s = "hello"; 
+ string 
+      s1 = s.substr(0, 3), // "hel" 
+      s2 = s.substr(1, 3), // "ell" 
+      s3 = s.substr(0, s.length()-1), "hell" 
+      s4 = s.substr(1); // "ello" </pre>
+
+Beware of (s.length()-1) on empty string because s.length() is unsigned and unsigned(0) – 1 is definitely not what you are expecting!
+<br><br>
+
+<span class="bodySubtitle"><a name="set"></a>Set</span><br>
+It’s always hard to decide which kind of container to describe first – set or map. My opinion is that, if the reader has a basic knowledge of algorithms, beginning from 'set' should be easier to understand.
+<br><br>
+Consider we need a container with the following features:
+<ul>
+<li>add an element, but do not allow duples [duplicates?]</li>
+<li>remove elements</li>
+<li>get count of elements (distinct elements)</li>
+<li>check whether elements are present in set</li>
+</ul>
+
+This is quite a frequently used task. STL provides the special container for it – set. Set can add, remove and check the presence of particular element in O(log N), where N is the count of objects in the set. While adding elements to set, the duples [duplicates?] are discarded. A count of the elements in the set, N, is returned in O(1). We will speak of the algorithmic implementation of set and map later -- for now, let’s investigate its interface:
+
+<pre class="code"> set&lt;int&gt; s; 
+
+ for(int i = 1; i &lt;= 100; i++) { 
+      s.insert(i); // Insert 100 elements, [1..100] 
+ } 
+
+ s.insert(42); // does nothing, 42 already exists in set 
+
+ for(int i = 2; i &lt;= 100; i += 2) { 
+      s.erase(i); // Erase even values 
+ } 
+
+ int n = int(s.size()); // n will be 50 </pre>
+
+The push_back() member may not be used with set. It make sense: since the order of elements in set does not matter, push_back() is not applicable here.
+<br>
+<br>
+Since set is not a linear container, it’s impossible to take the element in set by index. Therefore, the only way to traverse the elements of set is to use iterators.
+
+<pre class="code"> // Calculate the sum of elements in set 
+ set&lt;int&gt; S; 
+ // ... 
+ int r = 0; 
+ for(set&lt;int&gt;::const_iterator it = S.begin(); it != S.end(); it++) { 
+      r += *it; 
+ } </pre>
+
+It's more elegant to use traversing macros here. Why? Imagine you have a set&lt; pair&lt;string, pair&lt; int, vector&lt;int&gt; &gt; &gt;. How to traverse it? Write down the iterator type name? Oh, no. Use our traverse macros instead.
+
+<pre class="code"> set&lt; pair&lt;string, pair&lt; int, vector&lt;int&gt; &gt; &gt; SS; 
+ int total = 0; 
+ tr(SS, it) { 
+      total += it-&gt;second.first; 
+ } </pre>
+
+Notice the 'it-&gt;second.first' syntax. Since 'it' is an iterator, we need to take an object from 'it' before operating. So, the correct syntax would be '(*it).second.first'. However, it’s easier to write 'something-&gt;' than '(*something)'. The full explanation will be quite long –just remember that, for iterators, both syntaxes are allowed.
+<br><br>
+To determine whether some element is present in set use 'find()' member function. Don’t be confused, though: there are several 'find()' ’s in STL. There is a global algorithm 'find()', which takes two iterators, element, and works for O(N). It is possible to use it for searching for element in set, but why use an O(N) algorithm while there exists an O(log N) one? While searching in set and map (and also in multiset/multimap, hash_map/hash_set, etc.) do not use global find – instead, use member function 'set::find()'. As 'ordinal' find, set::find will return an iterator, either to the element found, or to 'end()'. So, the element presence check looks like this:
+
+<pre class="code"> set&lt;int&gt; s; 
+ // ... 
+ if(s.find(42) != s.end()) { 
+      // 42 presents in set 
+ } 
+ else { 
+      // 42 not presents in set 
+ } </pre>
+
+Another algorithm that works for O(log N) while called as member function is count. Some people think that
+
+<pre class="code"> if(s.count(42) != 0) { 
+      // … 
+ } </pre>
+
+or even
+
+<pre class="code"> if(s.count(42)) { 
+      // … 
+ } </pre>
+
+is easier to write. Personally, I don’t think so. Using count() in set/map is nonsense: the element either presents or not. As for me, I prefer to use the following two macros:
+
+<pre class="code"> #define present(container, element) (container.find(element) != container.end()) 
+ #define cpresent(container, element) (find(all(container),element) != container.end()) </pre>
+
+(Remember that all(c) stands for “c.begin(), c.end()”)
+<br><br>
+Here, 'present()' returns whether the element presents in the container with member function 'find()' (i.e. set/map, etc.) while 'cpresent' is for vector.
+<br><br>
+To erase an element from set use the erase() function.
+
+<pre class="code"> set&lt;int&gt; s; 
+ // … 
+ s.insert(54); 
+ s.erase(29); </pre>
+
+The erase() function also has the interval form:
+
+<pre class="code"> set&lt;int&gt; s; 
+ // .. 
+
+ set&lt;int&gt;::iterator it1, it2; 
+ it1 = s.find(10); 
+ it2 = s.find(100); 
+ // Will work if it1 and it2 are valid iterators, i.e. values 10 and 100 present in set. 
+ s.erase(it1, it2); // Note that 10 will be deleted, but 100 will remain in the container </pre>
+
+Set has an interval constructor:
+
+<pre class="code"> int data[5] = { 5, 1, 4, 2, 3 }; 
+ set&lt;int&gt; S(data, data+5); </pre>
+
+It gives us a simple way to get rid of duplicates in vector, and sort it:
+
+<pre class="code"> vector&lt;int&gt; v; 
+ // … 
+ set&lt;int&gt; s(all(v)); 
+ vector&lt;int&gt; v2(all(s)); </pre>
+
+Here 'v2' will contain the same elements as 'v' but sorted in ascending order and with duplicates removed.
+<br><br>
+Any comparable elements can be stored in set. This will be described later.
+<br><br>
+
+<span class="bodySubtitle"><a name="map"></a>Map</span><br>
+
+There are two explanation of map. The simple explanation is the following:
+
+<pre class="code"> map&lt;string, int&gt; M; 
+ M["Top"] = 1; 
+ M["Coder"] = 2; 
+ M["SRM"] = 10; 
+
+ int x = M["Top"] + M["Coder"]; 
+
+ if(M.find("SRM") != M.end()) { 
+      M.erase(M.find("SRM")); // or even M.erase("SRM") 
+ } </pre>
+
+Very simple, isn’t it?
+<br><br>
+Actually map is very much like set, except it contains not just values but pairs &lt;key, value&gt;. Map ensures that at most one pair with specific key exists. Another quite pleasant thing is that map has operator [] defined.
+<br><br>
+Traversing map is easy with our 'tr()' macros. Notice that iterator will be an std::pair of key and value. So, to get the value use it-&gt;second. The example follows:
+
+<pre class="code"> map&lt;string, int&gt; M; 
+ // … 
+ int r = 0; 
+ tr(M, it) { 
+      r += it-&gt;second; 
+ } </pre>
+
+Don’t change the key of map element by iterator, because it may break the integrity of map internal data structure (see below).
+<br><br>
+There is one important difference between map::find() and map::operator []. While map::find() will never change the contents of map, operator [] will create an element if it does not exist. In some cases this could be very convenient, but it's definitly a bad idea to use operator [] many times in a loop, when you do not want to add new elements. That’s why operator [] may not be used if map is passed as a const reference parameter to some function:
+
+<pre class="code"> void f(const map&lt;string, int&gt;&amp; M) { 
+      if(M["the meaning"] == 42) { // Error! Cannot use [] on const map objects! 
+      } 
+      if(M.find("the meaning") != M.end() &amp;&amp; M.find("the meaning")-&gt;second == 42) { // Correct 
+           cout &lt;&lt; "Don't Panic!" &lt;&lt; endl; 
+      } 
+ } </pre>
+
+<span class="bodySubtitle"><a name="notice"></a>Notice on Map and Set</span><br>
+Internally map and set are almost always stored as red-black trees. We do not need to worry about the internal structure, the thing to remember is that the elements of map and set are always sorted in ascending order while traversing these containers. And that’s why it’s strongly not recommended to change the key value while traversing map or set: If you make the modification that breaks the order, it will lead to improper functionality of container's algorithms, at least.
+<br><br>
+But the fact that the elements of map and set are always ordered can be practically used while solving TopCoder problems.
+<br><br>
+Another important thing is that operators ++ and -- are defined on iterators in map and set. Thus, if the value 42 presents in set, and it's not the first and the last one, than the following code will work:
+
+<pre class="code"> set&lt;int&gt; S; 
+ // ... 
+ set&lt;int&gt;::iterator it = S.find(42); 
+ set&lt;int&gt;::iterator it1 = it, it2 = it; 
+ it1--; 
+ it2++; 
+ int a = *it1, b = *it2; </pre>
+
+Here 'a' will contain the first neighbor of 42 to the left and 'b' the first one to the right.
+<br><br>
+
+<span class="bodySubtitle"><a name="algorithms"></a>More on algorithms</span><br>
+It’s time to speak about algorithms a bit more deeply. Most algorithms are declared in the #include &lt;algorithm&gt; standard header. At first, STL provides three very simple algorithms: min(a,b), max(a,b), swap(a,b). Here min(a,b) and max(a,b) returns the minimum and maximum of two elements, while swap(a,b) swaps two elements.
+<br><br>
+Algorithm sort() is also widely used. The call to sort(begin, end) sorts an interval in ascending order. Notice that sort() requires random access iterators, so it will not work on all containers. However, you probably won't ever call sort() on set, which is already ordered.
+<br><br>
+You’ve already heard of algorithm find(). The call to find(begin, end, element) returns the iterator where ‘element’ first occurs, or end if the element is not found. Instead of find(...), count(begin, end, element) returns the number of occurrences of an element in a container or a part of a container. Remember that set and map have the member functions find() and count(), which works in O(log N), while std::find() and std::count() take O(N).
+<br><br>
+Other useful algorithms are next_permutation() and prev_permutation(). Let’s speak about next_permutation. The call to next_permutation(begin, end) makes the interval [begin, end) hold the next permutation of the same elements, or returns false if the current permutation is the last one. Accordingly, next_permutation makes many tasks quite easy. If you want to check all permutations, just write:
+
+<pre class="code"> vector&lt;int&gt; v; 
+
+ for(int i = 0; i &lt; 10; i++) { 
+      v.push_back(i); 
+ } 
+
+ do { 
+      Solve(..., v); 
+ } while(next_permutation(all(v)); </pre>
+
+Don’t forget to ensure that the elements in a container are sorted before your first call to next_permutation(...). Their initial state should form the very first permutation; otherwise, some permutations will not be checked.
+<br><br>
+
+<span class="bodySubtitle"><a name="stringstreams"></a>String Streams</span><br>
+You often need to do some string processing/input/output. C++ provides two interesting objects for it: 'istringstream' and 'ostringstream'. They are both declared in #include &lt;sstream&gt;.
+<br><br>
+Object istringstream allows you to read from a string like you do from a standard input. It's better to view source:
+
+<pre class="code"> void f(const string&amp; s) { 
+
+      // Construct an object to parse strings 
+      istringstream is(s); 
+ 
+      // Vector to store data 
+      vector&lt;int&gt; v; 
+
+      // Read integer while possible and add it to the vector 
+      int tmp; 
+      while(is &gt;&gt; tmp) { 
+           v.push_back(tmp); 
+      } 
+ } </pre>
+
+The ostringstream object is used to do formatting output. Here is the code:
+
+<pre class="code"> string f(const vector&lt;int&gt;&amp; v) { 
+
+      // Constucvt an object to do formatted output 
+      ostringstream os; 
+
+      // Copy all elements from vector&lt;int&gt; to string stream as text 
+      tr(v, it) { 
+           os &lt;&lt; ' ' &lt;&lt; *it; 
+      } 
+
+      // Get string from string stream 
+      string s = os.str(); 
+
+      // Remove first space character 
+      if(!s.empty()) { // Beware of empty string here 
+           s = s.substr(1); 
+      } 
+
+      return s; 
+ } </pre>
+
+
+<span class="bodySubtitle"><a name="summary"></a>Summary</span><br>
+To go on with STL, I would like to summarize the list of templates to be used. This will simplify the reading of code samples and, I hope, improve your TopCoder skills. The short list of templates and macros follows:
+
+<pre class="code"> typedef vector&lt;int&gt; vi; 
+ typedef vector&lt;vi&gt; vvi; 
+ typedef pair&lt;int,int&gt; ii; 
+ #define sz(a) int((a).size()) 
+ #define pb push_back 
+ #defile all(c) (c).begin(),(c).end() 
+ #define tr(c,i) for(typeof((c).begin() i = (c).begin(); i != (c).end(); i++) 
+ #define present(c,x) ((c).find(x) != (c).end()) 
+ #define cpresent(c,x) (find(all(c),x) != (c).end()) </pre>
+
+The container vector&lt;int&gt; is here because it's really very popular. Actually, I found it convenient to have short aliases to many containers (especially for vector&lt;string&gt;, vector&lt;ii&gt;, vector&lt; pair&lt;double, ii&gt; &gt;). But this list only includes the macros that are required to understand the following text.
+<br><br>
+Another note to keep in mind: When a token from the left-hand side of #define appears in the right-hand side, it should be placed in braces to avoid many nontrivial problems.
+<br><br>
+<strong>Coming soon:</strong> <a href="http://community.topcoder.com/tc?module=Static&d1=tutorials&d2=standardTemplateLibrary2">Part II: C++ STL Advanced Uses</a>
+<br><br>
+<p>&nbsp;</p>
+        </td>
+<!-- Center Column Ends -->
+
+<!-- Right Column Begins -->
+         <td width="170" id="onRight" class="invisible">
+            
+
+
+
+<script type="text/javascript" language="javascript">
+
+</script>
+
+
+
+<div class="rightColContent">
+    <br><br>
+</div>
+
+
+         </td>
+<!-- Right Column Ends -->
+
+<!-- Gutter -->
+         <td width="10"><img src="./standardTemplateLibrary_files/clear.gif" width="10" height="1" border="0"></td>
+<!-- Gutter Ends -->
+    </tr>
+</tbody></table>
+
+<div id="onBottom" class="invisible">
+
+
+
+
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody>
+    <tr>
+        <td width="100%" class="footer">
+            <a href="http://www.topcoder.com/" class="footerLinks">Home</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href="http://www.topcoder.com/aboutus/" class="footerLinks">About TopCoder</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href="http://www.topcoder.com/aboutus/news/" class="footerLinks">Press Room</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href="http://www.topcoder.com/help/template-help/" class="footerLinks">Contact Us</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href="http://www.topcoder.com/aboutus/careers/" class="footerLinks">Careers</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href="http://www.topcoder.com/tc?module=Static&d1=about&d2=privacy" class="footerLinks">Privacy</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href="http://www.topcoder.com/tc?module=Static&d1=about&d2=terms" class="footerLinks">Terms</a>
+            <br>
+            <a href="http://www.topcoder.com/tc" class="footerLinks">Competitions</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href="https://www.topcoder.com/direct/" class="footerLinks">Cockpit</a>        </td>
+    </tr>
+    <tr>
+      <td width="100%" class="copyright">Copyright TopCoder, Inc. 2001-<script type="text/javascript">d=new Date();document.write(d.getFullYear());</script>2011</td></tr>
+</tbody>
+</table>
+
+</div>
+
+
+
+</body></html>

@@ -1,0 +1,697 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- saved from url=(0076)http://community.topcoder.com/tc?module=Static&d1=tutorials&d2=planApproach2 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Algorithm Tutorials</title>
+
+
+<script type="text/javascript" async="" src="./planApproach2_files/ga.js"></script><script language="JavaScript" type="text/javascript" src="./planApproach2_files/tcscript.js"></script><link type="image/x-icon" rel="shortcut icon" href="http://community.topcoder.com/i/favicon.ico">
+
+
+
+
+
+
+<link type="text/css" rel="stylesheet" href="./planApproach2_files/style.css">
+<link type="text/css" rel="stylesheet" href="./planApproach2_files/coders.css">
+<link type="text/css" rel="stylesheet" href="./planApproach2_files/tcStyles20080219.css">
+<link type="text/css" rel="stylesheet" href="./planApproach2_files/jobsRemix.css">
+
+
+<script language="JavaScript" src="./planApproach2_files/print.js"></script>
+<style type="text/css">
+.code
+{
+   width: 550;
+   padding: 10px;
+   margin: 20px;
+   color: #333;
+   font-size: 11px;
+   font-weight: normal;
+   line-height: 14px;
+   background-color: #EEEEEE;
+   border: 1px solid #999;
+}
+.math
+{
+   font-family: times, times new roman, serif;
+   font-weight: normal;
+   font-style: italic;
+   font-size: 14px;
+}
+</style>
+</head>
+<body>
+<div id="onTop" class="invisible">
+    
+
+
+
+
+
+
+<script type="text/javascript" src="./planApproach2_files/popup.js"></script>
+
+<div id="shortcutBar">
+    <div class="icon"><a href="http://www.topcoder.com/tc"><img src="./planApproach2_files/scHome.png" alt="" onmouseover="postPopUpText(&#39;globalPopupText&#39;,&#39;Home&#39;); popUp(this,&#39;globalPopup&#39;);" onmouseout="popHide()"></a></div>
+    <div class="icon"><a href="javascript:arena();"><img src="./planApproach2_files/scAlgo.png" alt="" onmouseover="postPopUpText(&#39;globalPopupText&#39;,&#39;Algorithm Competitions&#39;); popUp(this,&#39;globalPopup&#39;);" onmouseout="popHide()"></a></div>
+    <div class="icon"><a href="http://www.topcoder.com/tc?module=ActiveContests&pt=23"><img src="./planApproach2_files/scConceptualization.png" alt="" onmouseover="postPopUpText(&#39;globalPopupText&#39;,&#39;Software Conceptualization Competitions&#39;); popUp(this,&#39;globalPopup&#39;);" onmouseout="popHide()"></a></div>
+    <div class="icon"><a href="http://www.topcoder.com/tc?module=ActiveContests&pt=6"><img src="./planApproach2_files/scSpecification.png" alt="" onmouseover="postPopUpText(&#39;globalPopupText&#39;,&#39;Software Specification Competitions&#39;); popUp(this,&#39;globalPopup&#39;);" onmouseout="popHide()"></a></div>
+    <div class="icon"><a href="http://www.topcoder.com/tc?module=ActiveContests&pt=7"><img src="./planApproach2_files/scArchitecture.png" alt="" onmouseover="postPopUpText(&#39;globalPopupText&#39;,&#39;Software Architecture Competitions&#39;); popUp(this,&#39;globalPopup&#39;);" onmouseout="popHide()"></a></div>
+    <div class="icon"><a href="http://www.topcoder.com/tc?module=ViewActiveContests&ph=112"><img src="./planApproach2_files/scDesign.png" alt="" onmouseover="postPopUpText(&#39;globalPopupText&#39;,&#39;Component Design Competitions&#39;); popUp(this,&#39;globalPopup&#39;);" onmouseout="popHide()"></a></div>
+    <div class="icon"><a href="http://www.topcoder.com/tc?module=ViewActiveContests&ph=113"><img src="./planApproach2_files/scDevelopment.png" alt="" onmouseover="postPopUpText(&#39;globalPopupText&#39;,&#39;Component Development Competitions&#39;); popUp(this,&#39;globalPopup&#39;);" onmouseout="popHide()"></a></div>
+
+    <div class="icon"><a href="http://www.topcoder.com/tc?module=ViewAssemblyActiveContests"><img src="./planApproach2_files/scAssembly.png" alt="" onmouseover="postPopUpText(&#39;globalPopupText&#39;,&#39;Software Assembly Competitions&#39;); popUp(this,&#39;globalPopup&#39;);" onmouseout="popHide()"></a></div>
+    <div class="icon"><a href="http://www.topcoder.com/tc?module=ActiveContests&pt=13"><img src="./planApproach2_files/scTesting.png" alt="" onmouseover="postPopUpText(&#39;globalPopupText&#39;,&#39;Testing Competitions&#39;); popUp(this,&#39;globalPopup&#39;);" onmouseout="popHide()"></a></div>
+    <div class="icon"><a href="http://www.topcoder.com/tc?module=ActiveContests&pt=35"><img src="./planApproach2_files/scContentCreation.gif" alt="" onmouseover="postPopUpText(&#39;globalPopupText&#39;,&#39;Content Creation Competitions&#39;); popUp(this,&#39;globalPopup&#39;);" onmouseout="popHide()"></a></div>
+    <div class="icon"><a href="javascript:arena();"><img src="./planApproach2_files/scTCHS.png" alt="" onmouseover="postPopUpText(&#39;globalPopupText&#39;,&#39;High School Competitions&#39;); popUp(this,&#39;globalPopup&#39;);" onmouseout="popHide()"></a></div>
+    <div class="icon"><a href="http://www.topcoder.com/longcontest/?module=ViewActiveContests"><img src="./planApproach2_files/scMarathon.png" alt="" onmouseover="postPopUpText(&#39;globalPopupText&#39;,&#39;Marathon Matches&#39;); popUp(this,&#39;globalPopup&#39;);" onmouseout="popHide()"></a></div>
+    <div class="icon"><a href="http://studio.topcoder.com/?module=ViewActiveContests"><img src="./planApproach2_files/scStudio.png" alt="" onmouseover="postPopUpText(&#39;globalPopupText&#39;,&#39;TopCoder Studio Competitions&#39;); popUp(this,&#39;globalPopup&#39;);" onmouseout="popHide()"></a></div>
+</div>
+
+<div id="globalPopup" class="popUp"><div id="globalPopupText"></div></div>
+
+
+<div style="position: absolute; right:0px; top:31px;"><a href="http://www.topcoder.com/reg/"><img src="./planApproach2_files/register_now.gif" alt="Register Now" style="display:block;"></a></div>
+
+
+<div align="center" style="margin: 0px 290px 0px 280px;">
+   <div id="outerLogo">
+      <div id="innerLogo">
+      <a href="http://www.topcoder.com/"><img src="./planApproach2_files/topcoder.gif" alt="TopCoder" style="display: block;"></a>
+      </div>
+   </div>
+</div>
+
+<div class="memberCountBox">
+Member Count: 316,431 - 
+
+
+October 24, 2011
+
+&nbsp;<a class="gMetal" href="Javascript:tcTime()">[Get Time]</a>
+</div>
+
+<div class="topBar">
+    <div style="float: right; margin: 5px 0px 0px 0px;">
+        
+                <a class="gMetal" href="http://www.topcoder.com/tc?&module=Login">Login</a>
+            
+        
+    </div>
+</div>
+</div>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+    <tbody><tr valign="top">
+        <!-- Left Column Begins-->
+        <td width="180" id="onLeft" class="invisible">
+
+
+
+
+
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+<script language="JavaScript" type="text/javascript" src="./planApproach2_files/arena.js"></script>
+
+
+<script language="JavaScript" type="text/javascript">
+<!--
+function toggleMenu(menuTitle,menuID){
+   var menu = document.getElementById(menuID);
+   if(menu.style.display == 'block') menu.className = 'CLOSED';
+   else if(menu.className == 'OPEN' && menu.style.display != 'none') menu.className = 'CLOSED';
+   else {
+      menu.className = 'OPEN';
+   }
+   if(menuTitle.blur)menuTitle.blur();
+   if(menuTitle.className == 'exp') menuTitle.className = 'exp_ed';
+   else menuTitle.className = 'exp';
+   return;
+}
+function flipMenu(myMenuName){
+   var menuName = document.getElementById(myMenuName);
+   menuName.className = 'exp_ed';
+}
+
+// -->
+</script>
+
+<div style="padding: 0px;"><img src="./planApproach2_files/leftnav_top.gif" alt=""></div>
+<div id="navbar">
+    
+<ul>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_competitions&#39;)">Competitions</a>
+<ul id="m_competitions">
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_competitions_overview&#39;)">Overview</a>
+<ul id="m_competitions_overview">
+<li><a href="http://apps.topcoder.com/wiki/x/MQD9Ag">Reliability</a></li>
+<li><a href="http://apps.topcoder.com/wiki/x/lYE_/">Ratings</a></li>
+<li><a href="http://apps.topcoder.com/wiki/x/aoE_/">How to Get Paid</a></li>
+<li><a href="http://apps.topcoder.com/wiki/x/2gRmAw">Administrative Overview </a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_copilot_opportunities&#39;)">Copilot Opportunities</a>
+<ul id="m_copilot_opportunities">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Copilot+Overview">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_copilot_support&#39;)">Track Information</a>
+<ul id="m_copilot_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Copilot+Opportunities">How to Compete</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Copilot+Opportunities">Documentation</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Copilot+Opportunities">Tutorial</a></li>
+</ul></li>
+<li><a href="http://www.topcoder.com/tc?module=ActiveContests&pt=29">Active Contests</a></li>
+<li><a href="http://www.topcoder.com/tc?module=CompList&ph=140">Past Contests</a></li>
+<li><a href="http://www.topcoder.com/tc?module=ViewCopilotPool&size=20&view=0&sort=12">Copilot Pool</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;competition_design&#39;)">Design</a>
+<ul id="competition_design">
+<li><a href="http://studio.topcoder.com/">Studio</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_conceptualization_competitions&#39;)">Conceptualization</a>
+<ul id="m_conceptualization_competitions">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/TopCoder+Conceptualization+Contests">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_conceptualization_support&#39;)">Track Information</a>
+<ul id="m_conceptualization_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Conceptualization+Competitions">How to Compete</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Conceptualization+Documentation">Documentation</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Conceptualization+Submission+Instructions">Tutorial</a></li>
+</ul></li>
+<li><a href="http://community.topcoder.com/tc?module=ActiveContests&pt=23">Active Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ContestStatus&pt=23">Contest Status</a></li>
+<li><a href="http://community.topcoder.com/tc?module=CompList&ph=134">Past Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ViewReviewProjects&pt=23">Review Opportunities</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ReviewBoard&pt=23">Meet the Review Board</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_specification_competitions&#39;)">Specification</a>
+<ul id="m_specification_competitions">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/TopCoder+Specification+Contests">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_specification_support&#39;)">Track Information</a>
+<ul id="m_specification_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Specification+Competitions">How to Compete</a></li>
+</ul></li>
+<li><a href="http://community.topcoder.com/tc?module=ActiveContests&pt=6">Active Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ContestStatus&pt=6">Contest Status</a></li>
+<li><a href="http://community.topcoder.com/tc?module=CompList&ph=117">Past Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ViewReviewProjects&pt=6">Review Opportunities</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ReviewBoard&pt=6">Meet the Review Board</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_architecture_competitions&#39;)">Architecture</a>
+<ul id="m_architecture_competitions">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Architecture+Overview">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_architecture_support&#39;)">Track Information</a>
+<ul id="m_architecture_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Architecture+Competitions">How to Compete</a></li>
+</ul></li>
+<li><a href="http://community.topcoder.com/tc?module=ActiveContests&pt=7">Active Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ContestStatus&pt=7">Contest Status</a></li>
+<li><a href="http://community.topcoder.com/tc?module=CompList&ph=118">Past Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ViewReviewProjects&pt=7">Review Opportunities</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ReviewBoard&pt=7">Meet the Review Board</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_des_competitions&#39;)">Component Design</a>
+<ul id="m_des_competitions">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Component+Design+Overview">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_des_support&#39;)">Track Information</a>
+<ul id="m_des_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Component+Design+Competitions">How to Compete</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Component+Design+Documentation">Documentation</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ColorChange&ph=112">Recent Color Changes</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Component+Design+Data+Feeds">Data Feeds</a></li>
+</ul></li>
+<li><a href="http://community.topcoder.com/tc?module=ViewActiveContests&ph=112">Active Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ContestStatus&pt=1">Contest Status</a></li>
+<li><a href="http://community.topcoder.com/tc?module=CompList&ph=112">Past Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ViewReviewProjects&pt=1">Review Opportunities</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ReviewBoard&pt=1">Meet the Review Board</a></li>
+</ul></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;competition_dev&#39;)">Development</a>
+<ul id="competition_dev">
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_dev_competitions&#39;)">Component Development</a>
+<ul id="m_dev_competitions">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Component+Development+Competitions">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_dev_support&#39;)">Track Information</a>
+<ul id="m_dev_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Component+Development+Competitions">How to Compete</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Component+Development+Documentation">Documentation</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ColorChange&ph=113">Recent Color Changes</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Component+Development+Data+Feeds">Data Feeds</a></li>
+</ul></li>
+<li><a href="http://community.topcoder.com/tc?module=ViewActiveContests&ph=113">Active Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ContestStatus&pt=2">Contest Status</a></li>
+<li><a href="http://community.topcoder.com/tc?module=CompList&ph=113">Past Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ViewReviewProjects&pt=2">Review Opportunities</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ReviewBoard&pt=2">Meet the Review Board</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_assembly_competitions&#39;)">Assembly</a>
+<ul id="m_assembly_competitions">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Assembly">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_assembly_support&#39;)">Track Information</a>
+<ul id="m_assembly_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Assembly+Competitions">How to Compete</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Assembly+Competition+Tutorial">Tutorial</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Assembly+Competition+Documentation">Documentation</a></li>
+</ul></li>
+<li><a href="http://community.topcoder.com/tc?module=ViewAssemblyActiveContests">Active Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ContestStatus&pt=14">Contest Status</a></li>
+<li><a href="http://community.topcoder.com/tc?module=CompList&ph=125">Past Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ViewReviewProjects&pt=14">Review Opportunities</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ReviewBoard&pt=14">Meet the Review Board</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_test_suites_competitions&#39;)">Test Suites</a>
+<ul id="m_test_suites_competitions">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Test+Scenarios+and+Scripts">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_test_suites_support&#39;)">Track Information</a>
+<ul id="m_test_suites_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Testing+Competitions">How to Compete</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Testing+Competition+Tutorial">Tutorial</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Testing+Competition+Documentation">Documentation</a></li>
+</ul></li>
+<li><a href="http://community.topcoder.com/tc?module=ActiveContests&pt=13">Active Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ContestStatus&pt=13">Contest Status</a></li>
+<li><a href="http://community.topcoder.com/tc?module=CompList&pt=13">Past Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ViewReviewProjects&pt=13">Review Opportunities</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ReviewBoard&pt=13">Meet the Review Board</a></li>
+</ul></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;competition_ui_dev&#39;)">UI Development</a>
+<ul id="competition_ui_dev">
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_ui_prototype_competitions&#39;)">UI Prototype</a>
+<ul id="m_ui_prototype_competitions">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/UI+Prototype+Competitions">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_ui_prototype_support&#39;)">Track Information</a>
+<ul id="m_ui_prototype_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+UI+Prototype+Competitions">How to Compete</a></li>
+</ul></li>
+<li><a href="http://community.topcoder.com/tc?module=ActiveContests&pt=19">Active Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ContestStatus&pt=19">Contest Status</a></li>
+<li><a href="http://community.topcoder.com/tc?module=CompList&pt=19">Past Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ViewReviewProjects&pt=19">Review Opportunities</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ReviewBoard&pt=19">Meet the Review Board</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_ria_build_competitions&#39;)">RIA Build</a>
+<ul id="m_ria_build_competitions">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/RIA+Build+Competitions">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_ria_build_support&#39;)">Track Information</a>
+<ul id="m_ria_build_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+RIA+Builds">How to Compete</a></li>
+</ul></li>
+<li><a href="http://community.topcoder.com/tc?module=ActiveContests&pt=24">Active Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ContestStatus&pt=24">Contest Status</a></li>
+<li><a href="http://community.topcoder.com/tc?module=CompList&pt=24">Past Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ViewReviewProjects&pt=24">Review Opportunities</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ReviewBoard&pt=24">Meet the Review Board</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_content_creation_competitions&#39;)">Content Creation</a>
+<ul id="m_content_creation_competitions">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Content+Contests+Overview">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_content_creation_support&#39;)">Track Information</a>
+<ul id="m_content_creation_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Content+Creation+Competitions">How to Compete</a></li>
+</ul></li>
+<li><a href="http://community.topcoder.com/tc?module=ActiveContests&pt=35">Active Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ContestStatus&pt=35">Contest Status</a></li>
+<li><a href="http://community.topcoder.com/tc?module=CompList&pt=35">Past Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ViewReviewProjects&pt=35">Review Opportunities</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ReviewBoard&pt=35">Meet the Review Board</a></li>
+</ul></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;competition_qa&#39;)">QA and Maintenance</a>
+<ul id="competition_qa">
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_test_scenarios_competitions&#39;)">Test Scenarios</a>
+<ul id="m_test_scenarios_competitions">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Test+Scenarios+and+Scripts">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_test_scenarios_support&#39;)">Track Information</a>
+<ul id="m_test_scenarios_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Testing+Competitions">How to Compete</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Testing+Competition+Tutorial">Tutorial</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Testing+Competition+Documentation">Documentation</a></li>
+</ul></li>
+<li><a href="http://community.topcoder.com/tc?module=ActiveContests&pt=26">Active Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ContestStatus&pt=26">Contest Status</a></li>
+<li><a href="http://community.topcoder.com/tc?module=CompList&pt=26">Past Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ViewReviewProjects&pt=26">Review Opportunities</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ReviewBoard&pt=26">Meet the Review Board</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_bugraces_competitions&#39;)">Bug Race</a>
+<ul id="m_bugraces_competitions">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Bug+Race+Competition+Overview">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_bugraces_support&#39;)">Track Information</a>
+<ul id="m_bugraces_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Bug+Race+Competitions">How to Compete</a></li>
+</ul></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Active+Bug+Race+Competitions">Active Contests</a></li>
+<li><a href="http://apps.topcoder.com/wiki/x/FQG2AQ">Review Opportunities</a></li>
+</ul></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;competition_algo&#39;)">Algorithm</a>
+<ul id="competition_algo">
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_algo_competitions&#39;)">Single Round Matches (SRM)</a>
+<ul id="m_algo_competitions">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Algorithm+Overview">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_algo_support&#39;)">Track Information</a>
+<ul id="m_algo_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+SRM+Algorithm+Competitions">How to Compete</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/SRM+Algorithm+Competition+FAQs">FAQs</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Algorithm+Competition+Rating+System">Rating System</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Write+Problems+for+TopCoder">Write Problems</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_algo_stats&#39;)">Statistics</a>
+<ul id="m_algo_stats">
+<li><a href="http://community.topcoder.com/tc?module=MatchList">Match Archive</a></li>
+<li><a href="http://community.topcoder.com/stat?c=round_overview">Match Overviews</a></li>
+<li><a href="http://community.topcoder.com/tc?module=SrmDivisionWins">Match Winners</a></li>
+<li><a href="http://community.topcoder.com/stat?c=last_match">Match Results</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Algorithm+Problem+Set+Analysis">Match Editorials</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ProblemArchive">Problem Archive</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ColorChange&ratid=1">Recent Color Changes</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Algorithm+Data+Feeds">Data Feeds</a></li>
+</ul></li>
+<li><a href="javascript:arena();">Launch Arena</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_long_contests&#39;)">Marathon Match</a>
+<ul id="m_long_contests">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Marathon+Match+Overview">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_long_support&#39;)">Track Information</a>
+<ul id="m_long_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Marathon+Match+Events">How to Compete</a></li>
+<li><a href="http://community.topcoder.com/longcontest/?module=Static&d1=support&d2=ratings">Rating System</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_long_stats&#39;)">Statistics</a>
+<ul id="m_long_stats">
+<li><a href="http://community.topcoder.com/longcontest/stats/?module=MatchList">Match Archive</a></li>
+<li><a href="http://community.topcoder.com/longcontest/stats/?module=ViewOverview">Match Overview</a></li>
+<li><a href="http://community.topcoder.com/longcontest/stats/?module=MatchWinners">Match Winners</a></li>
+<li><a href="http://community.topcoder.com/longcontest/?module=Static&d1=match_editorials&d2=archive">Match Editorials</a></li>
+<li><a href="http://community.topcoder.com/longcontest/?module=Static&d1=support&d2=dataFeed">Data Feeds</a></li>
+</ul></li>
+<li><a href="http://community.topcoder.com/longcontest/?module=ViewActiveContests">Active Contests</a></li>
+<li><a href="http://community.topcoder.com/longcontest/?module=ViewPractice">Practice</a></li>
+<li><a href="http://community.topcoder.com/longcontest/?module=ViewQueue">Queue Status</a></li>
+</ul></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_hs_competitions&#39;)">High School</a>
+<ul id="m_hs_competitions">
+<li><a href="http://community.topcoder.com/tc?module=Static&d1=hs&d2=home">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_hs_stats&#39;)">Statistics</a>
+<ul id="m_hs_stats">
+<li><a href="http://community.topcoder.com/tc?module=HSRoundOverview">Match Overview</a></li>
+<li><a href="http://community.topcoder.com/tc?module=HSRoundStatsTeam">Match Results (Team)</a></li>
+<li><a href="http://community.topcoder.com/tc?module=HSRoundStatsInd">Match Results (Indiv.)</a></li>
+<li><a href="http://community.topcoder.com/tc?module=Static&d1=hs&d2=match_editorials&d3=archive">Match Editorials</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ColorChange&ratid=2">Recent Color Changes</a></li>
+<li><a href="http://community.topcoder.com/tc?module=Static&d1=hs&d2=support&d3=dataFeed">Data Feeds</a></li>
+</ul></li>
+<li><a href="http://community.topcoder.com/tc?module=Static&d1=hs&d2=spotlightSessions">Spotlight Sessions</a></li>
+<li><a href="javascript:arena();">Launch Arena</a></li>
+</ul></li>
+<li><a href="http://community.topcoder.com/dr">The Digital Run</a></li>
+<li><a href="http://software.topcoder.com/review">Submit &amp; Review</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_topcoder_networks&#39;)">TopCoder Networks</a>
+<ul id="m_topcoder_networks">
+<li><a href="http://community.topcoder.com/alcatel/">Alcatel Lucent</a></li>
+<li><a href="http://community.topcoder.com/amdapp/">AMD OpenCL</a></li>
+<li><a href="http://community.topcoder.com/darpacs/">DARPA CS-STEM</a></li>
+<li><a href="http://community.topcoder.com/ntl/">NASA Tournament Lab</a></li>
+<li><a href="http://community.topcoder.com/x/">PayPalX</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_events&#39;)">Events</a>
+<ul id="m_events">
+<li><a href="http://community.topcoder.com/tc?module=Static&d1=calendar&d2=thisMonth">Event Calendar</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_tournaments&#39;)">Tournaments</a>
+<ul id="m_tournaments">
+<li><a href="http://community.topcoder.com/tc?module=Static&d1=tournaments&d2=home">TopCoder</a></li>
+<li><a href="http://community.topcoder.com/pl/">Powered by TopCoder</a></li>
+<li><a href="http://community.topcoder.com/tc?module=CRPFStatic&d1=crpf&d2=crpf_overview">Charity</a></li>
+</ul></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_stats&#39;)">Statistics</a>
+<ul id="m_stats">
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_competitor_stats&#39;)">The Tops</a>
+<ul id="m_competitor_stats">
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_top_rated_competitors&#39;)">Top Ranked</a>
+<ul id="m_top_rated_competitors">
+<li><a href="http://community.topcoder.com/tc?module=AlgoRank">Algorithm</a></li>
+<li><a href="http://community.topcoder.com/tc?module=HSRank">High School</a></li>
+<li><a href="http://community.topcoder.com/longcontest/stats/?module=CoderRank">Marathon Match</a></li>
+<li><a href="http://community.topcoder.com/stat?c=top_conceptors">Conceptualization</a></li>
+<li><a href="http://community.topcoder.com/stat?c=top_specificators">Specification</a></li>
+<li><a href="http://community.topcoder.com/stat?c=top_architects">Architecture</a></li>
+<li><a href="http://community.topcoder.com/stat?c=top_designers">Design</a></li>
+<li><a href="http://community.topcoder.com/stat?c=top_developers">Development</a></li>
+<li><a href="http://community.topcoder.com/stat?c=top_assemblers">Assembly</a></li>
+<li><a href="http://community.topcoder.com/stat?c=top_testers">Test Suites</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_recordbook&#39;)">Record Book</a>
+<ul id="m_recordbook">
+<li><a href="http://community.topcoder.com/tc?module=Static&d1=statistics&d2=recordbook_home">Algorithm</a></li>
+<li><a href="http://community.topcoder.com/tc?module=Static&d1=compstats&d2=comp_recordbook_home">Component</a></li>
+<li><a href="http://community.topcoder.com/longcontest/?module=Static&d1=stats&d2=recordbook_home">Marathon Match</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_com&#39;)">Coder of the Month</a>
+<ul id="m_com">
+<li><a href="http://community.topcoder.com/tc?module=COMHistory&achtid=5">Algorithm</a></li>
+<li><a href="http://community.topcoder.com/tc?module=COMHistory&achtid=6">Design</a></li>
+<li><a href="http://community.topcoder.com/tc?module=COMHistory&achtid=7">Development</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li class="exp_ed"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_edu_content&#39;)">Tutorials</a>
+<ul id="m_edu_content" class="OPEN">
+<li><a href="http://community.topcoder.com/tc?module=Static&d1=education&d2=overview">Overview</a></li>
+<li class="highlight"><a href="http://community.topcoder.com/tc?module=Static&d1=tutorials&d2=alg_index">Algorithm Tutorials</a></li>
+<li><a href="http://community.topcoder.com/tc?module=Static&d1=tutorials&d2=comp_index">Component Tutorials</a></li>
+<li><a href="http://community.topcoder.com/tc?module=Static&d1=tutorials&d2=mm_index">Marathon Tutorials</a></li>
+<li><a href="http://apps.topcoder.com/wiki/dashboard.action">Wiki</a></li>
+</ul></li>
+<li><a href="http://forums.topcoder.com/">Forums</a></li>
+<li><a href="http://community.topcoder.com/tc?&module=SurveyList">Surveys</a></li>
+<li><a href="http://community.topcoder.com/tc?module=MyHome">My TopCoder</a></li>
+<li><a href="http://www.topcoder.com/help">Help Center</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_about_tc&#39;)">About TopCoder</a>
+<ul id="m_about_tc">
+<li><a href="http://www.topcoder.com/aboutus/">Overview</a></li>
+<li><a href="http://www.topcoder.com/aboutus/">Why Join TopCoder?</a></li>
+<li><a href="http://www.topcoder.com/aboutus/careers/">Working at TopCoder</a></li>
+<li><a href="http://www.topcoder.com/aboutus/management/">Leadership</a></li>
+<li><a href="http://www.topcoder.com/aboutus/news/">Press Room</a></li>
+</ul></li></ul>
+
+    <div style="float: left; padding: 10px 0px 0px 17px;">
+        
+        <a href="http://www.topcoder.com/tc?module=LinkTracking&link=http://apps.topcoder.com/wiki/x/L4TD&refer=leftnav"><img src="./planApproach2_files/umlTool.png" alt="UML Tool"></a>
+
+        
+        
+        
+        
+    </div>
+    
+
+<div id="navbarSearch">
+<b>Member Search:</b>
+<form action="http://www.topcoder.com/tc" method="get" name="simpleSearchForm" class="noSpace" id="simpleSearchForm">
+   <input class="noSpace" type="hidden" name="module" value="SimpleSearch">
+   <input class="noSpace" type="text" name="ha" value="Handle:" size="12" maxlength="15" onfocus="javascript: if (document.simpleSearchForm.ha.value==&#39;Handle:&#39;) document.simpleSearchForm.ha.value = &#39;&#39;;" onblur="javascript:if (document.simpleSearchForm.ha.value == &#39;&#39;)document.simpleSearchForm.ha.value = &#39;Handle:&#39;;">
+   <a class="gMetal" href="javascript:void document.simpleSearchForm.submit();">Go</a><br>
+   <a class="gMetal" href="http://www.topcoder.com/tc?module=ViewAdvanced">Advanced Search</a>
+</form>
+</div>
+</div>
+<div style="float: left; clear:left; padding: 0px 0px 23px 0px;"><img src="./planApproach2_files/leftnav_bottom.gif" alt=""></div>
+
+
+    <div align="center" style="float: left; clear:left; width: 170px; margin: 0px;">
+        <img src="./planApproach2_files/brackets.png" alt="" style="margin-bottom: 23px;">
+    </div>
+
+
+
+
+        </td>
+        <!-- Left Column Ends -->
+        <!-- Center Column Begins -->
+        <td width="100%" align="left" class="bodyColumn">
+            
+
+
+
+
+<table cellspacing="0" cellpadding="0" class="pageTitleTable">
+    <tbody><tr>
+        <td width="100%" class="pageTitle"><img border="0" src="./planApproach2_files/header_alg_tut.gif" alt="alg_tut"></td>
+        <td align="right" class="pageSubtitle">&nbsp;&nbsp;</td>
+    </tr>
+</tbody></table>
+
+
+            <div class="linkBox">
+                <a href="http://community.topcoder.com/tc?module=Static&d1=tutorials&d2=alg_index">Archive</a><br>
+                <span id="printableLink" class="invisible"><a href="Javascript:makeInvisible();">Printable view</a><br></span>
+                <span id="navigableLink" class=""><a href="Javascript:makeNavigable();">Normal view</a><br></span>
+                <a href="http://forums.topcoder.com/?module=ThreadList&forumID=505845">Discuss this article</a><br>
+                <a href="http://community.topcoder.com/tc?module=Static&d1=help&d2=writeForTC">Write for TopCoder</a>
+            </div>
+
+<span class="bodyTitle">Planning an Approach to a TopCoder Problem</span>
+
+<p>
+<img src="./planApproach2_files/leadhyena_inran_mug.gif" alt="" width="55" height="61" border="0" hspace="6" vspace="1" align="left" class="myStatsPhoto"><br>
+By&nbsp;<a href="http://www.topcoder.com/tc?module=MemberProfile&cr=282560&tab=alg" class="coderTextYellow">leadhyena_inran</a><br>
+<span class="smallText"><em>TopCoder Member</em></span><br clear="all">
+</p>
+
+<p>
+<a href="http://community.topcoder.com/tc?module=Static&d1=tutorials&d2=planApproach1">...read Section 1</a>
+<br><br>
+<span class="bodySubtitle">Bottom Up Programming</span><br>
+This technique is the antithesis to breaking down a program, and should be the first thing you start doing when you get stuck. Bottom-up programming is the process of building up primitive functions into more functional code until the solution becomes as trivial as one of the primitives. Sometimes you know that you'll need certain functions to form a solution and if these functions are atomic or easy to break down, you can start with these functions and build your solution upward instead of breaking it down.
+<br><br>
+In the case of MatArith, the procedure to add and multiply matrices was given in the problem statement making it easy to follow directions and get two functions to start with. From there you could make a smaller evalMult function that multiplied matrices together using a string evaluation and variable names, then a similar evalAdd that treats each term as a block and you have an approach to solve the problem.
+<br><br>
+In general, it's a very good strategy to code up any detailed procedure in the problem statement before tackling the actual problem. Examples of these are randomizer functions, any data structures you're asked to simulate, and any operations on mathematical objects like matrices and complex numbers. You'll find that by solving these smaller issues and then rereading the problem statement that you will understand what needs to be done much better. And sometimes, if you're really stuck, it doesn't hurt to write a couple atomic pieces of code that you know that you'll need in order to convince your mind to break down the problem towards those functions. As you can see, your path to the right approach need not be linear as long as it follows your train of thought.
+<br><br>
+Also, in case of a hidden bug, keep in mind that any code that you write using this approach tactic should be scanned for bugs before your top-down code, because you tend to write this code first and thus at a stage where you understand the problem less than when you finish the code. This is a good rule of thumb to follow when looking for errors in your code; they usually sit in the older sections of the code, even if older is only decided by minutes or even seconds.
+<br><br>
+<span class="bodySubtitle">Brute Force</span><br>
+Any time the solution requires looking for an optimal configuration or a maximal number or any other choice of one of a finite set of objects, the simplest way to solve the problem is to try all configurations. Any time the solution requires calculating a massive calculation requiring many steps, the best way to solve it is to do every calculation as asked for in the problem. Any time the problem asks you to count the number of ways something can be done, the best way to solve it is to try every way and make a tally. In other words, the first approach to consider in any possibly time-intensive problem is the most obvious one, even if it is horribly inefficient.
+<br><br>
+This approach tactic, called brute force, is so called because there is no discerning thought about the method of calculation of the return value. Any time you run into this kind of an optimization problem the first thing you should do is try to figure in your head the worst possible test cases and if 8 seconds is enough time to solve each one. If so, brute force can be a very speedy and usually less error prone approach. In order to utilize brute force, you have to know enough about the programming environment to calculate an estimate how much time any calculation will take. But an estimate is just a guess, and any guess could be wrong. This is where your wisdom is forced to kick in and make a judgment call. And this particular judgment call has bitten many a coder that didn't think it could be done brute force and couldn't debug a fancier approach, and likewise those that didn't figure correctly the worst of the cases to be tested for time.
+<br><br>
+In general, if you can't think of a way to solve the problem otherwise, plan to use brute force. If it ends up that you are wrong, and there is a test case that takes too long, keep the brute force solution around, and while recoding the more elegant solution, use the brute-force solution to verify that your elegant code is correct in the smaller cases, knowing that its more direct approach is a good verification of these cases (being much less error-prone code).
+<br><br>
+<span class="bodySubtitle">A Place for Algorithms</span><br>
+Well-known and efficient algorithms exist for many standard problems, much like basic approaches exist for many standard word problems in math, just like standard responses exist for most common opening moves in chess. While in general it's a bad idea to lean heavily upon your knowledge of the standard algorithms (it leads down the path of pattern mining and leaves you vulnerable to more original problems), it's a very good idea to know the ones that come up often, especially if you can apply them to either an atomic section of code or to allow them to break your problem down.
+<br><br>
+This is not the place to discuss algorithms (there are big books to read and other tutorials in this series to follow that will show you the important stuff), but rather to discuss how algorithms should be used in determining an approach. It is not sufficient to know how to use an algorithm in the default sense; always strive to know any algorithms you have memorized inside and out. For example, you may run into a problem like CityLink (SRM 170 Div I Med), which uses a careful mutation of a basic graph algorithm to solve in time, whereby just coding the regular algorithm would not suffice. True understanding of how the algorithm works allows the insight needed to be able to even conceive of the right mutation.
+<br><br>
+So, when you study algorithms, you need to understand how the code works, how long it will take to run, what parts of the code can be changed and what effect any changes will have on the algorithm. It's also extremely important that you know how to code the algorithm by memory before you try to use it in an approach, because without the experience of implementing an algorithm, it becomes very hard to tell whether your bugs are being caused by a faulty implementation or faulty input into the implementation. It's also good to practice different ways to use the algorithms creatively to solve different problems, to see what works and what doesn't. Better for an experiment with code to fall flat on its face in practice than during a competition. This is why broad-based algorithmic techniques (like divide-and-conquer, dynamic programming, greedy algorithms) are better to study first before you study your more focused algorithms because the concepts are easier to manipulate and easier to implement once you understand the procedure involved.
+<br><br>
+<span class="bodySubtitle">Manipulating the Domain</span><br>
+This situation will become more and more familiar: you find yourself trudging through the planning stages of a problem because of the sheer amount of work involved in simulating the domain of the problem. This may be due to the inappropriateness of the presented domain, and there are times when manipulating the domain of the problem to something more convenient will create an easier or more recognizable problem. The classic example of this is the game of Fifteen (used as a problem in SRM 172). In the game of Fifteen, you have numbers from 1 to 9 of which you may claim one per turn, and if exactly three of your numbers add to 15 before exactly three of your opponent's numbers adds to 15, then you win. For this problem, you can manipulate the domain by placing the numbers in the configuration of a 3x3 magic square (where every row, column, and diagonal add up to the same sum, in this case 15). Instantly you realize that the game of Fifteen is just the game Tic-Tac-Toe in disguise, making the game easier to play and program a solution for, because the manipulation of the domain transformed the situation of a game where you have no prior knowledge into one where you have a lot more knowledge. Some mathematicians think of this as the ABA<sup>-1</sup> approach, because the algebra suggests the proper process: first you transform the domain, then you perform your action, then (the A<sup>-1</sup>) you reverse your transformation.  This approach is very common in solving complex problems like diagonalizing matrices and solving the Rubik's Cube.
+<br><br>
+Most commonly this approach tactic is used to simplify basic calculations. A good example of this type of approach is HexagonIntersections from SRM 206. In this problem it was needed to find the number of tiled hexagons that touched a given line. The problem became much easier if you "slanted" the grid by transforming the numbers involved so that the hexagons involved had sides parallel to the x and y axis and the problem still had the same answer, thereby simplifying calculations.
+<br><br>
+Extreme care must be taken while debugging if you manipulate the domain. Remember that the correct procedure to domain manipulation is to first manipulate the domain, then solve the problem, and then correct the domain. When you test the code, remember that either the domain must be properly reversed by the transformation before the result is returned, or the reversal must not affect the answer. Also, when looking at values inside the domain manipulation, remember that these are transformed values and not the real ones. It's good to leave comment lines around your transformed section of code just to remind yourself of this fact.
+<br><br>
+<span class="bodySubtitle">Unwinding the Definitions</span><br>
+This approach tactic is an old mathematician's trick, relating to the incessant stacking of definitions upon definitions, and can be used to unravel a rather gnarly problem statement to get at the inner intended approach to the problem. The best way to do this is with code. When you read the definition of something you have never encountered before, try to think how you would code it. If the code asks you to find the simplest <em>grozmojt</em> in a set of integers, first figure out how your code would verify that something was a <em>grozmojt</em> and then figure out how to search for it, regardless if you even need to verify that something was a <em>grozmojt</em> in the solution. This is very similar to the bottom-up programming above, but taken at the definition level instead of the procedural one.
+<br><br>
+Simulation problems fall under similar tactics, and create one of those times when those predisposed to object oriented coding styles run up the scores. The best way to manage a simulation problem is to create a simulation object that can have actions performed on it from a main function. That way you don't worry if you passed enough state into a given function or not; since all of the information in the simulation is coming along with you, the approach becomes very convenient and reaches atomic code very quickly. This is also the correct approach to take if an algorithm needs to be simulated to count the steps needed in the algorithm (like MergeSort) or the number of objects deallocated in the execution of another algorithm (like ImmutableTrees). In these situations, the elegance of the code is usually sacrificed in the name of correctness and thoroughness, also making the approach easier to plan ahead for.
+<br><br>
+<span class="bodySubtitle">The Problem is Doable</span><br>
+An old geometry puzzle goes like this: you have a pair of concentric circles and the only length you are given is the length of a chord of the outer circle (call the chord length x) that is tangent to the inner circle, and you are asked for the area between the circles. You respond: "Well, if the problem is doable then the inner circle's radius is irrelevant to the calculation, so I'll declare it to be 0. Because the area of the inner circle is 0, or degenerates to the center of the outer circle, the chord of the outer circle passes through the center and is thus the diameter, and thus the area of the outer circle is Pi(x/2)<sup>2</sup>." Note that a proper geometric proof of this fact is harder to do; the sheer fact that a solution exists actually makes the problem easier. Since the writer had to write a solution for the problem, you know it's always solvable, and this fact can be used to your advantage in an SRM.
+<br><br>
+This approach tactic broadens into the concept that the writer is looking for a particular type of solution, and sometimes through edits of the original problem statement this approach is given away (especially if the original problem is considered too hard for the level it's at). Look for lowered constraints like arrays of size 20 (which many a seasoned coder will tell you is almost a codeword that the writer is looking for a brute force solution), or integers limited to between 1 and 10000 (allowing safe multiplication in ints without overflow). By leaning on the constraints you are acting similarly to the situation above, by not allowing the complexities of the problem that were trimmed off by the constraints to complicate your approach.
+<br><br>
+Sometimes the level of the problem alone will give a hint to what solution is intended. For example, look at FanFailure (from SRM 195 Div I Easy). The problem used the language of subsets and maximal and minimal, so you start to think maybe attack with brute force, and then you see the constraints opened up to 50 for the array size. 2<sup>50</sup> distinct subsets rules out brute force (better to find this out in the approach than in the code, right?) and you could look to fancier algorithms... but then you realize that this is a Div I Easy and probably isn't as hard as it looks so you think through the greedy algorithm and decide that it probably works. This choice wouldn't have been so obvious had it not been a Div I Easy.
+<br><br>
+Keep in mind that these invisible cues are not objective and can't be used to reason why an approach will work or not; they are there only to suggest what the writer's mind was thinking. Furthermore, if the writer is evil or particularly tricky, cues of this nature may be red herrings to throw these tactics astray. As long as you temper this approach tactic with solid analysis before you go on a wild goose chase, this "circular reasoning" can be used to great advantage.
+<br><br>
+<span class="bodySubtitle">Case Reduction</span><br>
+Sometimes the simplest problems to state are the ones that provide the most difficulty. With these types of problems it's not unusual that the solution requires that you break up the problem not into steps but into cases. By breaking a problem up into cases of different sets of inputs you can create subproblems that can be much easier to solve. Consider the problem TeamPhoto (SRM 167 Div I Medium). This problem is simple to state, but abhorrent to solve. If you break up the problem into a series of cases, you find that where the entire problem couldn't alone be solved by a greedy algorithm, each of the different cases could be, and you could take the best case from those optimal configurations to solve the problem.
+<br><br>
+The most common use of case reduction involves removing the boundary cases so that they don't mess up a na�ve solution. A good example of this is BirthdayOdds (SRM 174 Div I Easy); many people hard coded if(daysInYear==1)return 2; to avoid the possible problems with the boundary case, even if their solution would have handled it correctly without that statement. By adding that level of security, it became easier to verify that the approach they chose was correct.
+<br><br>
+<span class="bodySubtitle">Plans Within Plans</span><br>
+As illustrated above, an approach isn't easily stated, and is usually glossed over if reduced to a one-word label. Furthermore, there are many times when there exist levels to a problem, each of which needs to be solved before the full solution comes to light. One clear example of this is the problem MagicianTour (SRM 191 Div I Hard). There are definitely two delineated steps to this problem: the first step requires a graph search to find all connected components and their 2-coloring, and the second step requires the DP knapsack algorithm. In cases like this, it's very helpful to remember that sometimes more than one approach tactic needs to be applied to the situation to get at the solution. Another great example is TopographicalImage (SRM 209 Div I Hard) which asks for the lowest angle that places a calculated value based on shortest path under a certain limit. To solve, note that looking for this lowest value can be approached by binary search, but there are plans within plans, and the inner plan is to apply Floyd-Warshall's All Pairs Shortest Paths algorithm to decide if the angle is satisfactory.
+<br><br>
+Remember also that an approach isn't just "Oh, I know how to break this down... Let's go!" The idea of planning your approach is to strategically think about: the steps in your code, how an algorithm is to be applied, how the values are to be stored and passed, how the solution will react to the worst case, where the most probable nesting places are for bugs. The idea is that if the solution is carefully planned, there is a lower chance of losing it to a challenge or during system tests. For each approach there are steps that contain plans for their steps.
+<br><br>
+<span class="bodySubtitle">Tactical Permutation</span><br>
+There is never a right approach for all coders, and there are usually at least two ways to do a problem. Let's look at an unsavory Division One Easy called OhamaLow (SRM 205 Div I Easy). One of the more popular ways to approach this problem is to try all combinations of hands, see if the hand combination is legal, sort the hand combination, and compare it to the best hand so far. This is a common brute-force search strategy. But it's not the entire approach. Remember that there are plans within plans. You have to choose an approach on how to form each hand (this could be done recursively or using multiple for-loops), how to store the hands (int arrays, Strings, or even a new class), and how to compare them. There are many different ways to do each of these steps, and most of the ways to proceed with the approach will work. As seen above as well as here, there are many times where more than one approach will do the job, and these approaches are considered permutable. In fact, one way to permute the top-level brute-force search strategy is to instead of considering all possible constructible hands and picking the best one, you can construct all possible final hands in best to worst order and stop when you have found one that's constructible. In other words you take all 5 character substrings of "87654321" in order and see if the shared hand and player hand can make the chosen hand, and if so return that hand. This approach also requires substeps (how to decide if the hand can be formed, how to walk the possible hands, and so on) but sometimes (and in this case it is better) you can break it down faster.
+<br><br>
+The only way you get to choose between two approaches is if you are able to come up with both of them. A very good way to practice looking for multiple approaches to problems is to try to solve as many of the problems in the previous SRM using two different approaches. By doing this, you stretch your mind into looking for these different solutions, increasing your chances of finding the more elegant solution, or the faster one to type, or even the one that looks easier to debug.
+<br><br>
+<span class="bodySubtitle">Backtracking from a Flawed Approach</span><br>
+As demonstrated in the previous section, it is very possible for there to exist more than one way to plan an approach to a problem. It may even hit you in the middle of coding your approach how to more elegantly solve the problem. One of the hardest disciplines to develop while competing in TopCoder Single Round Matches is the facility to stick to the approach you've chosen until you can prove without a shadow of a doubt that you made a mistake in the approach and the solution will not work. Remember that you are not awarded points for code elegance, or for cleverness, or for optimized code. You are granted points solely on the ability to quickly post correct code. If you come up with a more elegant solution than the one you're in the middle of typing up, you have to make the split second analysis of how much time you'll lose for changing your current approach, and in most cases it isn't worth it.
+<br><br>
+There is no easy answer to planning the right approach the first time. If you code up a solution and you know it is right but has bugs this is much easier to repair than the sudden realization that you just went the entirely wrong direction. If you get caught in this situation, whatever you do, don't erase your code! Relabel your main function and any subfunctions or data structures that may be affected by further changes. The reason is because while you may desire a clean slate, you must accept that some of your previous routines may be the same, and retracing your steps by retyping the same code can be counterproductive to your thinking anew. Furthermore, by keeping the old code you can test against it later looking for cases that will successfully challenge other coders using the same flawed approach.
+<br><br>
+<span class="bodySubtitle">Conclusion</span><br>
+Planning an approach is not a science, although there is a lot of rigor in the thought involved. Rather, it is mainly educated guesswork coupled with successful planning. By being creative, economical, and thorough about your thought process you can become more successful and confident in your solutions and the time you spend thinking the problem through will save you time later in the coding and debugging. This ability to plan your code before the fingers hit the keys only develops through lots of practice, but this diligence is rewarded with an increasing ability to solve problems and eventually a sustained rating increase.
+<br><br>
+<span class="bodySubtitle">Mentioned in this writeup:</span><br>
+TCI '02 Round 2 Div I Med - <a href="http://community.topcoder.com/stat?c=problem_statement&pm=511&rd=4335">MatArith</a><br>
+SRM 170 Div I Med - <a href="http://community.topcoder.com/stat?c=problem_statement&pm=1864&rd=4655">CityLink</a><br>
+SRM 172 Div I Med - <a href="http://community.topcoder.com/stat?c=problem_statement&pm=1850&rd=4665">Fifteen</a><br>
+SRM 206 Div I Hard - <a href="http://community.topcoder.com/stat?c=problem_statement&pm=2920&rd=5852">HexagonIntersections</a><br>
+SRM 195 Div I Easy - <a href="http://community.topcoder.com/stat?c=problem_statement&pm=2235&rd=5070">FanFailure</a><br>
+SRM 167 Div I Med - <a href="http://community.topcoder.com/stat?c=problem_statement&pm=1614&rd=4640">TeamPhoto</a><br>
+SRM 174 Div I Easy - <a href="http://community.topcoder.com/stat?c=problem_statement&pm=1848&rd=4675">BirthdayOdds</a><br>
+SRM 191 Div I Hard - <a href="http://community.topcoder.com/stat?c=problem_statement&pm=2346&rd=4775">MagicianTour</a><br>
+SRM 210 Div II Hard - <a href="http://community.topcoder.com/stat?c=problem_statement&pm=2932&rd=5856">TopographicalImage</a><br>
+SRM 206 Div I Easy - <a href="http://community.topcoder.com/stat?c=problem_statement&pm=2435&rd=5852">OmahaLow</a><br>
+</p>
+
+<p>&nbsp;</p>
+        </td>
+<!-- Center Column Ends -->
+
+<!-- Right Column Begins -->
+         <td width="170" id="onRight" class="invisible">
+            
+
+
+
+<script type="text/javascript" language="javascript">
+
+</script>
+
+
+
+<div class="rightColContent">
+    <br><br>
+</div>
+
+
+         </td>
+<!-- Right Column Ends -->
+
+<!-- Gutter -->
+         <td width="10"><img src="./planApproach2_files/clear.gif" width="10" height="1" border="0"></td>
+<!-- Gutter Ends -->
+    </tr>
+</tbody></table>
+
+<div id="onBottom" class="invisible">
+
+
+
+
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody>
+    <tr>
+        <td width="100%" class="footer">
+            <a href="http://www.topcoder.com/" class="footerLinks">Home</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href="http://www.topcoder.com/aboutus/" class="footerLinks">About TopCoder</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href="http://www.topcoder.com/aboutus/news/" class="footerLinks">Press Room</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href="http://www.topcoder.com/help/template-help/" class="footerLinks">Contact Us</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href="http://www.topcoder.com/aboutus/careers/" class="footerLinks">Careers</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href="http://www.topcoder.com/tc?module=Static&d1=about&d2=privacy" class="footerLinks">Privacy</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href="http://www.topcoder.com/tc?module=Static&d1=about&d2=terms" class="footerLinks">Terms</a>
+            <br>
+            <a href="http://www.topcoder.com/tc" class="footerLinks">Competitions</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href="https://www.topcoder.com/direct/" class="footerLinks">Cockpit</a>        </td>
+    </tr>
+    <tr>
+      <td width="100%" class="copyright">Copyright TopCoder, Inc. 2001-<script type="text/javascript">d=new Date();document.write(d.getFullYear());</script>2011</td></tr>
+</tbody>
+</table>
+
+</div>
+
+
+
+</body></html>

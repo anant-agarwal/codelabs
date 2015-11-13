@@ -1,0 +1,978 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- saved from url=(0081)http://community.topcoder.com/tc?module=Static&d1=tutorials&d2=hungarianAlgorithm -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>TopCoder Algorithm Tutorials</title>
+
+
+
+
+<script type="text/javascript" async="" src="./hungarianAlgorithm_files/ga.js"></script><script language="JavaScript" type="text/javascript" src="./hungarianAlgorithm_files/tcscript.js"></script><link type="image/x-icon" rel="shortcut icon" href="http://community.topcoder.com/i/favicon.ico">
+
+
+
+
+
+
+<link type="text/css" rel="stylesheet" href="./hungarianAlgorithm_files/style.css">
+<link type="text/css" rel="stylesheet" href="./hungarianAlgorithm_files/coders.css">
+<link type="text/css" rel="stylesheet" href="./hungarianAlgorithm_files/tcStyles20080219.css">
+<link type="text/css" rel="stylesheet" href="./hungarianAlgorithm_files/jobsRemix.css">
+
+
+<script language="JavaScript" src="./hungarianAlgorithm_files/print.js"></script>
+
+<style type="text/css">
+.GAtableText
+{
+   color: #333;
+   font-size: 11px;
+   font-weight: normal;
+   line-height: 14px;
+   background-color: #EEEEEE;
+}
+</style>
+
+</head>
+
+<body>
+
+<div id="onTop" class="invisible">
+
+
+
+
+
+
+
+<script type="text/javascript" src="./hungarianAlgorithm_files/popup.js"></script>
+
+<div id="shortcutBar">
+    <div class="icon"><a href="http://www.topcoder.com/tc"><img src="./hungarianAlgorithm_files/scHome.png" alt="" onmouseover="postPopUpText(&#39;globalPopupText&#39;,&#39;Home&#39;); popUp(this,&#39;globalPopup&#39;);" onmouseout="popHide()"></a></div>
+    <div class="icon"><a href="javascript:arena();"><img src="./hungarianAlgorithm_files/scAlgo.png" alt="" onmouseover="postPopUpText(&#39;globalPopupText&#39;,&#39;Algorithm Competitions&#39;); popUp(this,&#39;globalPopup&#39;);" onmouseout="popHide()"></a></div>
+    <div class="icon"><a href="http://www.topcoder.com/tc?module=ActiveContests&pt=23"><img src="./hungarianAlgorithm_files/scConceptualization.png" alt="" onmouseover="postPopUpText(&#39;globalPopupText&#39;,&#39;Software Conceptualization Competitions&#39;); popUp(this,&#39;globalPopup&#39;);" onmouseout="popHide()"></a></div>
+    <div class="icon"><a href="http://www.topcoder.com/tc?module=ActiveContests&pt=6"><img src="./hungarianAlgorithm_files/scSpecification.png" alt="" onmouseover="postPopUpText(&#39;globalPopupText&#39;,&#39;Software Specification Competitions&#39;); popUp(this,&#39;globalPopup&#39;);" onmouseout="popHide()"></a></div>
+    <div class="icon"><a href="http://www.topcoder.com/tc?module=ActiveContests&pt=7"><img src="./hungarianAlgorithm_files/scArchitecture.png" alt="" onmouseover="postPopUpText(&#39;globalPopupText&#39;,&#39;Software Architecture Competitions&#39;); popUp(this,&#39;globalPopup&#39;);" onmouseout="popHide()"></a></div>
+    <div class="icon"><a href="http://www.topcoder.com/tc?module=ViewActiveContests&ph=112"><img src="./hungarianAlgorithm_files/scDesign.png" alt="" onmouseover="postPopUpText(&#39;globalPopupText&#39;,&#39;Component Design Competitions&#39;); popUp(this,&#39;globalPopup&#39;);" onmouseout="popHide()"></a></div>
+    <div class="icon"><a href="http://www.topcoder.com/tc?module=ViewActiveContests&ph=113"><img src="./hungarianAlgorithm_files/scDevelopment.png" alt="" onmouseover="postPopUpText(&#39;globalPopupText&#39;,&#39;Component Development Competitions&#39;); popUp(this,&#39;globalPopup&#39;);" onmouseout="popHide()"></a></div>
+
+    <div class="icon"><a href="http://www.topcoder.com/tc?module=ViewAssemblyActiveContests"><img src="./hungarianAlgorithm_files/scAssembly.png" alt="" onmouseover="postPopUpText(&#39;globalPopupText&#39;,&#39;Software Assembly Competitions&#39;); popUp(this,&#39;globalPopup&#39;);" onmouseout="popHide()"></a></div>
+    <div class="icon"><a href="http://www.topcoder.com/tc?module=ActiveContests&pt=13"><img src="./hungarianAlgorithm_files/scTesting.png" alt="" onmouseover="postPopUpText(&#39;globalPopupText&#39;,&#39;Testing Competitions&#39;); popUp(this,&#39;globalPopup&#39;);" onmouseout="popHide()"></a></div>
+    <div class="icon"><a href="http://www.topcoder.com/tc?module=ActiveContests&pt=35"><img src="./hungarianAlgorithm_files/scContentCreation.gif" alt="" onmouseover="postPopUpText(&#39;globalPopupText&#39;,&#39;Content Creation Competitions&#39;); popUp(this,&#39;globalPopup&#39;);" onmouseout="popHide()"></a></div>
+    <div class="icon"><a href="javascript:arena();"><img src="./hungarianAlgorithm_files/scTCHS.png" alt="" onmouseover="postPopUpText(&#39;globalPopupText&#39;,&#39;High School Competitions&#39;); popUp(this,&#39;globalPopup&#39;);" onmouseout="popHide()"></a></div>
+    <div class="icon"><a href="http://www.topcoder.com/longcontest/?module=ViewActiveContests"><img src="./hungarianAlgorithm_files/scMarathon.png" alt="" onmouseover="postPopUpText(&#39;globalPopupText&#39;,&#39;Marathon Matches&#39;); popUp(this,&#39;globalPopup&#39;);" onmouseout="popHide()"></a></div>
+    <div class="icon"><a href="http://studio.topcoder.com/?module=ViewActiveContests"><img src="./hungarianAlgorithm_files/scStudio.png" alt="" onmouseover="postPopUpText(&#39;globalPopupText&#39;,&#39;TopCoder Studio Competitions&#39;); popUp(this,&#39;globalPopup&#39;);" onmouseout="popHide()"></a></div>
+</div>
+
+<div id="globalPopup" class="popUp"><div id="globalPopupText"></div></div>
+
+
+<div style="position: absolute; right:0px; top:31px;"><a href="http://www.topcoder.com/reg/"><img src="./hungarianAlgorithm_files/register_now.gif" alt="Register Now" style="display:block;"></a></div>
+
+
+<div align="center" style="margin: 0px 290px 0px 280px;">
+   <div id="outerLogo">
+      <div id="innerLogo">
+      <a href="http://www.topcoder.com/"><img src="./hungarianAlgorithm_files/topcoder.gif" alt="TopCoder" style="display: block;"></a>
+      </div>
+   </div>
+</div>
+
+<div class="memberCountBox">
+Member Count: 316,431 - 
+
+
+October 24, 2011
+
+&nbsp;<a class="gMetal" href="Javascript:tcTime()">[Get Time]</a>
+</div>
+
+<div class="topBar">
+    <div style="float: right; margin: 5px 0px 0px 0px;">
+        
+                <a class="gMetal" href="http://www.topcoder.com/tc?&module=Login">Login</a>
+            
+        
+    </div>
+</div>
+</div>
+
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+   <tbody><tr valign="top">
+<!-- Left Column Begins-->
+        <td width="180" id="onLeft" class="invisible">
+         
+
+
+
+
+
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+<script language="JavaScript" type="text/javascript" src="./hungarianAlgorithm_files/arena.js"></script>
+
+
+<script language="JavaScript" type="text/javascript">
+<!--
+function toggleMenu(menuTitle,menuID){
+   var menu = document.getElementById(menuID);
+   if(menu.style.display == 'block') menu.className = 'CLOSED';
+   else if(menu.className == 'OPEN' && menu.style.display != 'none') menu.className = 'CLOSED';
+   else {
+      menu.className = 'OPEN';
+   }
+   if(menuTitle.blur)menuTitle.blur();
+   if(menuTitle.className == 'exp') menuTitle.className = 'exp_ed';
+   else menuTitle.className = 'exp';
+   return;
+}
+function flipMenu(myMenuName){
+   var menuName = document.getElementById(myMenuName);
+   menuName.className = 'exp_ed';
+}
+
+// -->
+</script>
+
+<div style="padding: 0px;"><img src="./hungarianAlgorithm_files/leftnav_top.gif" alt=""></div>
+<div id="navbar">
+    
+<ul>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_competitions&#39;)">Competitions</a>
+<ul id="m_competitions">
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_competitions_overview&#39;)">Overview</a>
+<ul id="m_competitions_overview">
+<li><a href="http://apps.topcoder.com/wiki/x/MQD9Ag">Reliability</a></li>
+<li><a href="http://apps.topcoder.com/wiki/x/lYE_/">Ratings</a></li>
+<li><a href="http://apps.topcoder.com/wiki/x/aoE_/">How to Get Paid</a></li>
+<li><a href="http://apps.topcoder.com/wiki/x/2gRmAw">Administrative Overview </a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_copilot_opportunities&#39;)">Copilot Opportunities</a>
+<ul id="m_copilot_opportunities">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Copilot+Overview">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_copilot_support&#39;)">Track Information</a>
+<ul id="m_copilot_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Copilot+Opportunities">How to Compete</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Copilot+Opportunities">Documentation</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Copilot+Opportunities">Tutorial</a></li>
+</ul></li>
+<li><a href="http://www.topcoder.com/tc?module=ActiveContests&pt=29">Active Contests</a></li>
+<li><a href="http://www.topcoder.com/tc?module=CompList&ph=140">Past Contests</a></li>
+<li><a href="http://www.topcoder.com/tc?module=ViewCopilotPool&size=20&view=0&sort=12">Copilot Pool</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;competition_design&#39;)">Design</a>
+<ul id="competition_design">
+<li><a href="http://studio.topcoder.com/">Studio</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_conceptualization_competitions&#39;)">Conceptualization</a>
+<ul id="m_conceptualization_competitions">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/TopCoder+Conceptualization+Contests">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_conceptualization_support&#39;)">Track Information</a>
+<ul id="m_conceptualization_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Conceptualization+Competitions">How to Compete</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Conceptualization+Documentation">Documentation</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Conceptualization+Submission+Instructions">Tutorial</a></li>
+</ul></li>
+<li><a href="http://community.topcoder.com/tc?module=ActiveContests&pt=23">Active Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ContestStatus&pt=23">Contest Status</a></li>
+<li><a href="http://community.topcoder.com/tc?module=CompList&ph=134">Past Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ViewReviewProjects&pt=23">Review Opportunities</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ReviewBoard&pt=23">Meet the Review Board</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_specification_competitions&#39;)">Specification</a>
+<ul id="m_specification_competitions">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/TopCoder+Specification+Contests">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_specification_support&#39;)">Track Information</a>
+<ul id="m_specification_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Specification+Competitions">How to Compete</a></li>
+</ul></li>
+<li><a href="http://community.topcoder.com/tc?module=ActiveContests&pt=6">Active Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ContestStatus&pt=6">Contest Status</a></li>
+<li><a href="http://community.topcoder.com/tc?module=CompList&ph=117">Past Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ViewReviewProjects&pt=6">Review Opportunities</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ReviewBoard&pt=6">Meet the Review Board</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_architecture_competitions&#39;)">Architecture</a>
+<ul id="m_architecture_competitions">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Architecture+Overview">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_architecture_support&#39;)">Track Information</a>
+<ul id="m_architecture_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Architecture+Competitions">How to Compete</a></li>
+</ul></li>
+<li><a href="http://community.topcoder.com/tc?module=ActiveContests&pt=7">Active Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ContestStatus&pt=7">Contest Status</a></li>
+<li><a href="http://community.topcoder.com/tc?module=CompList&ph=118">Past Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ViewReviewProjects&pt=7">Review Opportunities</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ReviewBoard&pt=7">Meet the Review Board</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_des_competitions&#39;)">Component Design</a>
+<ul id="m_des_competitions">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Component+Design+Overview">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_des_support&#39;)">Track Information</a>
+<ul id="m_des_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Component+Design+Competitions">How to Compete</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Component+Design+Documentation">Documentation</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ColorChange&ph=112">Recent Color Changes</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Component+Design+Data+Feeds">Data Feeds</a></li>
+</ul></li>
+<li><a href="http://community.topcoder.com/tc?module=ViewActiveContests&ph=112">Active Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ContestStatus&pt=1">Contest Status</a></li>
+<li><a href="http://community.topcoder.com/tc?module=CompList&ph=112">Past Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ViewReviewProjects&pt=1">Review Opportunities</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ReviewBoard&pt=1">Meet the Review Board</a></li>
+</ul></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;competition_dev&#39;)">Development</a>
+<ul id="competition_dev">
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_dev_competitions&#39;)">Component Development</a>
+<ul id="m_dev_competitions">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Component+Development+Competitions">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_dev_support&#39;)">Track Information</a>
+<ul id="m_dev_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Component+Development+Competitions">How to Compete</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Component+Development+Documentation">Documentation</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ColorChange&ph=113">Recent Color Changes</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Component+Development+Data+Feeds">Data Feeds</a></li>
+</ul></li>
+<li><a href="http://community.topcoder.com/tc?module=ViewActiveContests&ph=113">Active Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ContestStatus&pt=2">Contest Status</a></li>
+<li><a href="http://community.topcoder.com/tc?module=CompList&ph=113">Past Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ViewReviewProjects&pt=2">Review Opportunities</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ReviewBoard&pt=2">Meet the Review Board</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_assembly_competitions&#39;)">Assembly</a>
+<ul id="m_assembly_competitions">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Assembly">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_assembly_support&#39;)">Track Information</a>
+<ul id="m_assembly_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Assembly+Competitions">How to Compete</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Assembly+Competition+Tutorial">Tutorial</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Assembly+Competition+Documentation">Documentation</a></li>
+</ul></li>
+<li><a href="http://community.topcoder.com/tc?module=ViewAssemblyActiveContests">Active Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ContestStatus&pt=14">Contest Status</a></li>
+<li><a href="http://community.topcoder.com/tc?module=CompList&ph=125">Past Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ViewReviewProjects&pt=14">Review Opportunities</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ReviewBoard&pt=14">Meet the Review Board</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_test_suites_competitions&#39;)">Test Suites</a>
+<ul id="m_test_suites_competitions">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Test+Scenarios+and+Scripts">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_test_suites_support&#39;)">Track Information</a>
+<ul id="m_test_suites_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Testing+Competitions">How to Compete</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Testing+Competition+Tutorial">Tutorial</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Testing+Competition+Documentation">Documentation</a></li>
+</ul></li>
+<li><a href="http://community.topcoder.com/tc?module=ActiveContests&pt=13">Active Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ContestStatus&pt=13">Contest Status</a></li>
+<li><a href="http://community.topcoder.com/tc?module=CompList&pt=13">Past Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ViewReviewProjects&pt=13">Review Opportunities</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ReviewBoard&pt=13">Meet the Review Board</a></li>
+</ul></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;competition_ui_dev&#39;)">UI Development</a>
+<ul id="competition_ui_dev">
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_ui_prototype_competitions&#39;)">UI Prototype</a>
+<ul id="m_ui_prototype_competitions">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/UI+Prototype+Competitions">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_ui_prototype_support&#39;)">Track Information</a>
+<ul id="m_ui_prototype_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+UI+Prototype+Competitions">How to Compete</a></li>
+</ul></li>
+<li><a href="http://community.topcoder.com/tc?module=ActiveContests&pt=19">Active Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ContestStatus&pt=19">Contest Status</a></li>
+<li><a href="http://community.topcoder.com/tc?module=CompList&pt=19">Past Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ViewReviewProjects&pt=19">Review Opportunities</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ReviewBoard&pt=19">Meet the Review Board</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_ria_build_competitions&#39;)">RIA Build</a>
+<ul id="m_ria_build_competitions">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/RIA+Build+Competitions">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_ria_build_support&#39;)">Track Information</a>
+<ul id="m_ria_build_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+RIA+Builds">How to Compete</a></li>
+</ul></li>
+<li><a href="http://community.topcoder.com/tc?module=ActiveContests&pt=24">Active Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ContestStatus&pt=24">Contest Status</a></li>
+<li><a href="http://community.topcoder.com/tc?module=CompList&pt=24">Past Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ViewReviewProjects&pt=24">Review Opportunities</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ReviewBoard&pt=24">Meet the Review Board</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_content_creation_competitions&#39;)">Content Creation</a>
+<ul id="m_content_creation_competitions">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Content+Contests+Overview">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_content_creation_support&#39;)">Track Information</a>
+<ul id="m_content_creation_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Content+Creation+Competitions">How to Compete</a></li>
+</ul></li>
+<li><a href="http://community.topcoder.com/tc?module=ActiveContests&pt=35">Active Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ContestStatus&pt=35">Contest Status</a></li>
+<li><a href="http://community.topcoder.com/tc?module=CompList&pt=35">Past Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ViewReviewProjects&pt=35">Review Opportunities</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ReviewBoard&pt=35">Meet the Review Board</a></li>
+</ul></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;competition_qa&#39;)">QA and Maintenance</a>
+<ul id="competition_qa">
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_test_scenarios_competitions&#39;)">Test Scenarios</a>
+<ul id="m_test_scenarios_competitions">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Test+Scenarios+and+Scripts">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_test_scenarios_support&#39;)">Track Information</a>
+<ul id="m_test_scenarios_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Testing+Competitions">How to Compete</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Testing+Competition+Tutorial">Tutorial</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Testing+Competition+Documentation">Documentation</a></li>
+</ul></li>
+<li><a href="http://community.topcoder.com/tc?module=ActiveContests&pt=26">Active Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ContestStatus&pt=26">Contest Status</a></li>
+<li><a href="http://community.topcoder.com/tc?module=CompList&pt=26">Past Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ViewReviewProjects&pt=26">Review Opportunities</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ReviewBoard&pt=26">Meet the Review Board</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_bugraces_competitions&#39;)">Bug Race</a>
+<ul id="m_bugraces_competitions">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Bug+Race+Competition+Overview">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_bugraces_support&#39;)">Track Information</a>
+<ul id="m_bugraces_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Bug+Race+Competitions">How to Compete</a></li>
+</ul></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Active+Bug+Race+Competitions">Active Contests</a></li>
+<li><a href="http://apps.topcoder.com/wiki/x/FQG2AQ">Review Opportunities</a></li>
+</ul></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;competition_algo&#39;)">Algorithm</a>
+<ul id="competition_algo">
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_algo_competitions&#39;)">Single Round Matches (SRM)</a>
+<ul id="m_algo_competitions">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Algorithm+Overview">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_algo_support&#39;)">Track Information</a>
+<ul id="m_algo_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+SRM+Algorithm+Competitions">How to Compete</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/SRM+Algorithm+Competition+FAQs">FAQs</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Algorithm+Competition+Rating+System">Rating System</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Write+Problems+for+TopCoder">Write Problems</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_algo_stats&#39;)">Statistics</a>
+<ul id="m_algo_stats">
+<li><a href="http://community.topcoder.com/tc?module=MatchList">Match Archive</a></li>
+<li><a href="http://community.topcoder.com/stat?c=round_overview">Match Overviews</a></li>
+<li><a href="http://community.topcoder.com/tc?module=SrmDivisionWins">Match Winners</a></li>
+<li><a href="http://community.topcoder.com/stat?c=last_match">Match Results</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Algorithm+Problem+Set+Analysis">Match Editorials</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ProblemArchive">Problem Archive</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ColorChange&ratid=1">Recent Color Changes</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Algorithm+Data+Feeds">Data Feeds</a></li>
+</ul></li>
+<li><a href="javascript:arena();">Launch Arena</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_long_contests&#39;)">Marathon Match</a>
+<ul id="m_long_contests">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Marathon+Match+Overview">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_long_support&#39;)">Track Information</a>
+<ul id="m_long_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Marathon+Match+Events">How to Compete</a></li>
+<li><a href="http://community.topcoder.com/longcontest/?module=Static&d1=support&d2=ratings">Rating System</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_long_stats&#39;)">Statistics</a>
+<ul id="m_long_stats">
+<li><a href="http://community.topcoder.com/longcontest/stats/?module=MatchList">Match Archive</a></li>
+<li><a href="http://community.topcoder.com/longcontest/stats/?module=ViewOverview">Match Overview</a></li>
+<li><a href="http://community.topcoder.com/longcontest/stats/?module=MatchWinners">Match Winners</a></li>
+<li><a href="http://community.topcoder.com/longcontest/?module=Static&d1=match_editorials&d2=archive">Match Editorials</a></li>
+<li><a href="http://community.topcoder.com/longcontest/?module=Static&d1=support&d2=dataFeed">Data Feeds</a></li>
+</ul></li>
+<li><a href="http://community.topcoder.com/longcontest/?module=ViewActiveContests">Active Contests</a></li>
+<li><a href="http://community.topcoder.com/longcontest/?module=ViewPractice">Practice</a></li>
+<li><a href="http://community.topcoder.com/longcontest/?module=ViewQueue">Queue Status</a></li>
+</ul></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_hs_competitions&#39;)">High School</a>
+<ul id="m_hs_competitions">
+<li><a href="http://community.topcoder.com/tc?module=Static&d1=hs&d2=home">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_hs_stats&#39;)">Statistics</a>
+<ul id="m_hs_stats">
+<li><a href="http://community.topcoder.com/tc?module=HSRoundOverview">Match Overview</a></li>
+<li><a href="http://community.topcoder.com/tc?module=HSRoundStatsTeam">Match Results (Team)</a></li>
+<li><a href="http://community.topcoder.com/tc?module=HSRoundStatsInd">Match Results (Indiv.)</a></li>
+<li><a href="http://community.topcoder.com/tc?module=Static&d1=hs&d2=match_editorials&d3=archive">Match Editorials</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ColorChange&ratid=2">Recent Color Changes</a></li>
+<li><a href="http://community.topcoder.com/tc?module=Static&d1=hs&d2=support&d3=dataFeed">Data Feeds</a></li>
+</ul></li>
+<li><a href="http://community.topcoder.com/tc?module=Static&d1=hs&d2=spotlightSessions">Spotlight Sessions</a></li>
+<li><a href="javascript:arena();">Launch Arena</a></li>
+</ul></li>
+<li><a href="http://community.topcoder.com/dr">The Digital Run</a></li>
+<li><a href="http://software.topcoder.com/review">Submit &amp; Review</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_topcoder_networks&#39;)">TopCoder Networks</a>
+<ul id="m_topcoder_networks">
+<li><a href="http://community.topcoder.com/alcatel/">Alcatel Lucent</a></li>
+<li><a href="http://community.topcoder.com/amdapp/">AMD OpenCL</a></li>
+<li><a href="http://community.topcoder.com/darpacs/">DARPA CS-STEM</a></li>
+<li><a href="http://community.topcoder.com/ntl/">NASA Tournament Lab</a></li>
+<li><a href="http://community.topcoder.com/x/">PayPalX</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_events&#39;)">Events</a>
+<ul id="m_events">
+<li><a href="http://community.topcoder.com/tc?module=Static&d1=calendar&d2=thisMonth">Event Calendar</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_tournaments&#39;)">Tournaments</a>
+<ul id="m_tournaments">
+<li><a href="http://community.topcoder.com/tc?module=Static&d1=tournaments&d2=home">TopCoder</a></li>
+<li><a href="http://community.topcoder.com/pl/">Powered by TopCoder</a></li>
+<li><a href="http://community.topcoder.com/tc?module=CRPFStatic&d1=crpf&d2=crpf_overview">Charity</a></li>
+</ul></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_stats&#39;)">Statistics</a>
+<ul id="m_stats">
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_competitor_stats&#39;)">The Tops</a>
+<ul id="m_competitor_stats">
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_top_rated_competitors&#39;)">Top Ranked</a>
+<ul id="m_top_rated_competitors">
+<li><a href="http://community.topcoder.com/tc?module=AlgoRank">Algorithm</a></li>
+<li><a href="http://community.topcoder.com/tc?module=HSRank">High School</a></li>
+<li><a href="http://community.topcoder.com/longcontest/stats/?module=CoderRank">Marathon Match</a></li>
+<li><a href="http://community.topcoder.com/stat?c=top_conceptors">Conceptualization</a></li>
+<li><a href="http://community.topcoder.com/stat?c=top_specificators">Specification</a></li>
+<li><a href="http://community.topcoder.com/stat?c=top_architects">Architecture</a></li>
+<li><a href="http://community.topcoder.com/stat?c=top_designers">Design</a></li>
+<li><a href="http://community.topcoder.com/stat?c=top_developers">Development</a></li>
+<li><a href="http://community.topcoder.com/stat?c=top_assemblers">Assembly</a></li>
+<li><a href="http://community.topcoder.com/stat?c=top_testers">Test Suites</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_recordbook&#39;)">Record Book</a>
+<ul id="m_recordbook">
+<li><a href="http://community.topcoder.com/tc?module=Static&d1=statistics&d2=recordbook_home">Algorithm</a></li>
+<li><a href="http://community.topcoder.com/tc?module=Static&d1=compstats&d2=comp_recordbook_home">Component</a></li>
+<li><a href="http://community.topcoder.com/longcontest/?module=Static&d1=stats&d2=recordbook_home">Marathon Match</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_com&#39;)">Coder of the Month</a>
+<ul id="m_com">
+<li><a href="http://community.topcoder.com/tc?module=COMHistory&achtid=5">Algorithm</a></li>
+<li><a href="http://community.topcoder.com/tc?module=COMHistory&achtid=6">Design</a></li>
+<li><a href="http://community.topcoder.com/tc?module=COMHistory&achtid=7">Development</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li class="exp_ed"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_edu_content&#39;)">Tutorials</a>
+<ul id="m_edu_content" class="OPEN">
+<li><a href="http://community.topcoder.com/tc?module=Static&d1=education&d2=overview">Overview</a></li>
+<li class="highlight"><a href="http://community.topcoder.com/tc?module=Static&d1=tutorials&d2=alg_index">Algorithm Tutorials</a></li>
+<li><a href="http://community.topcoder.com/tc?module=Static&d1=tutorials&d2=comp_index">Component Tutorials</a></li>
+<li><a href="http://community.topcoder.com/tc?module=Static&d1=tutorials&d2=mm_index">Marathon Tutorials</a></li>
+<li><a href="http://apps.topcoder.com/wiki/dashboard.action">Wiki</a></li>
+</ul></li>
+<li><a href="http://forums.topcoder.com/">Forums</a></li>
+<li><a href="http://community.topcoder.com/tc?&module=SurveyList">Surveys</a></li>
+<li><a href="http://community.topcoder.com/tc?module=MyHome">My TopCoder</a></li>
+<li><a href="http://www.topcoder.com/help">Help Center</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_about_tc&#39;)">About TopCoder</a>
+<ul id="m_about_tc">
+<li><a href="http://www.topcoder.com/aboutus/">Overview</a></li>
+<li><a href="http://www.topcoder.com/aboutus/">Why Join TopCoder?</a></li>
+<li><a href="http://www.topcoder.com/aboutus/careers/">Working at TopCoder</a></li>
+<li><a href="http://www.topcoder.com/aboutus/management/">Leadership</a></li>
+<li><a href="http://www.topcoder.com/aboutus/news/">Press Room</a></li>
+</ul></li></ul>
+
+    <div style="float: left; padding: 10px 0px 0px 17px;">
+        
+        <a href="http://www.topcoder.com/tc?module=LinkTracking&link=http://apps.topcoder.com/wiki/x/L4TD&refer=leftnav"><img src="./hungarianAlgorithm_files/umlTool.png" alt="UML Tool"></a>
+
+        
+        
+        
+        
+    </div>
+    
+
+<div id="navbarSearch">
+<b>Member Search:</b>
+<form action="http://www.topcoder.com/tc" method="get" name="simpleSearchForm" class="noSpace" id="simpleSearchForm">
+   <input class="noSpace" type="hidden" name="module" value="SimpleSearch">
+   <input class="noSpace" type="text" name="ha" value="Handle:" size="12" maxlength="15" onfocus="javascript: if (document.simpleSearchForm.ha.value==&#39;Handle:&#39;) document.simpleSearchForm.ha.value = &#39;&#39;;" onblur="javascript:if (document.simpleSearchForm.ha.value == &#39;&#39;)document.simpleSearchForm.ha.value = &#39;Handle:&#39;;">
+   <a class="gMetal" href="javascript:void document.simpleSearchForm.submit();">Go</a><br>
+   <a class="gMetal" href="http://www.topcoder.com/tc?module=ViewAdvanced">Advanced Search</a>
+</form>
+</div>
+</div>
+<div style="float: left; clear:left; padding: 0px 0px 23px 0px;"><img src="./hungarianAlgorithm_files/leftnav_bottom.gif" alt=""></div>
+
+
+    <div align="center" style="float: left; clear:left; width: 170px; margin: 0px;">
+        <img src="./hungarianAlgorithm_files/brackets.png" alt="" style="margin-bottom: 23px;">
+    </div>
+
+
+
+
+        </td>
+<!-- Left Column Ends -->
+
+<!-- Center Column Begins -->
+<td width="100%" align="left" class="bodyColumn">
+
+
+
+
+
+
+<table cellspacing="0" cellpadding="0" class="pageTitleTable">
+    <tbody><tr>
+        <td width="100%" class="pageTitle"><img border="0" src="./hungarianAlgorithm_files/header_alg_tut.gif" alt="alg_tut"></td>
+        <td align="right" class="pageSubtitle">&nbsp;&nbsp;</td>
+    </tr>
+</tbody></table>
+
+
+
+<div class="linkBox">
+    <a href="http://community.topcoder.com/tc?module=Static&d1=tutorials&d2=alg_index">Archive</a><br>
+    <span id="printableLink" class="invisible"><a href="Javascript:makeInvisible();">Printable view</a><br></span>
+    <span id="navigableLink" class=""><a href="Javascript:makeNavigable();">Normal view</a><br></span>
+    <a href="http://forums.topcoder.com/?module=ThreadList&forumID=522020">Discuss this article</a><br>
+    <a href="http://community.topcoder.com/tc?module=Static&d1=help&d2=writeForTC">Write for TopCoder</a>
+</div>
+ 
+<span class="bigTitle">Assignment Problem and Hungarian Algorithm</span>
+<br><br>
+<div class="authorPhoto">
+    <img src="./hungarianAlgorithm_files/x-ray_big.jpg" alt="Author">
+</div>
+<div class="authorText">
+  By&nbsp;<a href="http://www.topcoder.com/tc?module=MemberProfile&cr=22654859&tab=alg" class="coderTextYellow">x-ray</a><br>
+      <em>TopCoder Member</em>
+</div>
+
+<br clear="all">
+
+<h3>Introduction</h3>
+<p>Are you familiar with the following situation? You open the Div I Medium and don't know how to approach it, while a lot of people in your room submitted it in less than 10 minutes. Then, after the contest, you find out in the editorial that this problem can be simply reduced to a classical one. If yes, then this tutorial will surely be useful for you.</p>
+
+
+<h3>Problem statement</h3>
+<p>In this article we'll deal with one optimization problem, which can be informally defined as:</p>
+<p><em>Assume that we have <strong>N</strong> workers and <strong>N</strong> jobs that should be done. For each pair (worker, job) we know salary that should be paid to worker for him to perform the job. Our goal is to complete all jobs minimizing total inputs, while assigning each worker to exactly one job and vice versa.</em></p>
+<p>Converting this problem to a formal mathematical definition we can form the following equations:<br>
+<img src="./hungarianAlgorithm_files/image001.png" alt=""> - cost matrix, where <strong><em>c<sub>ij</sub></em></strong> - cost of worker <strong><em>i</em></strong> to perform job <strong><em>j</em></strong>.<br>
+<img src="./hungarianAlgorithm_files/image003.png" alt=""> - resulting binary matrix, where <strong><em>x<sub>ij</sub></em></strong> = 1 if and only if <strong><em>i<sup>th</sup></em></strong> worker is assigned to <strong><em>j<sup>th</sup></em></strong> job.<br>
+<img src="./hungarianAlgorithm_files/image005.png" alt=""> - one worker to one job assignment.<br>
+<img src="./hungarianAlgorithm_files/image007.png" alt=""> - one job to one worker assignment.<br>
+<img src="./hungarianAlgorithm_files/image009.png" alt=""> - total cost function.</p>
+<p>We can also rephrase this problem in terms of graph theory. Let's look at the job and workers as if they were a bipartite graph, where each edge between the <strong><em>i<sup>th</sup></em></strong> worker and <strong><em>j<sup>th</sup></em></strong> job has weight of <strong><em>c<sub>ij</sub></em></strong>. Then our task is to find minimum-weight matching in the graph (the matching will consists of <strong>N</strong> edges, because our bipartite graph is complete).</p>
+<p>Small example just to make things clearer:</p>
+<p align="center"><img src="./hungarianAlgorithm_files/image012.jpg" alt=""></p>
+
+
+<h3>General description of the algorithm</h3>
+<p>This problem is known as the assignment problem. The assignment problem is a special case of the transportation problem, which in turn is a special case of the <a href="http://community.topcoder.com/tc?module=Static&d1=tutorials&d2=minimumCostFlow1">min-cost flow</a> problem, so it can be solved using algorithms that solve the more general cases. Also, our problem is a special case of binary integer linear programming problem (which is NP-hard).  But, due to the specifics of the problem, there are more efficient algorithms to solve it. We'll handle the assignment problem with the Hungarian algorithm (or Kuhn-Munkres algorithm). I'll illustrate two different implementations of this algorithm, both graph theoretic, one easy and fast to implement with <strong>O(n<sup>4</sup>)</strong> complexity, and the other one with <strong>O(n<sup>3</sup>)</strong> complexity, but harder to implement.</p>
+<p>There are also implementations of Hungarian algorithm that do not use graph theory. Rather, they just operate with cost matrix, making different transformation of it (see [1] for clear explanation). We'll not touch these approaches, because it's less practical for TopCoder needs.</p>
+
+
+<h3>O(n<sup>4</sup>) algorithm explanation</h3>
+<p>As mentioned above, we are dealing with a bipartite graph. The main idea of the method is the following: consider we've found the perfect matching using only edges of weight 0 (hereinafter called "0-weight edges"). Obviously, these edges will be the solution of the assignment problem. If we can't find perfect matching on the current step, then the Hungarian algorithm changes weights of the available edges in such a way that the new 0-weight edges appear and these changes do not influence the optimal solution.</p>
+<p>To clarify, let's look at the step-by-step overview:</p>
+
+<p><strong>Step 0)</strong></p>
+<p><strong>A.</strong> For each vertex from left part (workers) find the minimal outgoing edge and subtract its weight from all weights connected with this vertex. This will introduce 0-weight edges (at least one).</p>
+<p><strong>B.</strong> Apply the same procedure for the vertices in the right part (jobs).</p>
+<p align="center"><img src="./hungarianAlgorithm_files/image014.jpg" alt=""></p>
+<p>Actually, this step is not necessary, but it decreases the number of main cycle iterations.</p>
+
+<p><strong>Step 1)</strong></p>
+<p><strong>A.</strong> Find the maximum matching using only 0-weight edges (for this purpose you can use max-flow algorithm, augmenting path algorithm, etc.).</p>
+<p><strong>B.</strong> If it is perfect, then the problem is solved. Otherwise find the minimum vertex cover <strong><em>V</em></strong> (for the subgraph with 0-weight edges only), the best way to do this is to use <a target="_blank" href="http://www.topcoder.com/tc?module=LinkTracking&link=http://en.wikipedia.org/wiki/K%C3%B6nig%27s_theorem_(graph_theory)#proof&refer=hungarianAlgorithm">Köning's graph theorem</a>.</p>
+<p align="center"><img src="./hungarianAlgorithm_files/image016.jpg" alt=""></p>
+
+<p><strong>Step 2)</strong> Let <img src="./hungarianAlgorithm_files/image018.gif" alt=""> and adjust the weights using the following rule:</p>
+<p align="center"><img src="./hungarianAlgorithm_files/image020.gif" alt=""><br><br><img src="./hungarianAlgorithm_files/image022.jpg" alt=""></p>
+
+<p><strong>Step 3)</strong> Repeat Step 1 until solved.</p>
+<p>But there is a nuance here; finding the maximum matching in step 1 on each iteration will cause the algorithm to become <strong>O(n<sup>5</sup>)</strong>. In order to avoid this, on each step we can just modify the matching from the previous step, which only takes <strong>O(n<sup>2</sup>)</strong> operations.</p>
+<p>It's easy to see that no more than n2 iterations will occur, because every time at least one edge becomes 0-weight. Therefore, the overall complexity is <strong>O(n<sup>4</sup>)</strong>.</p>
+
+
+<h3>O(n<sup>3</sup>) algorithm explanation</h3>
+<p><em>Warning! In this section we will deal with the maximum-weighted matching problem. It's obviously easy to transform minimum problem to the maximum one, just by setting:<br>
+<img src="./hungarianAlgorithm_files/image024.gif" alt=""><br>or<br><img src="./hungarianAlgorithm_files/image026.gif" alt=""></em>.</p>
+<p>Before discussing the algorithm, let's take a look at some of the theoretical ideas. Let's start off by considering we have a complete bipartite graph <strong><em>G=(V,E)</em></strong> where <img src="./hungarianAlgorithm_files/image028.gif" alt=""> and <img src="./hungarianAlgorithm_files/image030.gif" alt="">, <strong><em>w(x,y)</em></strong> - weight of edge <strong><em>(x,y)</em></strong>.</p>
+<p><em>Vertex and set neighborhood</em></p>
+<p>Let <img src="./hungarianAlgorithm_files/image032.gif" alt="">. Then <img src="./hungarianAlgorithm_files/image034.gif" alt=""> is <strong><em>v</em>'s</strong> neighborhood, or all vertices that share an edge with <strong>v</strong>.</p>
+<p>Let <img src="./hungarianAlgorithm_files/image036.gif" alt="">. Then <img src="./hungarianAlgorithm_files/image038.gif" alt=""> is <strong><em>S</em>'s</strong> neighborhood, or all vertices that share an edge with a vertex in <strong>S</strong>.</p>
+<p><em>Vertex labeling</em></p>
+<p>This is simply a function <img src="./hungarianAlgorithm_files/image040.gif" alt=""> (for each vertex we assign some number called a label). Let's call this labeling feasible if it satisfies the following condition: <img src="./hungarianAlgorithm_files/image042.gif" alt="">. In other words, the sum of the labels of the vertices on both sides of a given edge are greater than or equal to the weight of that edge.</p>
+<p><em>Equality subgraph</em></p>
+<p>Let <strong><em>G<sub>l</sub>=(V,E<sub>l</sub>)</em></strong> be a spanning subgraph of <strong>G</strong> (in other words, it includes all vertices from <strong>G</strong>). If <strong>G</strong> only those edges <strong>(x,y)</strong> which satisfy the following condition: <img src="./hungarianAlgorithm_files/image044.gif" alt="">, then it is an equality subgraph. In other words, it only includes those edges from the bipartite matching which allow the vertices to be perfectly feasible.</p>
+<p>Now we're ready for the theorem which provides the connection between equality subgraphs and maximum-weighted matching:</p>
+<p><em>If <strong>M*</strong> is a perfect matching in the equality subgraph <strong>G<sub>l</sub></strong>, then <strong>M*</strong> is a maximum-weighted matching in <strong>G</strong>.</em></p>
+<p>The proof is rather straightforward, but if you want you can do it for practice. Let's continue with a few final definitions:</p>
+<p><em>Alternating path and alternating tree</em></p>
+<p>Consider we have a matching <strong><em>M</em> (<img src="./hungarianAlgorithm_files/image046.gif" alt="">)</strong>.</p>
+<p>Vertex <img src="./hungarianAlgorithm_files/image032.gif" alt=""> is called matched if <img src="./hungarianAlgorithm_files/image051.gif" alt="">, otherwise it is called <em>exposed (free, unmatched)</em>.
+</p><p>(In the diagram below, <strong>W<sub>1</sub></strong>, <strong>W<sub>2</sub></strong>, <strong>W<sub>3</sub></strong>, <strong>J<sub>1</sub></strong>, <strong>J<sub>3</sub></strong>, <strong>J<sub>4</sub></strong> are matched, <strong>W<sub>4</sub></strong>, <strong>J<sub>2</sub></strong> are exposed)</p>
+<p align="center"><img src="./hungarianAlgorithm_files/image048.jpg" alt=""></p>
+<p>Path <strong><em>P</em></strong> is called alternating if its edges alternate between <strong>M</strong> and <strong>E\M</strong>. (For example, (<strong>W<sub>4</sub></strong>, <strong>J<sub>4</sub></strong>, <strong>W<sub>3</sub></strong>, <strong>J<sub>3</sub></strong>, <strong>W<sub>2</sub></strong>, <strong>J<sub>2</sub></strong>) and (<strong>W<sub>4</sub></strong>, <strong>J<sub>1</sub></strong>, <strong>W<sub>1</sub></strong>) are alternating paths)</p>
+<p>If the first and last vertices in alternating path are exposed, it is called <em>augmenting</em> (because we can increment the size of the matching by inverting edges along this path, therefore matching unmatched edges and vice versa). ((<strong>W<sub>4</sub></strong>, <strong>J<sub>4</sub></strong>, <strong>W<sub>3</sub></strong>, <strong>J<sub>3</sub></strong>, <strong>W<sub>2</sub></strong>, <strong>J<sub>2</sub></strong>) - augmenting alternating path)</p>
+<p>A tree which has a root in some exposed vertex, and a property that every path starting in the root is alternating, is called an <em>alternating tree</em>. (Example on the picture above, with root in <strong>W<sub>4</sub></strong>)</p>
+<p>That's all for the theory, now let's look at the algorithm:</p>
+<p>First let's have a look on the scheme of the Hungarian algorithm:</p>
+<p><strong>Step 0.</strong> Find some initial feasible vertex labeling and some initial matching.</p>
+<p><strong>Step 1.</strong> If <strong>M</strong> is perfect, then it's optimal, so problem is solved. Otherwise, some exposed <img src="./hungarianAlgorithm_files/image053.gif" alt=""> exists; set <img src="./hungarianAlgorithm_files/image055.gif" alt="">. (<strong>x</strong> - is a root of the alternating tree we're going to build). Go to step 2.</p>
+<p><strong>Step 2.</strong> If <img src="./hungarianAlgorithm_files/image057.gif" alt=""> go to step 3, else <img src="./hungarianAlgorithm_files/image059.gif" alt="">. Find</p>
+<table align="center" class="stat" style="width: 450px;" cellpadding="0" cellspacing="0">
+    <tbody><tr class="light">
+        <td><img src="./hungarianAlgorithm_files/image061.gif" alt=""></td>
+        <td><strong>(1)</strong></td>
+    </tr>
+</tbody></table>
+<p>and replace existing labeling with the next one:</p>
+<table align="center" class="stat" style="width: 450px;" cellpadding="0" cellspacing="0">
+    <tbody><tr class="dark">
+        <td><img src="./hungarianAlgorithm_files/image063.gif" alt=""></td>
+        <td><strong>(2)</strong></td>
+    </tr>
+</tbody></table>
+<p>Now replace <img src="./hungarianAlgorithm_files/image065.gif" alt=""> with <img src="./hungarianAlgorithm_files/image067.gif" alt=""></p>
+<p><strong>Step 3.</strong> Find some vertex <img src="./hungarianAlgorithm_files/image069.gif" alt="">. If <strong><em>y</em></strong> is exposed then an alternating path from <strong><em>x</em></strong> (root of the tree) to <strong><em>y</em></strong> exists, augment matching along this path and go to step 1. If <strong><em>y</em></strong> is matched in <strong>M</strong> with some vertex <strong><em>z</em></strong> add <strong><em>(z,y)</em></strong> to the alternating tree and set <img src="./hungarianAlgorithm_files/image071.gif" alt="">, go to step 2.</p>
+<p>And now let's illustrate these steps by considering an example and writing some code.</p>
+<p>As an example we'll use the previous one, but first let's transform it to the maximum-weighted matching problem, using the second method from the two described above. (See Picture 1)</p>
+<p align="center"><img src="./hungarianAlgorithm_files/image073.jpg" alt=""><br>Picture 1</p>
+<p>Here are the global variables that will be used in the code:</p>
+<pre><span style="color:blue">#define N 55</span>             <span style="color:green">//max number of vertices in one part</span>
+<span style="color:blue">#define INF 100000000</span>    <span style="color:green">//just infinity</span>
+
+<span style="color:blue">int cost[N][N];</span>          <span style="color:green">//cost matrix</span>
+<span style="color:blue">int n, max_match;</span>        <span style="color:green">//n workers and n jobs</span>
+<span style="color:blue">int lx[N], ly[N];</span>        <span style="color:green">//labels of X and Y parts</span>
+<span style="color:blue">int xy[N];</span>               <span style="color:green">//xy[x] - vertex that is matched with x,</span>
+<span style="color:blue">int yx[N];</span>               <span style="color:green">//yx[y] - vertex that is matched with y</span>
+<span style="color:blue">bool S[N], T[N];</span>         <span style="color:green">//sets S and T in algorithm</span>
+<span style="color:blue">int slack[N];</span>            <span style="color:green">//as in the algorithm description</span>
+<span style="color:blue">int slackx[N];</span>           <span style="color:green">//slackx[y] such a vertex, that</span>
+                         <span style="color:green">// l(slackx[y]) + l(y) - w(slackx[y],y) = slack[y]</span>
+<span style="color:blue">int prev[N];</span>             <span style="color:green">//array for memorizing alternating paths</span>
+</pre>
+<p><em>Step 0:</em></p>
+<p>It's easy to see that next initial labeling will be feasible: </p>
+<p align="center"><img src="./hungarianAlgorithm_files/image077.gif" alt=""></p>
+<p>And as an initial matching we'll use an empty one. So we'll get equality subgraph as on Picture 2. The code for initializing is quite easy, but I'll paste it for completeness:</p>
+<p align="center"><img src="./hungarianAlgorithm_files/image075.jpg" alt=""></p>
+<pre><span style="color:blue">void</span> init_labels()
+{
+    memset(lx, 0, <span style="color:blue">sizeof</span>(lx));
+    memset(ly, 0, <span style="color:blue">sizeof</span>(ly));
+    <span style="color:blue">for</span> (<span style="color:blue">int</span> x = 0; x &lt; n; x++)
+        <span style="color:blue">for</span> (<span style="color:blue">int</span> y = 0; y &lt; n; y++)
+            lx[x] = max(lx[x], cost[x][y]);
+}
+</pre>
+<p>The next three steps will be implemented in one function, which will correspond to a single iteration of the algorithm. When the algorithm halts, we will have a perfect matching, that's why we'll have n iterations of the algorithm and therefore <strong>(n+1)</strong> calls of the function.</p>
+<p><em>Step 1</em></p>
+<p>According to this step we need to check whether the matching is already perfect, if the answer is positive we just stop algorithm, otherwise we need to clear <strong><em>S</em></strong>, <strong><em>T</em></strong> and alternating tree and then find some exposed vertex from the <strong><em>X</em></strong> part. Also, in this step we are initializing a <em>slack</em> array, I'll describe it on the next step.</p>
+<pre><span style="color:blue">void</span> augment()                         <span style="color:green">//main function of the algorithm</span>
+{
+    <span style="color:blue">if</span> (max_match == n) <span style="color:blue">return;</span>        <span style="color:green">//check wether matching is already perfect</span>
+    <span style="color:blue">int</span> x, y, root;                    <span style="color:green">//just counters and root vertex</span>
+    <span style="color:blue">int</span> q[N], wr = 0, rd = 0;          <span style="color:green">//q - queue for bfs, wr,rd - write and read</span>
+                                       <span style="color:green">//pos in queue</span>
+    memset(S, <span style="color:blue">false</span>, <span style="color:blue">sizeof</span>(S));       <span style="color:green">//init set S</span>
+    memset(T, <span style="color:blue">false</span>, <span style="color:blue">sizeof</span>(T));       <span style="color:green">//init set T</span>
+    memset(prev, -1, <span style="color:blue">sizeof</span>(prev));    <span style="color:green">//init set prev - for the alternating tree</span>
+    <span style="color:blue">for</span> (x = 0; x &lt; n; x++)            <span style="color:green">//finding root of the tree</span>
+        <span style="color:blue">if</span> (xy[x] == -1)
+        {
+            q[wr++] = root = x;
+            prev[x] = -2;
+            S[x] = <span style="color:blue">true</span>;
+            <span style="color:blue">break</span>;
+        }
+
+    <span style="color:blue">for</span> (y = 0; y &lt; n; y++)            <span style="color:green">//initializing slack array</span>
+    {
+        slack[y] = lx[root] + ly[y] - cost[root][y];
+        slackx[y] = root;
+    }
+</pre>
+<p><em>Step 2</em></p>
+<p>On this step, the alternating tree is completely built for the current labeling, but the augmenting path hasn't been found yet, so we need to improve the labeling. It will add new edges to the equality subgraph, giving an opportunity to expand the alternating tree. This is the main idea of the method; <em>we are improving the labeling until we find an augmenting path in the equality graph corresponding to the current labeling</em>. Let's turn back to step 2. There we just change labels using formulas <strong>(1)</strong> and <strong>(2)</strong>, but using them in an obvious manner will cause the algorithm to have <strong>O(n<sup>4</sup>)</strong> time. So, in order to avoid this we use a <em>slack</em> array initialized in <strong>O(n)</strong> time because we only augment the array created in step 1:<br>
+<img src="./hungarianAlgorithm_files/image079.gif" alt=""><br>Then we just need O(n) to calculate a delta &#916; (see (1)):<br><img src="./hungarianAlgorithm_files/image081.gif" alt=""></p>
+<p><em>Updating slack:</em><br>
+<strong>1)</strong> On <strong>step 3</strong>, when vertex <strong><em>x</em></strong> moves from <strong><em>X\S</em></strong> to <strong><em>S</em></strong>, this takes <strong>O(n)</strong>.<br>
+<strong>2)</strong> On <strong>step 2</strong>, when updating labeling, it's also takes <strong>O(n)</strong>, because:<br><img src="./hungarianAlgorithm_files/image081.gif" alt=""><br>So we get <strong>O(n)</strong> instead of <strong>O(n<sup>2</sup>)</strong> as in the straightforward approach.<br>Here's code for the label updating function:</p>
+<pre><span style="color:blue">void</span> update_labels()
+{
+    <span style="color:blue">int</span> x, y, delta = INF;             <span style="color:green">//init delta as infinity</span>
+    <span style="color:blue">for</span> (y = 0; y &lt; n; y++)            <span style="color:green">//calculate delta using slack</span>
+        <span style="color:blue">if</span> (!T[y])
+            delta = min(delta, slack[y]);
+    <span style="color:blue">for</span> (x = 0; x &lt; n; x++)            <span style="color:green">//update X labels</span>
+        <span style="color:blue">if</span> (S[x]) lx[x] -= delta;
+    <span style="color:blue">for</span> (y = 0; y &lt; n; y++)            <span style="color:green">//update Y labels</span>
+        <span style="color:blue">if</span> (T[y]) ly[y] += delta;
+    <span style="color:blue">for</span> (y = 0; y &lt; n; y++)            <span style="color:green">//update slack array</span>
+        <span style="color:blue">if</span> (!T[y])
+            slack[y] -= delta;
+}
+</pre>
+<p><em>Step 3</em></p>
+<p>In step 3, first we build an alternating tree starting from some exposed vertex, chosen at the beginning of each iteration. We will do this using breadth-first search algorithm. If on some step we meet an exposed vertex from the <strong><em>Y</em></strong> part, then finally we can augment our path, finishing up with a call to the main function of the algorithm. So the code will be the following:</p>
+<p><strong>1)</strong> Here's the function that adds new edges to the alternating tree:</p>
+<pre><span style="color:blue">void</span> add_to_tree(<span style="color:blue">int</span> x, <span style="color:blue">int</span> prevx) 
+<span style="color:green">//x - current vertex,prevx - vertex from X before x in the alternating path,
+//so we add edges (prevx, xy[x]), (xy[x], x)</span>
+{
+    S[x] = <span style="color:blue">true</span>;                    <span style="color:green">//add x to S</span>
+    prev[x] = prevx;                <span style="color:green">//we need this when augmenting</span>
+    <span style="color:blue">for</span> (<span style="color:blue">int</span> y = 0; y &lt; n; y++)    <span style="color:green">//update slacks, because we add new vertex to S</span>
+        <span style="color:blue">if</span> (lx[x] + ly[y] - cost[x][y] &lt; slack[y])
+        {
+            slack[y] = lx[x] + ly[y] - cost[x][y];
+            slackx[y] = x;
+        }
+}
+</pre>
+<p><strong>3)</strong> And now, the end of the <strong><em>augment()</em></strong> function:</p>
+<pre><span style="color:green">//second part of augment() function</span>
+    <span style="color:blue">while</span> (<span style="color:blue">true</span>)                                                        <span style="color:green">//main cycle</span>
+    {
+        <span style="color:blue">while</span> (rd &lt; wr)                                                 <span style="color:green">//building tree with bfs cycle</span>
+        {
+            x = q[rd++];                                                <span style="color:green">//current vertex from X part</span>
+            <span style="color:blue">for</span> (y = 0; y &lt; n; y++)                                     <span style="color:green">//iterate through all edges in equality graph</span>
+                <span style="color:blue">if</span> (cost[x][y] == lx[x] + ly[y] &amp;&amp;  !T[y])
+                {
+                    <span style="color:blue">if</span> (yx[y] == -1) <span style="color:blue">break</span>;                             <span style="color:green">//an exposed vertex in Y found, so
+                                                                        //augmenting path exists!</span>
+                    T[y] = <span style="color:blue">true</span>;                                        <span style="color:green">//else just add y to T,</span>
+                    q[wr++] = yx[y];                                    <span style="color:green">//add vertex yx[y], which is matched
+                                                                        //with y, to the queue</span>
+                    add_to_tree(yx[y], x);                              <span style="color:green">//add edges (x,y) and (y,yx[y]) to the tree</span>
+                }
+            <span style="color:blue">if</span> (y &lt; n) <span style="color:blue">break</span>;                                           <span style="color:green">//augmenting path found!</span>
+        }
+        <span style="color:blue">if</span> (y &lt; n) <span style="color:blue">break</span>;                                               <span style="color:green">//augmenting path found!</span>
+
+        update_labels();                                                <span style="color:green">//augmenting path not found, so improve labeling</span>
+        wr = rd = 0;                
+        <span style="color:blue">for</span> (y = 0; y &lt; n; y++)        
+        <span style="color:green">//in this cycle we add edges that were added to the equality graph as a
+        //result of improving the labeling, we add edge (slackx[y], y) to the tree if
+        //and only if !T[y] &amp;&amp;  slack[y] == 0, also with this edge we add another one
+        //(y, yx[y]) or augment the matching, if y was exposed</span>
+            <span style="color:blue">if</span> (!T[y] &amp;&amp;  slack[y] == 0)
+            {
+                <span style="color:blue">if</span> (yx[y] == -1)                                        <span style="color:green">//exposed vertex in Y found - augmenting path exists!</span>
+                {
+                    x = slackx[y];
+                    <span style="color:blue">break</span>;
+                }
+                <span style="color:blue">else</span>
+                {
+                    T[y] = <span style="color:blue">true</span>;                                        <span style="color:green">//else just add y to T,</span>
+                    <span style="color:blue">if</span> (!S[yx[y]])    
+                    {
+                        q[wr++] = yx[y];                                <span style="color:green">//add vertex yx[y], which is matched with
+                                                                        //y, to the queue</span>
+                        add_to_tree(yx[y], slackx[y]);                  <span style="color:green">//and add edges (x,y) and (y,
+                                                                        //yx[y]) to the tree</span>
+                    }
+                }
+            }
+        <span style="color:blue">if</span> (y &lt; n) <span style="color:blue">break</span>;                                               <span style="color:green">//augmenting path found!</span>
+    }
+
+    <span style="color:blue">if</span> (y &lt; n)                                                          <span style="color:green">//we found augmenting path!</span>
+    {
+        max_match++;                                                    <span style="color:green">//increment matching
+        //in this cycle we inverse edges along augmenting path</span>
+        <span style="color:blue">for</span> (<span style="color:blue">int</span> cx = x, cy = y, ty; cx != -2; cx = prev[cx], cy = ty)
+        {
+            ty = xy[cx];
+            yx[cy] = cx;
+            xy[cx] = cy;
+        }
+        augment();                                                      <span style="color:green">//recall function, go to step 1 of the algorithm</span>
+    }
+}<span style="color:green">//end of augment() function</span>
+</pre>
+<p>The only thing in code that hasn't been explained yet is the procedure that goes after labels are updated. Say we've updated labels and now we need to complete our alternating tree; to do this and to keep algorithm in <strong>O(n<sup>3</sup>)</strong> time (it's only possible if we use each edge no more than one time per iteration) we need to know what edges should be added without iterating through all of them, and the answer for this question is to use BFS to add edges only from those vertices in <strong>Y</strong>, that are not in <strong>T</strong> and for which <strong>slack[y] = 0</strong> (it's easy to prove that in such way we'll add all edges and keep algorithm to be <strong>O(n<sup>3</sup>)</strong>).  See picture below for explanation:</p>
+<p align="center"><img src="./hungarianAlgorithm_files/image085.jpg" alt=""></p>
+<p>At last, here's the function that implements Hungarian algorithm:</p>
+<pre><span style="color:blue">int</span> hungarian()
+{
+    <span style="color:blue">int</span> ret = 0;                      <span style="color:green">//weight of the optimal matching</span>
+    max_match = 0;                    <span style="color:green">//number of vertices in current matching</span>
+    memset(xy, -1, <span style="color:blue">sizeof</span>(xy));    
+    memset(yx, -1, <span style="color:blue">sizeof</span>(yx));
+    init_labels();                    <span style="color:green">//step 0</span>
+    augment();                        <span style="color:green">//steps 1-3</span>
+    <span style="color:blue">for</span> (<span style="color:blue">int</span> x = 0; x &lt; n; x++)       <span style="color:green">//forming answer there</span>
+        ret += cost[x][xy[x]];
+    <span style="color:blue">return</span> ret;
+}
+</pre>
+<p>To see all this in practice let's complete the example started on step 0.</p>
+<table align="center" class="stat" style="width: 100%;" cellpadding="0" cellspacing="0">
+    
+    <tbody><tr class="light">
+        <td rowspan="2" align="center"><img src="./hungarianAlgorithm_files/image087.jpg" alt=""></td>
+        <td align="center">Build<br>alternating tree</td>
+        <td rowspan="2" align="center"><img src="./hungarianAlgorithm_files/image089.jpg" alt=""></td>
+        <td align="center">Augmenting<br>path found</td>
+        <td rowspan="2" align="center"><img src="./hungarianAlgorithm_files/image091.jpg" alt=""></td>
+        <td align="center">Build<br>alternating tree</td>
+    </tr>
+    <tr class="light">
+        <td align="center" style="font-size:20px;">&#8594;</td>
+        <td align="center" style="font-size:20px;">&#8594;</td>
+        <td align="center" style="font-size:20px;">&#8594;</td>
+    </tr>
+    
+    <tr class="dark">
+        <td rowspan="2" align="center"><img src="./hungarianAlgorithm_files/image093.jpg" alt=""></td>
+        <td align="center">Update labels<br>(&#916;=1)</td>
+        <td rowspan="2" align="center"><img src="./hungarianAlgorithm_files/image095.jpg" alt=""></td>
+        <td align="center">Build<br>alternating tree</td>
+        <td rowspan="2" align="center"><img src="./hungarianAlgorithm_files/image097.jpg" alt=""></td>
+        <td align="center">Update labels<br>(&#916;=1)</td>
+    </tr>
+    <tr class="dark">
+        <td align="center" style="font-size:20px;">&#8594;</td>
+        <td align="center" style="font-size:20px;">&#8594;</td>
+        <td align="center" style="font-size:20px;">&#8594;</td>
+    </tr>
+    
+    <tr class="light">
+        <td rowspan="2" align="center"><img src="./hungarianAlgorithm_files/image099.jpg" alt=""></td>
+        <td align="center">Build<br>alternating tree</td>
+        <td rowspan="2" align="center"><img src="./hungarianAlgorithm_files/image101.jpg" alt=""></td>
+        <td align="center">Augmenting<br>path found</td>
+        <td rowspan="2" align="center"><img src="./hungarianAlgorithm_files/image103.jpg" alt=""></td>
+        <td align="center">Build<br>alternating tree</td>
+    </tr>
+    <tr class="light">
+        <td align="center" style="font-size:20px;">&#8594;</td>
+        <td align="center" style="font-size:20px;">&#8594;</td>
+        <td align="center" style="font-size:20px;">&#8594;</td>
+    </tr>
+    
+    <tr class="dark">
+        <td rowspan="2" align="center"><img src="./hungarianAlgorithm_files/image105.jpg" alt=""></td>
+        <td align="center">Update labels<br>(&#916;=2)</td>
+        <td rowspan="2" align="center"><img src="./hungarianAlgorithm_files/image107.jpg" alt=""></td>
+        <td align="center">Build<br>alternating tree</td>
+        <td rowspan="2" align="center"><img src="./hungarianAlgorithm_files/image109.jpg" alt=""></td>
+        <td align="center">Update labels<br>(&#916;=1)</td>
+    </tr>
+    <tr class="dark">
+        <td align="center" style="font-size:20px;">&#8594;</td>
+        <td align="center" style="font-size:20px;">&#8594;</td>
+        <td align="center" style="font-size:20px;">&#8594;</td>
+    </tr>
+    
+    <tr class="light">
+        <td rowspan="2" align="center"><img src="./hungarianAlgorithm_files/image111.jpg" alt=""></td>
+        <td align="center">Build<br>alternating tree</td>
+        <td rowspan="2" align="center"><img src="./hungarianAlgorithm_files/image113.jpg" alt=""></td>
+        <td align="center">Augmenting<br>path found</td>
+        <td rowspan="2" align="center"><img src="./hungarianAlgorithm_files/image115.jpg" alt=""></td>
+        <td rowspan="2" align="center">Optimal matching found</td>
+    </tr>
+    <tr class="light">
+        <td align="center" style="font-size:20px;">&#8594;</td>
+        <td align="center" style="font-size:20px;">&#8594;</td>
+    </tr>
+</tbody></table>
+<p>Finally, let's talk about the complexity of this algorithm. On each iteration we increment matching so we have <strong>n</strong> iterations. On each iterations each edge of the graph is used no more than one time when finding augmenting path, so we've got <strong>O(n<sup>2</sup>)</strong> operations. Concerning labeling we update <em>slack</em> array each time when we insert vertex from <strong><em>X</em></strong> into <strong><em>S</em></strong>, so this happens no more than n times per iteration, updating <em>slack</em> takes <strong>O(n)</strong> operations, so again we've got <strong>O(n<sup>2</sup>)</strong>. Updating labels happens no more than n time per iterations (because we add at least one vertex from <strong><em>Y</em></strong> to <strong><em>T</em></strong> per iteration), it takes <strong>O(n)</strong> operations - again <strong>O(n<sup>2</sup>)</strong>. So total complexity of this implementation is <strong>O(n<sup>3</sup>)</strong>.</p>
+
+
+<h3>Some practice</h3>
+<p>For practice let's consider the medium <a href="http://community.topcoder.com/stat?c=problem_statement&pm=7726&rd=10787">problem</a> from SRM 371 (div. 1). It's obvious we need to find the maximum-weighted matching in graph, where the <strong><em>X</em></strong> part is our players, the <strong><em>Y</em></strong> part is the opposing club players, and the weight of each edge is:<br>
+<img src="./hungarianAlgorithm_files/image117.gif" alt=""></p>
+<p>Though this problem has a much simpler solution, this one is obvious and fast coding can bring more points.</p>
+<p>Try this <a href="http://community.topcoder.com/stat?c=problem_statement&pm=8143&rd=10789">one</a> for more practice. I hope this article has increased the wealth of your knowledge in classical algorithms… Good luck and have fun!</p>
+
+
+<h3>References</h3>
+<ol>
+    <li>Mike Dawes "<a target="_blank" href="http://www.topcoder.com/tc?module=LinkTracking&link=http://www.math.uwo.ca/~mdawes/courses/344/kuhn-munkres.pdf&refer=hungarianAlgorithm">The Optimal Assignment Problem</a>"</li>
+    <li>Mordecaj J. Golin "<a target="_blank" href="http://www.topcoder.com/tc?module=LinkTracking&link=http://www.cse.ust.hk/~golin/COMP572/Notes/Matching.pdf&refer=hungarianAlgorithm">Bipartite Matching and the Hungarian Method</a>"</li>
+    <li>Samir Khuller "<a target="_blank" href="http://www.topcoder.com/tc?module=LinkTracking&link=https://drum.umd.edu/dspace/bitstream/1903/592/4/CS-TR-3113.pdf&refer=hungarianAlgorithm">Design and Analysis of Algorithms: Course Notes</a>"</li>
+    <li>Lawler E.L. "<a target="_blank" href="http://www.topcoder.com/tc?module=LinkTracking&link=http://books.google.com/books?id=m4MvtFenVjEC%26hl=uk&refer=hungarianAlgorithm">Combinatorial Optimization: Networks and Matroids</a>"</li>
+</ol>
+
+
+
+
+
+<p>&nbsp;</p>
+        </td>
+<!-- Center Column Ends -->
+
+<!-- Right Column Begins -->
+         <td width="170" id="onRight" class="invisible">
+            
+
+
+
+<script type="text/javascript" language="javascript">
+
+</script>
+
+
+
+<div class="rightColContent">
+    <br><br>
+</div>
+
+
+         </td>
+<!-- Right Column Ends -->
+
+<!-- Gutter -->
+         <td width="10"><img src="./hungarianAlgorithm_files/clear.gif" width="10" height="1" border="0"></td>
+<!-- Gutter Ends -->
+    </tr>
+</tbody></table>
+
+<div id="onBottom" class="invisible">
+
+
+
+
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody>
+    <tr>
+        <td width="100%" class="footer">
+            <a href="http://www.topcoder.com/" class="footerLinks">Home</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href="http://www.topcoder.com/aboutus/" class="footerLinks">About TopCoder</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href="http://www.topcoder.com/aboutus/news/" class="footerLinks">Press Room</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href="http://www.topcoder.com/help/template-help/" class="footerLinks">Contact Us</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href="http://www.topcoder.com/aboutus/careers/" class="footerLinks">Careers</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href="http://www.topcoder.com/tc?module=Static&d1=about&d2=privacy" class="footerLinks">Privacy</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href="http://www.topcoder.com/tc?module=Static&d1=about&d2=terms" class="footerLinks">Terms</a>
+            <br>
+            <a href="http://www.topcoder.com/tc" class="footerLinks">Competitions</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href="https://www.topcoder.com/direct/" class="footerLinks">Cockpit</a>        </td>
+    </tr>
+    <tr>
+      <td width="100%" class="copyright">Copyright TopCoder, Inc. 2001-<script type="text/javascript">d=new Date();document.write(d.getFullYear());</script>2011</td></tr>
+</tbody>
+</table>
+
+</div>
+
+
+
+
+</body></html>

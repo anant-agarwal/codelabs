@@ -1,0 +1,1485 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- saved from url=(0074)http://community.topcoder.com/tc?module=Static&d1=tutorials&d2=complexity2 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Algorithm Tutorials</title>
+
+
+<script type="text/javascript" async="" src="./complexity2_files/ga.js"></script><script language="JavaScript" type="text/javascript" src="./complexity2_files/tcscript.js"></script><link type="image/x-icon" rel="shortcut icon" href="http://community.topcoder.com/i/favicon.ico">
+
+
+
+
+
+
+<link type="text/css" rel="stylesheet" href="./complexity2_files/style.css">
+<link type="text/css" rel="stylesheet" href="./complexity2_files/coders.css">
+<link type="text/css" rel="stylesheet" href="./complexity2_files/tcStyles20080219.css">
+<link type="text/css" rel="stylesheet" href="./complexity2_files/jobsRemix.css">
+
+
+<script language="JavaScript" src="./complexity2_files/print.js"></script>
+<style type="text/css">
+.code
+{
+   width: 550;
+   padding: 10px;
+   margin: 20px;
+   color: #333;
+   font-size: 11px;
+   font-weight: normal;
+   line-height: 14px;
+   background-color: #EEEEEE;
+   border: 1px solid #999;
+}
+.math
+{
+   font-family: times, times new roman, serif;
+   font-weight: normal;
+   font-style: italic;
+   font-size: 14px;
+}
+</style>
+</head>
+<body>
+<div id="onTop" class="invisible">
+    
+
+
+
+
+
+
+<script type="text/javascript" src="./complexity2_files/popup.js"></script>
+
+<div id="shortcutBar">
+    <div class="icon"><a href="http://www.topcoder.com/tc"><img src="./complexity2_files/scHome.png" alt="" onmouseover="postPopUpText(&#39;globalPopupText&#39;,&#39;Home&#39;); popUp(this,&#39;globalPopup&#39;);" onmouseout="popHide()"></a></div>
+    <div class="icon"><a href="javascript:arena();"><img src="./complexity2_files/scAlgo.png" alt="" onmouseover="postPopUpText(&#39;globalPopupText&#39;,&#39;Algorithm Competitions&#39;); popUp(this,&#39;globalPopup&#39;);" onmouseout="popHide()"></a></div>
+    <div class="icon"><a href="http://www.topcoder.com/tc?module=ActiveContests&pt=23"><img src="./complexity2_files/scConceptualization.png" alt="" onmouseover="postPopUpText(&#39;globalPopupText&#39;,&#39;Software Conceptualization Competitions&#39;); popUp(this,&#39;globalPopup&#39;);" onmouseout="popHide()"></a></div>
+    <div class="icon"><a href="http://www.topcoder.com/tc?module=ActiveContests&pt=6"><img src="./complexity2_files/scSpecification.png" alt="" onmouseover="postPopUpText(&#39;globalPopupText&#39;,&#39;Software Specification Competitions&#39;); popUp(this,&#39;globalPopup&#39;);" onmouseout="popHide()"></a></div>
+    <div class="icon"><a href="http://www.topcoder.com/tc?module=ActiveContests&pt=7"><img src="./complexity2_files/scArchitecture.png" alt="" onmouseover="postPopUpText(&#39;globalPopupText&#39;,&#39;Software Architecture Competitions&#39;); popUp(this,&#39;globalPopup&#39;);" onmouseout="popHide()"></a></div>
+    <div class="icon"><a href="http://www.topcoder.com/tc?module=ViewActiveContests&ph=112"><img src="./complexity2_files/scDesign.png" alt="" onmouseover="postPopUpText(&#39;globalPopupText&#39;,&#39;Component Design Competitions&#39;); popUp(this,&#39;globalPopup&#39;);" onmouseout="popHide()"></a></div>
+    <div class="icon"><a href="http://www.topcoder.com/tc?module=ViewActiveContests&ph=113"><img src="./complexity2_files/scDevelopment.png" alt="" onmouseover="postPopUpText(&#39;globalPopupText&#39;,&#39;Component Development Competitions&#39;); popUp(this,&#39;globalPopup&#39;);" onmouseout="popHide()"></a></div>
+
+    <div class="icon"><a href="http://www.topcoder.com/tc?module=ViewAssemblyActiveContests"><img src="./complexity2_files/scAssembly.png" alt="" onmouseover="postPopUpText(&#39;globalPopupText&#39;,&#39;Software Assembly Competitions&#39;); popUp(this,&#39;globalPopup&#39;);" onmouseout="popHide()"></a></div>
+    <div class="icon"><a href="http://www.topcoder.com/tc?module=ActiveContests&pt=13"><img src="./complexity2_files/scTesting.png" alt="" onmouseover="postPopUpText(&#39;globalPopupText&#39;,&#39;Testing Competitions&#39;); popUp(this,&#39;globalPopup&#39;);" onmouseout="popHide()"></a></div>
+    <div class="icon"><a href="http://www.topcoder.com/tc?module=ActiveContests&pt=35"><img src="./complexity2_files/scContentCreation.gif" alt="" onmouseover="postPopUpText(&#39;globalPopupText&#39;,&#39;Content Creation Competitions&#39;); popUp(this,&#39;globalPopup&#39;);" onmouseout="popHide()"></a></div>
+    <div class="icon"><a href="javascript:arena();"><img src="./complexity2_files/scTCHS.png" alt="" onmouseover="postPopUpText(&#39;globalPopupText&#39;,&#39;High School Competitions&#39;); popUp(this,&#39;globalPopup&#39;);" onmouseout="popHide()"></a></div>
+    <div class="icon"><a href="http://www.topcoder.com/longcontest/?module=ViewActiveContests"><img src="./complexity2_files/scMarathon.png" alt="" onmouseover="postPopUpText(&#39;globalPopupText&#39;,&#39;Marathon Matches&#39;); popUp(this,&#39;globalPopup&#39;);" onmouseout="popHide()"></a></div>
+    <div class="icon"><a href="http://studio.topcoder.com/?module=ViewActiveContests"><img src="./complexity2_files/scStudio.png" alt="" onmouseover="postPopUpText(&#39;globalPopupText&#39;,&#39;TopCoder Studio Competitions&#39;); popUp(this,&#39;globalPopup&#39;);" onmouseout="popHide()"></a></div>
+</div>
+
+<div id="globalPopup" class="popUp"><div id="globalPopupText"></div></div>
+
+
+<div style="position: absolute; right:0px; top:31px;"><a href="http://www.topcoder.com/reg/"><img src="./complexity2_files/register_now.gif" alt="Register Now" style="display:block;"></a></div>
+
+
+<div align="center" style="margin: 0px 290px 0px 280px;">
+   <div id="outerLogo">
+      <div id="innerLogo">
+      <a href="http://www.topcoder.com/"><img src="./complexity2_files/topcoder.gif" alt="TopCoder" style="display: block;"></a>
+      </div>
+   </div>
+</div>
+
+<div class="memberCountBox">
+Member Count: 316,431 - 
+
+
+October 24, 2011
+
+&nbsp;<a class="gMetal" href="Javascript:tcTime()">[Get Time]</a>
+</div>
+
+<div class="topBar">
+    <div style="float: right; margin: 5px 0px 0px 0px;">
+        
+                <a class="gMetal" href="http://www.topcoder.com/tc?&module=Login">Login</a>
+            
+        
+    </div>
+</div>
+</div>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+    <tbody><tr valign="top">
+        <!-- Left Column Begins-->
+        <td width="180" id="onLeft" class="invisible">
+
+
+
+
+
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+<script language="JavaScript" type="text/javascript" src="./complexity2_files/arena.js"></script>
+
+
+<script language="JavaScript" type="text/javascript">
+<!--
+function toggleMenu(menuTitle,menuID){
+   var menu = document.getElementById(menuID);
+   if(menu.style.display == 'block') menu.className = 'CLOSED';
+   else if(menu.className == 'OPEN' && menu.style.display != 'none') menu.className = 'CLOSED';
+   else {
+      menu.className = 'OPEN';
+   }
+   if(menuTitle.blur)menuTitle.blur();
+   if(menuTitle.className == 'exp') menuTitle.className = 'exp_ed';
+   else menuTitle.className = 'exp';
+   return;
+}
+function flipMenu(myMenuName){
+   var menuName = document.getElementById(myMenuName);
+   menuName.className = 'exp_ed';
+}
+
+// -->
+</script>
+
+<div style="padding: 0px;"><img src="./complexity2_files/leftnav_top.gif" alt=""></div>
+<div id="navbar">
+    
+<ul>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_competitions&#39;)">Competitions</a>
+<ul id="m_competitions">
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_competitions_overview&#39;)">Overview</a>
+<ul id="m_competitions_overview">
+<li><a href="http://apps.topcoder.com/wiki/x/MQD9Ag">Reliability</a></li>
+<li><a href="http://apps.topcoder.com/wiki/x/lYE_/">Ratings</a></li>
+<li><a href="http://apps.topcoder.com/wiki/x/aoE_/">How to Get Paid</a></li>
+<li><a href="http://apps.topcoder.com/wiki/x/2gRmAw">Administrative Overview </a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_copilot_opportunities&#39;)">Copilot Opportunities</a>
+<ul id="m_copilot_opportunities">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Copilot+Overview">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_copilot_support&#39;)">Track Information</a>
+<ul id="m_copilot_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Copilot+Opportunities">How to Compete</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Copilot+Opportunities">Documentation</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Copilot+Opportunities">Tutorial</a></li>
+</ul></li>
+<li><a href="http://www.topcoder.com/tc?module=ActiveContests&pt=29">Active Contests</a></li>
+<li><a href="http://www.topcoder.com/tc?module=CompList&ph=140">Past Contests</a></li>
+<li><a href="http://www.topcoder.com/tc?module=ViewCopilotPool&size=20&view=0&sort=12">Copilot Pool</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;competition_design&#39;)">Design</a>
+<ul id="competition_design">
+<li><a href="http://studio.topcoder.com/">Studio</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_conceptualization_competitions&#39;)">Conceptualization</a>
+<ul id="m_conceptualization_competitions">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/TopCoder+Conceptualization+Contests">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_conceptualization_support&#39;)">Track Information</a>
+<ul id="m_conceptualization_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Conceptualization+Competitions">How to Compete</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Conceptualization+Documentation">Documentation</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Conceptualization+Submission+Instructions">Tutorial</a></li>
+</ul></li>
+<li><a href="http://community.topcoder.com/tc?module=ActiveContests&pt=23">Active Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ContestStatus&pt=23">Contest Status</a></li>
+<li><a href="http://community.topcoder.com/tc?module=CompList&ph=134">Past Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ViewReviewProjects&pt=23">Review Opportunities</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ReviewBoard&pt=23">Meet the Review Board</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_specification_competitions&#39;)">Specification</a>
+<ul id="m_specification_competitions">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/TopCoder+Specification+Contests">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_specification_support&#39;)">Track Information</a>
+<ul id="m_specification_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Specification+Competitions">How to Compete</a></li>
+</ul></li>
+<li><a href="http://community.topcoder.com/tc?module=ActiveContests&pt=6">Active Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ContestStatus&pt=6">Contest Status</a></li>
+<li><a href="http://community.topcoder.com/tc?module=CompList&ph=117">Past Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ViewReviewProjects&pt=6">Review Opportunities</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ReviewBoard&pt=6">Meet the Review Board</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_architecture_competitions&#39;)">Architecture</a>
+<ul id="m_architecture_competitions">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Architecture+Overview">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_architecture_support&#39;)">Track Information</a>
+<ul id="m_architecture_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Architecture+Competitions">How to Compete</a></li>
+</ul></li>
+<li><a href="http://community.topcoder.com/tc?module=ActiveContests&pt=7">Active Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ContestStatus&pt=7">Contest Status</a></li>
+<li><a href="http://community.topcoder.com/tc?module=CompList&ph=118">Past Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ViewReviewProjects&pt=7">Review Opportunities</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ReviewBoard&pt=7">Meet the Review Board</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_des_competitions&#39;)">Component Design</a>
+<ul id="m_des_competitions">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Component+Design+Overview">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_des_support&#39;)">Track Information</a>
+<ul id="m_des_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Component+Design+Competitions">How to Compete</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Component+Design+Documentation">Documentation</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ColorChange&ph=112">Recent Color Changes</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Component+Design+Data+Feeds">Data Feeds</a></li>
+</ul></li>
+<li><a href="http://community.topcoder.com/tc?module=ViewActiveContests&ph=112">Active Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ContestStatus&pt=1">Contest Status</a></li>
+<li><a href="http://community.topcoder.com/tc?module=CompList&ph=112">Past Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ViewReviewProjects&pt=1">Review Opportunities</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ReviewBoard&pt=1">Meet the Review Board</a></li>
+</ul></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;competition_dev&#39;)">Development</a>
+<ul id="competition_dev">
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_dev_competitions&#39;)">Component Development</a>
+<ul id="m_dev_competitions">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Component+Development+Competitions">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_dev_support&#39;)">Track Information</a>
+<ul id="m_dev_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Component+Development+Competitions">How to Compete</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Component+Development+Documentation">Documentation</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ColorChange&ph=113">Recent Color Changes</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Component+Development+Data+Feeds">Data Feeds</a></li>
+</ul></li>
+<li><a href="http://community.topcoder.com/tc?module=ViewActiveContests&ph=113">Active Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ContestStatus&pt=2">Contest Status</a></li>
+<li><a href="http://community.topcoder.com/tc?module=CompList&ph=113">Past Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ViewReviewProjects&pt=2">Review Opportunities</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ReviewBoard&pt=2">Meet the Review Board</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_assembly_competitions&#39;)">Assembly</a>
+<ul id="m_assembly_competitions">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Assembly">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_assembly_support&#39;)">Track Information</a>
+<ul id="m_assembly_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Assembly+Competitions">How to Compete</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Assembly+Competition+Tutorial">Tutorial</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Assembly+Competition+Documentation">Documentation</a></li>
+</ul></li>
+<li><a href="http://community.topcoder.com/tc?module=ViewAssemblyActiveContests">Active Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ContestStatus&pt=14">Contest Status</a></li>
+<li><a href="http://community.topcoder.com/tc?module=CompList&ph=125">Past Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ViewReviewProjects&pt=14">Review Opportunities</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ReviewBoard&pt=14">Meet the Review Board</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_test_suites_competitions&#39;)">Test Suites</a>
+<ul id="m_test_suites_competitions">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Test+Scenarios+and+Scripts">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_test_suites_support&#39;)">Track Information</a>
+<ul id="m_test_suites_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Testing+Competitions">How to Compete</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Testing+Competition+Tutorial">Tutorial</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Testing+Competition+Documentation">Documentation</a></li>
+</ul></li>
+<li><a href="http://community.topcoder.com/tc?module=ActiveContests&pt=13">Active Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ContestStatus&pt=13">Contest Status</a></li>
+<li><a href="http://community.topcoder.com/tc?module=CompList&pt=13">Past Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ViewReviewProjects&pt=13">Review Opportunities</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ReviewBoard&pt=13">Meet the Review Board</a></li>
+</ul></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;competition_ui_dev&#39;)">UI Development</a>
+<ul id="competition_ui_dev">
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_ui_prototype_competitions&#39;)">UI Prototype</a>
+<ul id="m_ui_prototype_competitions">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/UI+Prototype+Competitions">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_ui_prototype_support&#39;)">Track Information</a>
+<ul id="m_ui_prototype_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+UI+Prototype+Competitions">How to Compete</a></li>
+</ul></li>
+<li><a href="http://community.topcoder.com/tc?module=ActiveContests&pt=19">Active Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ContestStatus&pt=19">Contest Status</a></li>
+<li><a href="http://community.topcoder.com/tc?module=CompList&pt=19">Past Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ViewReviewProjects&pt=19">Review Opportunities</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ReviewBoard&pt=19">Meet the Review Board</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_ria_build_competitions&#39;)">RIA Build</a>
+<ul id="m_ria_build_competitions">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/RIA+Build+Competitions">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_ria_build_support&#39;)">Track Information</a>
+<ul id="m_ria_build_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+RIA+Builds">How to Compete</a></li>
+</ul></li>
+<li><a href="http://community.topcoder.com/tc?module=ActiveContests&pt=24">Active Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ContestStatus&pt=24">Contest Status</a></li>
+<li><a href="http://community.topcoder.com/tc?module=CompList&pt=24">Past Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ViewReviewProjects&pt=24">Review Opportunities</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ReviewBoard&pt=24">Meet the Review Board</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_content_creation_competitions&#39;)">Content Creation</a>
+<ul id="m_content_creation_competitions">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Content+Contests+Overview">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_content_creation_support&#39;)">Track Information</a>
+<ul id="m_content_creation_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Content+Creation+Competitions">How to Compete</a></li>
+</ul></li>
+<li><a href="http://community.topcoder.com/tc?module=ActiveContests&pt=35">Active Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ContestStatus&pt=35">Contest Status</a></li>
+<li><a href="http://community.topcoder.com/tc?module=CompList&pt=35">Past Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ViewReviewProjects&pt=35">Review Opportunities</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ReviewBoard&pt=35">Meet the Review Board</a></li>
+</ul></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;competition_qa&#39;)">QA and Maintenance</a>
+<ul id="competition_qa">
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_test_scenarios_competitions&#39;)">Test Scenarios</a>
+<ul id="m_test_scenarios_competitions">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Test+Scenarios+and+Scripts">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_test_scenarios_support&#39;)">Track Information</a>
+<ul id="m_test_scenarios_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Testing+Competitions">How to Compete</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Testing+Competition+Tutorial">Tutorial</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Testing+Competition+Documentation">Documentation</a></li>
+</ul></li>
+<li><a href="http://community.topcoder.com/tc?module=ActiveContests&pt=26">Active Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ContestStatus&pt=26">Contest Status</a></li>
+<li><a href="http://community.topcoder.com/tc?module=CompList&pt=26">Past Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ViewReviewProjects&pt=26">Review Opportunities</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ReviewBoard&pt=26">Meet the Review Board</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_bugraces_competitions&#39;)">Bug Race</a>
+<ul id="m_bugraces_competitions">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Bug+Race+Competition+Overview">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_bugraces_support&#39;)">Track Information</a>
+<ul id="m_bugraces_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Bug+Race+Competitions">How to Compete</a></li>
+</ul></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Active+Bug+Race+Competitions">Active Contests</a></li>
+<li><a href="http://apps.topcoder.com/wiki/x/FQG2AQ">Review Opportunities</a></li>
+</ul></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;competition_algo&#39;)">Algorithm</a>
+<ul id="competition_algo">
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_algo_competitions&#39;)">Single Round Matches (SRM)</a>
+<ul id="m_algo_competitions">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Algorithm+Overview">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_algo_support&#39;)">Track Information</a>
+<ul id="m_algo_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+SRM+Algorithm+Competitions">How to Compete</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/SRM+Algorithm+Competition+FAQs">FAQs</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Algorithm+Competition+Rating+System">Rating System</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Write+Problems+for+TopCoder">Write Problems</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_algo_stats&#39;)">Statistics</a>
+<ul id="m_algo_stats">
+<li><a href="http://community.topcoder.com/tc?module=MatchList">Match Archive</a></li>
+<li><a href="http://community.topcoder.com/stat?c=round_overview">Match Overviews</a></li>
+<li><a href="http://community.topcoder.com/tc?module=SrmDivisionWins">Match Winners</a></li>
+<li><a href="http://community.topcoder.com/stat?c=last_match">Match Results</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Algorithm+Problem+Set+Analysis">Match Editorials</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ProblemArchive">Problem Archive</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ColorChange&ratid=1">Recent Color Changes</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Algorithm+Data+Feeds">Data Feeds</a></li>
+</ul></li>
+<li><a href="javascript:arena();">Launch Arena</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_long_contests&#39;)">Marathon Match</a>
+<ul id="m_long_contests">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Marathon+Match+Overview">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_long_support&#39;)">Track Information</a>
+<ul id="m_long_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Marathon+Match+Events">How to Compete</a></li>
+<li><a href="http://community.topcoder.com/longcontest/?module=Static&d1=support&d2=ratings">Rating System</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_long_stats&#39;)">Statistics</a>
+<ul id="m_long_stats">
+<li><a href="http://community.topcoder.com/longcontest/stats/?module=MatchList">Match Archive</a></li>
+<li><a href="http://community.topcoder.com/longcontest/stats/?module=ViewOverview">Match Overview</a></li>
+<li><a href="http://community.topcoder.com/longcontest/stats/?module=MatchWinners">Match Winners</a></li>
+<li><a href="http://community.topcoder.com/longcontest/?module=Static&d1=match_editorials&d2=archive">Match Editorials</a></li>
+<li><a href="http://community.topcoder.com/longcontest/?module=Static&d1=support&d2=dataFeed">Data Feeds</a></li>
+</ul></li>
+<li><a href="http://community.topcoder.com/longcontest/?module=ViewActiveContests">Active Contests</a></li>
+<li><a href="http://community.topcoder.com/longcontest/?module=ViewPractice">Practice</a></li>
+<li><a href="http://community.topcoder.com/longcontest/?module=ViewQueue">Queue Status</a></li>
+</ul></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_hs_competitions&#39;)">High School</a>
+<ul id="m_hs_competitions">
+<li><a href="http://community.topcoder.com/tc?module=Static&d1=hs&d2=home">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_hs_stats&#39;)">Statistics</a>
+<ul id="m_hs_stats">
+<li><a href="http://community.topcoder.com/tc?module=HSRoundOverview">Match Overview</a></li>
+<li><a href="http://community.topcoder.com/tc?module=HSRoundStatsTeam">Match Results (Team)</a></li>
+<li><a href="http://community.topcoder.com/tc?module=HSRoundStatsInd">Match Results (Indiv.)</a></li>
+<li><a href="http://community.topcoder.com/tc?module=Static&d1=hs&d2=match_editorials&d3=archive">Match Editorials</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ColorChange&ratid=2">Recent Color Changes</a></li>
+<li><a href="http://community.topcoder.com/tc?module=Static&d1=hs&d2=support&d3=dataFeed">Data Feeds</a></li>
+</ul></li>
+<li><a href="http://community.topcoder.com/tc?module=Static&d1=hs&d2=spotlightSessions">Spotlight Sessions</a></li>
+<li><a href="javascript:arena();">Launch Arena</a></li>
+</ul></li>
+<li><a href="http://community.topcoder.com/dr">The Digital Run</a></li>
+<li><a href="http://software.topcoder.com/review">Submit &amp; Review</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_topcoder_networks&#39;)">TopCoder Networks</a>
+<ul id="m_topcoder_networks">
+<li><a href="http://community.topcoder.com/alcatel/">Alcatel Lucent</a></li>
+<li><a href="http://community.topcoder.com/amdapp/">AMD OpenCL</a></li>
+<li><a href="http://community.topcoder.com/darpacs/">DARPA CS-STEM</a></li>
+<li><a href="http://community.topcoder.com/ntl/">NASA Tournament Lab</a></li>
+<li><a href="http://community.topcoder.com/x/">PayPalX</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_events&#39;)">Events</a>
+<ul id="m_events">
+<li><a href="http://community.topcoder.com/tc?module=Static&d1=calendar&d2=thisMonth">Event Calendar</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_tournaments&#39;)">Tournaments</a>
+<ul id="m_tournaments">
+<li><a href="http://community.topcoder.com/tc?module=Static&d1=tournaments&d2=home">TopCoder</a></li>
+<li><a href="http://community.topcoder.com/pl/">Powered by TopCoder</a></li>
+<li><a href="http://community.topcoder.com/tc?module=CRPFStatic&d1=crpf&d2=crpf_overview">Charity</a></li>
+</ul></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_stats&#39;)">Statistics</a>
+<ul id="m_stats">
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_competitor_stats&#39;)">The Tops</a>
+<ul id="m_competitor_stats">
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_top_rated_competitors&#39;)">Top Ranked</a>
+<ul id="m_top_rated_competitors">
+<li><a href="http://community.topcoder.com/tc?module=AlgoRank">Algorithm</a></li>
+<li><a href="http://community.topcoder.com/tc?module=HSRank">High School</a></li>
+<li><a href="http://community.topcoder.com/longcontest/stats/?module=CoderRank">Marathon Match</a></li>
+<li><a href="http://community.topcoder.com/stat?c=top_conceptors">Conceptualization</a></li>
+<li><a href="http://community.topcoder.com/stat?c=top_specificators">Specification</a></li>
+<li><a href="http://community.topcoder.com/stat?c=top_architects">Architecture</a></li>
+<li><a href="http://community.topcoder.com/stat?c=top_designers">Design</a></li>
+<li><a href="http://community.topcoder.com/stat?c=top_developers">Development</a></li>
+<li><a href="http://community.topcoder.com/stat?c=top_assemblers">Assembly</a></li>
+<li><a href="http://community.topcoder.com/stat?c=top_testers">Test Suites</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_recordbook&#39;)">Record Book</a>
+<ul id="m_recordbook">
+<li><a href="http://community.topcoder.com/tc?module=Static&d1=statistics&d2=recordbook_home">Algorithm</a></li>
+<li><a href="http://community.topcoder.com/tc?module=Static&d1=compstats&d2=comp_recordbook_home">Component</a></li>
+<li><a href="http://community.topcoder.com/longcontest/?module=Static&d1=stats&d2=recordbook_home">Marathon Match</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_com&#39;)">Coder of the Month</a>
+<ul id="m_com">
+<li><a href="http://community.topcoder.com/tc?module=COMHistory&achtid=5">Algorithm</a></li>
+<li><a href="http://community.topcoder.com/tc?module=COMHistory&achtid=6">Design</a></li>
+<li><a href="http://community.topcoder.com/tc?module=COMHistory&achtid=7">Development</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li class="exp_ed"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_edu_content&#39;)">Tutorials</a>
+<ul id="m_edu_content" class="OPEN">
+<li><a href="http://community.topcoder.com/tc?module=Static&d1=education&d2=overview">Overview</a></li>
+<li class="highlight"><a href="http://community.topcoder.com/tc?module=Static&d1=tutorials&d2=alg_index">Algorithm Tutorials</a></li>
+<li><a href="http://community.topcoder.com/tc?module=Static&d1=tutorials&d2=comp_index">Component Tutorials</a></li>
+<li><a href="http://community.topcoder.com/tc?module=Static&d1=tutorials&d2=mm_index">Marathon Tutorials</a></li>
+<li><a href="http://apps.topcoder.com/wiki/dashboard.action">Wiki</a></li>
+</ul></li>
+<li><a href="http://forums.topcoder.com/">Forums</a></li>
+<li><a href="http://community.topcoder.com/tc?&module=SurveyList">Surveys</a></li>
+<li><a href="http://community.topcoder.com/tc?module=MyHome">My TopCoder</a></li>
+<li><a href="http://www.topcoder.com/help">Help Center</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_about_tc&#39;)">About TopCoder</a>
+<ul id="m_about_tc">
+<li><a href="http://www.topcoder.com/aboutus/">Overview</a></li>
+<li><a href="http://www.topcoder.com/aboutus/">Why Join TopCoder?</a></li>
+<li><a href="http://www.topcoder.com/aboutus/careers/">Working at TopCoder</a></li>
+<li><a href="http://www.topcoder.com/aboutus/management/">Leadership</a></li>
+<li><a href="http://www.topcoder.com/aboutus/news/">Press Room</a></li>
+</ul></li></ul>
+
+    <div style="float: left; padding: 10px 0px 0px 17px;">
+        
+        <a href="http://www.topcoder.com/tc?module=LinkTracking&link=http://apps.topcoder.com/wiki/x/L4TD&refer=leftnav"><img src="./complexity2_files/umlTool.png" alt="UML Tool"></a>
+
+        
+        
+        
+        
+    </div>
+    
+
+<div id="navbarSearch">
+<b>Member Search:</b>
+<form action="http://www.topcoder.com/tc" method="get" name="simpleSearchForm" class="noSpace" id="simpleSearchForm">
+   <input class="noSpace" type="hidden" name="module" value="SimpleSearch">
+   <input class="noSpace" type="text" name="ha" value="Handle:" size="12" maxlength="15" onfocus="javascript: if (document.simpleSearchForm.ha.value==&#39;Handle:&#39;) document.simpleSearchForm.ha.value = &#39;&#39;;" onblur="javascript:if (document.simpleSearchForm.ha.value == &#39;&#39;)document.simpleSearchForm.ha.value = &#39;Handle:&#39;;">
+   <a class="gMetal" href="javascript:void document.simpleSearchForm.submit();">Go</a><br>
+   <a class="gMetal" href="http://www.topcoder.com/tc?module=ViewAdvanced">Advanced Search</a>
+</form>
+</div>
+</div>
+<div style="float: left; clear:left; padding: 0px 0px 23px 0px;"><img src="./complexity2_files/leftnav_bottom.gif" alt=""></div>
+
+
+    <div align="center" style="float: left; clear:left; width: 170px; margin: 0px;">
+        <img src="./complexity2_files/brackets.png" alt="" style="margin-bottom: 23px;">
+    </div>
+
+
+
+
+        </td>
+        <!-- Left Column Ends -->
+        <!-- Center Column Begins -->
+        <td width="100%" align="left" class="bodyColumn">
+            
+
+
+
+
+<table cellspacing="0" cellpadding="0" class="pageTitleTable">
+    <tbody><tr>
+        <td width="100%" class="pageTitle"><img border="0" src="./complexity2_files/header_alg_tut.gif" alt="alg_tut"></td>
+        <td align="right" class="pageSubtitle">&nbsp;&nbsp;</td>
+    </tr>
+</tbody></table>
+
+
+            <div class="linkBox">
+                <a href="http://community.topcoder.com/tc?module=Static&d1=tutorials&d2=alg_index">Archive</a><br>
+                <span id="printableLink"><a href="Javascript:makeInvisible();">Printable view</a><br></span>
+                <span id="navigableLink" class="invisible"><a href="Javascript:makeNavigable();">Normal view</a><br></span>
+                <a href="http://forums.topcoder.com/?module=ThreadList&forumID=505848">Discuss this article</a><br>
+                <a href="http://community.topcoder.com/tc?module=Static&d1=help&d2=writeForTC">Write for TopCoder</a>
+            </div>
+
+<span class="bodyTitle">Computational Complexity: Section 2</span>
+
+<p>
+<img src="./complexity2_files/misof_mug.gif" alt="" width="55" height="61" border="0" hspace="6" vspace="1" align="left" class="myStatsPhoto"><br>
+By&nbsp;<a href="http://www.topcoder.com/tc?module=MemberProfile&cr=8357090&tab=alg" class="coderTextRed">misof</a><br>
+<span class="smallText"><em>TopCoder Member</em></span><br clear="all">
+</p>
+
+<a href="http://community.topcoder.com/tc?module=Static&d1=tutorials&d2=complexity1">...read Section 1</a>
+<br><br>
+<p>
+In this part of the article we will focus on estimating the time complexity for recursive programs.
+In essence, this will lead to finding the order of growth for solutions of recurrence equations.
+Don't worry if you don't understand what exactly is a recurrence solution, we will explain it
+in the right place at the right time. But first we will consider a simpler case - programs
+without recursion.
+
+</p><p>
+
+<span class="bodySubtitle"><a name="SECTION00010000000000000000">
+Nested loops</a>
+</span>
+
+</p><p>
+First of all let's consider simple programs that contain no function calls. The rule of thumb to
+find an upper bound on the time complexity of such a program is:
+
+</p><ul>
+<li>estimate the maximum number of times each loop can be executed,
+</li>
+<li><b>add</b> these bounds for cycles following each other.
+</li>
+<li><b>multiply</b> these bounds for nested cycles/parts of code,
+</li>
+</ul>
+
+<p>
+
+<b>Example 1.</b> Estimating the time complexity of a random piece of code.
+
+</p><p>
+</p><pre>int result=0;                           //  1
+for (int i=0; i&lt;N; i++)                 //  2
+  for (int j=i; j&lt;N; j++) {             //  3
+    for (int k=0; k&lt;M; k++) {           //  4
+      int x=0;                          //  5
+      while (x&lt;N) { result++; x+=3; }   //  6
+    }                                   //  7
+    for (int k=0; k&lt;2*M; k++)           //  8
+      if (k%7 == 4) result++;           //  9
+  }                                     // 10
+</pre>
+The time complexity of the while-cycle in line 6 is clearly <span class="MATH"><i>O</i>(<i>N</i>)</span> - it
+is executed no more than <span class="MATH"><i>N</i>/3&nbsp; + 1</span> times.
+
+<p>
+Now consider the for-cycle in
+lines 4-7. The variable k is clearly incremented <span class="MATH"><i>O</i>(<i>M</i>)</span> times. Each time the whole while-cycle in line 6 is executed. Thus the total time complexity of the lines 4-7 can be bounded by <span class="MATH"><i>O</i>(<i>MN</i>)</span>.
+
+</p><p>
+The time complexity of the for-cycle in lines 8-9 is <span class="MATH"><i>O</i>(<i>M</i>)</span>. Thus the execution time of lines 4-9 is <!-- MATH
+ $O(MN + M) = O(MN)$
+ -->
+<span class="MATH"><i>O</i>(<i>MN</i> + <i>M</i>) = <i>O</i>(<i>MN</i>)</span>.
+
+</p><p>
+This inner part is executed <span class="MATH"><i>O</i>(<i>N</i><sup>2</sup>)</span> times - once for each possible combination of <span class="MATH"><i>i</i></span> and <span class="MATH"><i>j</i></span>.
+(Note that there are only <span class="MATH"><i>N</i>(<i>N</i> + 1)/2</span> possible values for <span class="MATH">[<i>i</i>, <i>j</i>]</span>. Still, <span class="MATH"><i>O</i>(<i>N</i><sup>2</sup>)</span> is a correct upper
+bound.)
+
+</p><p>
+From the facts above follows that the total time complexity of the algorithm
+in Example 1 is <!-- MATH
+ $O(N^2 . MN) = O(MN^3)$
+ -->
+<span class="MATH"><i>O</i>(<i>N</i><sup>2</sup>.<i>MN</i>) = <i>O</i>(<i>MN</i><sup>3</sup>)</span>.
+
+</p><p>
+From now on we will assume that the reader is able to estimate the time
+complexity of simple parts of code using the method demonstrated above. We will
+now consider programs using recursion (i.e. a function occasionally calling
+itself with different parameters) and try to analyze the impact of these
+recursive calls on their time complexity.
+
+</p><p>
+
+<span class="bodySubtitle"><a name="SECTION00020000000000000000">
+Using recursion to generate combinatorial objects</a>
+</span>
+
+</p><p>
+One common use of recursion is to implement a <em>backtracking</em> algorithm to generate all possible
+solutions of a problem. The general idea is to generate the solution incrementally and to step back
+and try another way once all solutions for the current branch have been exhausted.
+
+</p><p>
+This approach is not absolutely universal, there may be problems where it is impossible to generate
+the solution incrementally. However, very often the set of all possible solutions of a problem
+corresponds to the set of all combinatorial objects of some kind. Most often it is the set of
+all permutations (of a given size), but other objects (combinations, partitions, etc.) can be seen
+from time to time.
+
+</p><p>
+As a side note, it is always possible to generate all strings of zeroes and ones, check each of
+them (i.e. check whether it corresponds to a valid solution) and keep the best found so far. If we
+can find an upper bound on the size of the best solution, this approach is finite. However,
+this approach is everything but fast. Don't use it if there is <b>any</b> other way.
+
+</p><p>
+
+<b>Example 2.</b> A trivial algorithm to generate all permutations of numbers 0 to <span class="MATH"><i>N</i> - 1</span>.
+
+</p><p>
+</p><pre>vector&lt;int&gt; permutation(N);
+vector&lt;int&gt; used(N,0);
+
+void try(int which, int what) {
+  // try taking the number "what" as the "which"-th element
+  permutation[which] = what;
+  used[what] = 1;
+
+  if (which == N-1)
+    outputPermutation();
+  else
+    // try all possibilities for the next element
+    for (int next=0; next&lt;N; next++)
+      if (!used[next])
+        try(which+1, next);
+
+  used[what] = 0;
+}
+
+int main() {
+  // try all possibilities for the first element
+  for (int first=0; first&lt;N; first++)
+    try(0,first);
+}
+</pre>
+
+<p>
+In this case a trivial <b>lower</b> bound on the time complexity is the number
+of possible solutions. Backtracking algorithms are usually used to solve hard
+problems - i.e. such that we don't know whether a significantly more efficient
+solution exists. Usually the solution space is quite large and uniform
+and the algorithm can be implemented so that its time complexity is close to
+the theoretical lower bound. To get an upper bound it should be enough to check
+how much additional (i.e. unnecessary) work the algorithm does.
+
+</p><p>
+The number of possible solutions, and thus the
+time complexity of such algorithms, is usually exponential - or worse.
+
+</p><p>
+
+<span class="bodySubtitle"><a name="SECTION00030000000000000000">
+Divide&amp;conquer using recursion</a>
+</span>
+
+</p><p>
+From the previous example we could get the feeling that recursion is evil
+and leads to horribly slow programs. The contrary is true.
+Recursion can be a very powerful tool in the design of effective algorithms.
+The usual way to create an effective recursive algorithm is to apply the <em>
+divide&amp;conquer paradigm</em> - try to split the problem into several parts, solve
+each part separately and in the end combine the results to obtain the result
+for the original problem. Needless to say, the "solve each part separately" is
+usually implemented using recursion - and thus applying the same method again
+and again, until the problem is sufficiently small to be solved by brute force.
+
+</p><p>
+
+<b>Example 3.</b> The sorting algorithm MergeSort described in pseudocode.
+
+</p><p>
+</p><pre>MergeSort(sequence S) {
+  if (size of S &lt;= 1) return S;
+  split S into S_1 and S_2 of roughly the same size;
+  MergeSort(S_1);
+  MergeSort(S_2);
+  combine sorted S_1 and sorted S_2 to obtain sorted S;
+  return sorted S;
+}
+</pre>
+
+<p>
+Clearly <span class="MATH"><i>O</i>(<i>N</i>)</span> time is enough to split a sequence with <span class="MATH"><i>N</i></span> elements into two
+parts. (Depending on the implementation this may be even possible in constant
+time.) Combining the shorter sorted sequences can be done in <span class="MATH"><img width="15" height="14" align="BOTTOM" border="0" src="./complexity2_files/img1.png" alt="$ \Theta$">(<i>N</i>)</span>: Start
+with an empty <span class="MATH"><i>S</i></span>. At each moment the smallest element not yet in <span class="MATH"><i>S</i></span> is either
+at the beginning of <span class="MATH"><i>S</i><sub>1</sub></span> or at the beginning of <span class="MATH"><i>S</i><sub>2</sub></span>. Move this element to the end of <span class="MATH"><i>S</i></span> and continue.
+
+</p><p>
+Thus the total time to MergeSort a sequence with <span class="MATH"><i>N</i></span> elements is <span class="MATH"><img width="15" height="14" align="BOTTOM" border="0" src="./complexity2_files/img1.png" alt="$ \Theta$">(<i>N</i>)</span> plus the time needed to make the two recursive calls.
+
+</p><p>
+Let <span class="MATH"><i>f</i> (<i>N</i>)</span> be the time complexity of MergeSort as defined in the previous part of our article. The discussion above leads us to the following equation:
+
+</p><p>
+</p><div align="CENTER" class="mathdisplay">
+<img src="./complexity2_files/new19.png">
+</div>
+
+<p>
+where <span class="MATH"><i>p</i></span> is a linear function representing the amount of work spent on splitting the
+sequence and merging the results.
+
+</p><p>
+Basically, this is just a <i class="slanted">recurrence equation</i>. If you don't know this term, please don't
+be afraid. The word "recurrence" stems from the latin phrase for "to run back". Thus the
+name just says that the next values of <span class="MATH"><i>f</i></span> are defined using the previous (i.e. smaller) values
+of <span class="MATH"><i>f</i></span>.
+
+</p><p>
+Well, to be really formal, for the equation
+to be complete we should specify some initial values - in this case, <span class="MATH"><i>f</i> (1)</span>. This (and knowing
+the implementation-specific function <span class="MATH"><i>p</i></span>) would enable us to compute the exact values of
+<span class="MATH"><i>f</i></span>.
+
+</p><p>
+But as you hopefully understand by now, this is not necessarily our goal. While it is
+theoretically possible to compute a closed-form formula for <span class="MATH"><i>f</i> (<i>N</i>)</span>, this formula would
+most probably be really ugly... and we don't really need it. We only want to find
+a <span class="MATH"><img width="15" height="14" align="BOTTOM" border="0" src="./complexity2_files/img1.png" alt="$ \Theta$"></span>-bound (and sometimes only an <span class="MATH"><i>O</i></span>-bound) on the growth of <span class="MATH"><i>f</i></span>. Luckily, this
+can often be done quite easily, if you know some tricks of the trade.
+
+</p><p>
+As a consequence, we won't be interested in the exact form of <span class="MATH"><i>p</i></span>, all we need to know
+is that <!-- MATH
+ $p(N)=\Theta(N)$
+ -->
+<span class="MATH"><i>p</i>(<i>N</i>) = <img width="15" height="14" align="BOTTOM" border="0" src="./complexity2_files/img1.png" alt="$ \Theta$">(<i>N</i>)</span>. Also, we don't need to specify the initial values for the
+equation. We simply assume that all problem instances with small <span class="MATH"><i>N</i></span> can be solved in
+constant time.
+
+</p><p>
+The rationale behind the last simplification: While changing the initial values does change the
+solution to the recurrence equation, it usually doesn't change its asymptotic order of
+growth. (If your intuition fails you here, try playing with the equation above.
+For example fix <span class="MATH"><i>p</i></span> and try to compute <span class="MATH"><i>f</i> (8)</span>, <span class="MATH"><i>f</i> (16)</span> and <span class="MATH"><i>f</i> (32)</span> for different values of <span class="MATH"><i>f</i> (1)</span>.)
+
+</p><p>
+If this would be a formal textbook, at this point we would probably have to develop some theory
+that would allow us to deal with the floor and ceiling functions in our equations.
+Instead we will simply neglect them from now on. (E.g. we can assume that each division
+will be integer division, rounded down.)
+
+</p><p>
+A reader skilled in math is encouraged to prove that if <span class="MATH"><i>p</i></span> is a polynomial (with
+non-negative values on N) and <!-- MATH
+ $q(n)=p(n+1)$
+ -->
+<span class="MATH"><i>q</i>(<i>n</i>) = <i>p</i>(<i>n</i> + 1)</span> then <!-- MATH
+ $q(n)=\Theta(p(n))$
+ -->
+<span class="MATH"><i>q</i>(<i>n</i>) = <img width="15" height="14" align="BOTTOM" border="0" src="./complexity2_files/img1.png" alt="$ \Theta$">(<i>p</i>(<i>n</i>))</span>. Using this observation
+we may formally prove that (assuming the <span class="MATH"><i>f</i></span> we seek is polynomially-bounded) the right side of
+each such equation remains asymptotically the same if we replace each ceiling function
+by a floor function.
+
+</p><p>
+The observations we made allow us to rewrite our example equation in a more simple way:
+
+</p><div align="CENTER" class="mathdisplay">
+<a name="dva"></a>
+<table width="100%" align="CENTER">
+<tbody><tr valign="MIDDLE"><td align="CENTER" nowrap="">
+  <img src="./complexity2_files/new31.png">
+</td>
+<td class="eqno" width="10" align="RIGHT">
+(<span class="arabic">1</span>)</td></tr>
+</tbody></table>
+</div><p></p>
+
+<p>
+Note that this is not an equation in the classical sense. As in the examples in the first part
+of this article, the equals sign now reads "is asymptotically equal to".
+Usually there are lots of different functions that satisfy such an equation.
+But usually all of them will have the same order of growth - and this is exactly what we want to determine.
+Or, more generally, we want to find the smallest upper bound on the growth of <b>all possible</b>
+functions that satisfy the given equation.
+
+</p><p>
+In the last sections of this article we will discuss various methods of solving these "equations".
+But before we can do that, we need to know a bit more about logarithms.
+
+</p><p>
+
+<span class="bodySubtitle"><a name="SECTION00040000000000000000">
+Notes on logarithms</a>
+</span>
+
+</p><p>
+By now, you may have already asked one of the following questions: If the author writes that some complexity
+is e.g. <!-- MATH
+ $O(N\log N)$
+ -->
+<span class="MATH"><i>O</i>(<i>N</i> log&nbsp;<i>N</i>)</span>, what is the base of the logarithm? In some cases, wouldn't <!-- MATH
+ $O(N\log_2 N)$
+ -->
+<span class="MATH"><i>O</i>(<i>N</i> log<sub>2</sub><i>N</i>)</span> be
+a better bound?
+
+</p><p>
+The answer: The base of the logarithm does not matter, all logarithmic functions (with base <span class="MATH">&gt; 1</span>)
+are asymptotically equal. This is due to the well-known equation:
+
+</p><div align="CENTER" class="mathdisplay">
+<a name="dva"></a>
+<table width="100%" align="CENTER">
+<tbody><tr valign="MIDDLE"><td align="CENTER" nowrap="">
+  <img src="./complexity2_files/new35.png">
+</td>
+<td class="eqno" width="10" align="RIGHT">
+(<span class="arabic">2</span>)</td></tr>
+</tbody></table>
+</div><p></p>
+
+<p>
+Note that given two bases <span class="MATH"><i>a</i></span>, <span class="MATH"><i>b</i></span>, the number <!-- MATH
+ $1/\log_b a$
+ -->
+<span class="MATH">1/log<sub>b</sub><i>a</i></span> is just a constant, and thus
+the function <span class="MATH">log<sub>a</sub><i>N</i></span> is just a constant multiple of <span class="MATH">log<sub>b</sub><i>N</i></span>.
+
+</p><p>
+To obtain more clean and readable expressions, we always use the notation <span class="MATH">log&nbsp;<i>N</i></span> inside big-Oh
+expressions, even if logarithms with a different base were used in the computation of the bound.
+
+</p><p>
+By the way, sadly the meaning of <span class="MATH">log&nbsp;<i>N</i></span> differs from country to country. To avoid ambiguity
+where it may occur: I use <span class="MATH">log&nbsp;<i>N</i></span> to denote the decadic (i.e. base-10) logarithm, <span class="MATH">ln&nbsp;<i>N</i></span>
+for the natural (i.e. base-<span class="MATH"><i>e</i></span>) logarithm, <span class="MATH">lg&nbsp;<i>N</i></span> for the binary logarithm and <span class="MATH">log<sub>b</sub><i>N</i></span>
+for the general case.
+
+</p><p>
+
+</p><p></p><p>
+<br>
+
+</p><p>
+Now we will show some useful tricks involving logarithms, we will need them later.
+Suppose <span class="MATH"><i>a</i></span>, <span class="MATH"><i>b</i></span> are given constants such that <span class="MATH"><i>a</i>, <i>b</i> &gt; 1</span>.
+
+</p><p>
+From (2) we get:
+
+</p><p>
+</p><div align="CENTER" class="mathdisplay">
+<img src="./complexity2_files/new46.png">
+</div>
+
+<p>
+Using this knowledge, we can simplify the term
+<span class="MATH"><img src="./complexity2_files/new47.png"></span> as follows:
+
+</p><div align="CENTER" class="mathdisplay">
+<a name="dva"></a>
+<table width="100%" align="CENTER">
+<tbody><tr valign="MIDDLE"><td align="CENTER" nowrap="">
+  <img src="./complexity2_files/new48.png">
+</td>
+<td class="eqno" width="10" align="RIGHT">
+(<span class="arabic">3</span>)</td></tr>
+</tbody></table>
+</div><p></p>
+
+<p>
+
+<span class="bodySubtitle"><a name="SECTION00050000000000000000">
+The substitution method</a>
+</span>
+
+</p><p>
+This method can be summarized in one sentence: Guess an asymptotic upper bound on <span class="MATH"><i>f</i></span> and
+(try to) prove it by induction.
+
+</p><p>
+As an example, we will prove that if <span class="MATH"><i>f</i></span> satisfies the equation (1)
+then
+<!-- MATH
+ $f(N) = O(N\log N)$
+ -->
+<span class="MATH"><i>f</i> (<i>N</i>) = <i>O</i>(<i>N</i> log&nbsp;<i>N</i>)</span>.
+
+</p><p>
+From (1) we know that
+
+</p><p>
+</p><div align="CENTER" class="mathdisplay">
+<img src="./complexity2_files/new52.png">
+</div>
+
+<p>
+for some <span class="MATH"><i>c</i></span>. Now we will prove that if we take a large enough (but constant) <span class="MATH"><i>d</i></span>
+then for almost all <span class="MATH"><i>N</i></span> we have <!-- MATH
+ $f(N) \leq dN\lg N$
+ -->
+<span class="MATH"><i>f</i> (<i>N</i>) <img width="15" height="29" align="MIDDLE" border="0" src="./complexity2_files/img15.png" alt="$ \leq$"> <i>dN</i> lg&nbsp;<i>N</i></span>.
+We will start by proving the induction step.
+
+</p><p>
+Assume that <!-- MATH
+ $f(N/2) \leq d(N/2)\lg(N/2)$
+ -->
+<span class="MATH"><i>f</i> (<i>N</i>/2) <img width="15" height="29" align="MIDDLE" border="0" src="./complexity2_files/img15.png" alt="$ \leq$"> <i>d</i> (<i>N</i>/2)lg(<i>N</i>/2)</span>. Then
+
+</p><p>
+</p><div align="CENTER" class="mathdisplay">
+<img src="./complexity2_files/new57.png">
+</div>
+
+<p>
+In other words, the induction step will hold as long as <span class="MATH"><i>d</i> &gt; <i>c</i></span>. We are always
+able to choose such <span class="MATH"><i>d</i></span>.
+
+</p><p>
+We are only left with proving the inequality for some initial value <span class="MATH"><i>N</i></span>. This gets
+quite ugly when done formally. The general idea is that if the <span class="MATH"><i>d</i></span> we found so far
+is not large enough, we can always increase it to cover the initial cases.
+
+</p><p>
+Note that for our example equation we won't be able to prove it for <span class="MATH"><i>N</i> = 1</span>, because
+<span class="MATH">lg&nbsp;1 = 0</span>. However, by taking <!-- MATH
+ $d > 2(f(1)+f(2)+f(3)+c)$
+ -->
+<span class="MATH"><i>d</i> &gt; 2(<i>f</i> (1) + <i>f</i> (2) + <i>f</i> (3) + <i>c</i>)</span> we can easily prove the inequality
+for <span class="MATH"><i>N</i> = 2</span> and <span class="MATH"><i>N</i> = 3</span>, which is more than enough.
+
+</p><p>
+Please note what exactly did we prove. Our result is that if <span class="MATH"><i>f</i></span> satisfies the
+equation (1)
+then for almost all <span class="MATH"><i>N</i></span> we have <!-- MATH
+ $f(N) \leq dN\lg N$
+ -->
+<span class="MATH"><i>f</i> (<i>N</i>) <img width="15" height="29" align="MIDDLE" border="0" src="./complexity2_files/img15.png" alt="$ \leq$"> <i>dN</i> lg&nbsp;<i>N</i></span>, where <span class="MATH"><i>d</i></span> is some fixed constant.
+Conclusion: from (1)
+ it follows that <!-- MATH
+ $f(N)=O(N\lg N)$
+ -->
+<span class="MATH"><i>f</i> (<i>N</i>) = <i>O</i>(<i>N</i> lg&nbsp;<i>N</i>)</span>.
+
+</p><p>
+
+<span class="bodySubtitle"><a name="SECTION00060000000000000000">
+The recursion tree</a>
+</span>
+
+</p><p>
+To a beginner, the previous method won't be very useful. To use it successfully we need
+to make a good guess - and to make a good guess we need some insight. The question
+is, how to gain this insight? Let's take a closer look at what's happening, when we
+try to evaluate the recurrence (or equivalently, when we run the corresponding recursive program).
+
+</p><p>
+We may describe the execution of a recursive program on a given input by a rooted tree.
+Each node will correspond to some instance of the problem the program solves.
+Consider an arbitrary vertex in our tree. If solving its instance requires recursive calls, this
+vertex will have children corresponding to the smaller subproblems we solve recursively.
+The root node of the tree is the input of the program, leaves represent small problems that
+are solved by brute force.
+
+</p><p>
+Now suppose we label each vertex by the amount of work spent solving the corresponding problem
+(excluding the recursive calls). Clearly the runtime is exactly the sum of all labels.
+
+</p><p>
+As always, we only want an asymptotic bound. To achieve this, we may "round" the labels to
+make the summation easier. Again, we will demonstrate this method on examples.
+
+</p><p>
+
+<b>Example 4.</b> The recursion tree for MergeSort on 5 elements.
+
+</p><p>
+</p><div align="CENTER">
+<img src="./complexity2_files/tree1.png">
+</div>
+
+<p>
+The recursion tree for the corresponding recurrence equation. This time,
+the number inside each vertex represents the number of steps the algorithm makes there.
+
+</p><p>
+</p><div align="CENTER">
+<img src="./complexity2_files/tree2.png">
+</div>
+
+<p>
+Note that in a similar way we may sketch the general form of the recursion tree for any
+recurrence. Consider our old friend, the equation (1).
+ Here we know that there is
+a number <span class="MATH"><i>c</i></span> such that the number of operations in each node can be bound by (<span class="MATH"><i>c</i></span> times the
+current value of <span class="MATH"><i>N</i></span>). Thus the tree in the example below is indeed the worst possible
+case.
+
+</p><p>
+
+<b>Example 5.</b> A worst-case tree for the general case of the recurrence equation (1).
+
+</p><p>
+</p><div align="CENTER">
+<img src="./complexity2_files/tree3.png">
+</div>
+
+<p>
+Now, the classical trick from combinatorics is to sum the elements in an order different from
+the order in which they were created. In this case, consider an arbitrary level of the tree (i.e. a set
+of vertices with the same depth). It is not hard to see that the total work on each of the
+levels is <span class="MATH"><i>cN</i></span>.
+
+</p><p>
+Now comes the second question: What is the number of levels? Clearly, the leaves correspond
+to the trivial cases of the algorithm. Note that the size of the problem is halved in each step.
+Clearly after <span class="MATH">lg&nbsp;<i>N</i></span> steps we are left with a trivial problem of size 1, thus the number of
+levels is <!-- MATH
+ $\Theta(\log N)$
+ -->
+<span class="MATH"><img width="15" height="14" align="BOTTOM" border="0" src="./complexity2_files/img1.png" alt="$ \Theta$">(log&nbsp;<i>N</i>)</span>.
+
+</p><p>
+Combining both observations we get the final result: The total amount of work done here is
+<!-- MATH
+ $\Theta(cN \times \log N) = \Theta(N\log N)$
+ -->
+<span class="MATH"><img width="15" height="14" align="BOTTOM" border="0" src="./complexity2_files/img1.png" alt="$ \Theta$">(<i>cN</i> <tt>x</tt> log&nbsp;<i>N</i>) = <img width="15" height="14" align="BOTTOM" border="0" src="./complexity2_files/img1.png" alt="$ \Theta$">(<i>N</i> log&nbsp;<i>N</i>)</span>.
+
+</p><p>
+A side note. If the reader doesn't trust the simplifications we made when using this method,
+he is invited to treat this method as a "way of making a good guess" and then to prove the result
+using the substitution method. However, with a little effort the application of this method could
+also be upgraded to a full formal proof.
+
+</p><p>
+
+<span class="bodySubtitle"><a name="SECTION00070000000000000000">
+More recursion trees</a>
+</span>
+
+</p><p>
+By now you should be asking: Was it really only a coincidence that the total amount of work on
+each of the levels in Example 5 was the same?
+
+</p><p>
+The answer: No and yes. No, there's a simple reason why this happened, we'll discover it later.
+Yes, because this is not always the case - as we'll see in the following two examples.
+
+</p><p>
+
+<b>Example 6.</b> Let's try to apply our new "recursion tree" method to solve the following
+recurrence equation:
+
+</p><p>
+</p><div align="CENTER" class="mathdisplay">
+<img src="./complexity2_files/new72.png">
+</div>
+
+<p>
+The recursion tree will look as follows:
+
+</p><p>
+</p><div align="CENTER">
+<img src="./complexity2_files/tree5.png">
+</div>
+
+<p>
+Let's try computing the total work for each of the first few levels.
+Our results:
+
+</p><p>
+</p><div align="CENTER">
+<table width="350" align="center" border="0" cellpadding="6" cellspacing="2" class="sidebarBox">
+<tbody><tr><td class="sidebarTitle" align="RIGHT">level</td>
+<td class="sidebarText" align="CENTER" width="25%">1</td>
+<td class="sidebarText" align="CENTER" width="25%">2</td>
+<td class="sidebarText" align="CENTER" width="25%">3</td>
+<td class="sidebarText" align="LEFT" width="25%">...</td>
+</tr>
+<tr><td class="sidebarTitle" align="RIGHT">work</td>
+<td class="sidebarText" align="CENTER"><span class="MATH"><i>cN</i><sup>3</sup></span></td>
+<td class="sidebarText" align="CENTER"><!-- MATH
+ \${3\over 8} cN^3$
+ -->
+<span class="MATH"><img width="13" height="35" align="MIDDLE" border="0" src="./complexity2_files/img16.png" alt="$ {3\over 8}$"><i>cN</i><sup>3</sup></span></td>
+<td class="sidebarText" align="CENTER"><!-- MATH
+ \${3^2 \over 8^2} cN^3$
+ -->
+<span class="MATH"><img width="19" height="41" align="MIDDLE" border="0" src="./complexity2_files/img17.png" alt="$ {3^2 \over 8^2}$"><i>cN</i><sup>3</sup></span></td>
+<td class="sidebarText" align="LEFT">...</td>
+</tr>
+</tbody></table>
+</div>
+
+<p>
+Clearly as we go deeper in the tree, the total amount of work on the current level decreases.
+The question is, how fast does it decrease? As we move one level lower, there will be
+three times that many subproblems. However, their size gets divided by 2, and thus the time
+to process each of them decreases to one eighth of the original time. Thus the amount
+of work is decreased by the factor <span class="MATH">3/8</span>.
+
+</p><p>
+But this means that the entries in the table above form a geometric progression.
+For a while assume that this progression is infinite. Then its sum would be
+
+</p><p>
+</p><div align="CENTER" class="mathdisplay">
+<img src="./complexity2_files/new77.png">
+</div>
+
+<p>
+Thus the total amount of work in our tree is <!-- MATH
+ $\Omega(N^3)$
+ -->
+<span class="MATH"><img width="15" height="14" align="BOTTOM" border="0" src="./complexity2_files/img20.png" alt="$ \Omega$">(<i>N</i><sup>3</sup>)</span> (summing the infinite sequence
+gives us an upper bound).
+But already the first element of our progression is <!-- MATH
+ $\Theta(N^3)$
+ -->
+<span class="MATH"><img width="15" height="14" align="BOTTOM" border="0" src="./complexity2_files/img1.png" alt="$ \Theta$">(<i>N</i><sup>3</sup>)</span>.
+It follows that the total amount of work in our tree is <!-- MATH
+ $\Theta(N^3)$
+ -->
+<span class="MATH"><img width="15" height="14" align="BOTTOM" border="0" src="./complexity2_files/img1.png" alt="$ \Theta$">(<i>N</i><sup>3</sup>)</span>
+and we are done.
+
+</p><p>
+The important generalization of this example: If the amounts of work at subsequent levels
+of the recursion tree form a <b>decreasing geometric progression</b>, the total amount of work
+is asymptotically the same as the amount of work done in the root node.
+
+</p><p>
+From this result we can deduce an interesting fact about the (hypothetical) algorithm behind
+this recurrence equation: The recursive calls didn't take much time in this case, the most
+time consuming part was preparing the recursive calls and/or processing the results.
+(I.e. this is the part that should be improved if we need a faster algorithm.)
+
+</p><p>
+
+<b>Example 7.</b> Now let's try to apply our new "recursion tree" method to solve the following
+recurrence equation:
+
+</p><p>
+</p><div align="CENTER" class="mathdisplay">
+<img src="./complexity2_files/new80.png">
+</div>
+
+<p>
+The recursion tree will look as follows:
+
+</p><p>
+</p><div align="CENTER">
+<img src="./complexity2_files/tree4.png">
+</div>
+
+<p>
+Again, let's try computing the total work for each of the first few levels.
+We get:
+
+</p><p>
+</p><div align="CENTER">
+<table width="350" align="center" border="0" cellpadding="6" cellspacing="2" class="sidebarBox">
+<tbody><tr><td class="sidebarTitle" align="RIGHT">level</td>
+<td class="sidebarText" align="CENTER" width="25%">1</td>
+<td class="sidebarText" align="CENTER" width="25%">2</td>
+<td class="sidebarText" align="CENTER" width="25%">3</td>
+<td class="sidebarText" align="LEFT" width="25%">...</td>
+</tr>
+<tr><td class="sidebarTitle" align="RIGHT">work</td>
+<td class="sidebarText" align="CENTER"><span class="MATH"><i>cN</i></span></td>
+<td class="sidebarText" align="CENTER"><!-- MATH
+ \${5\over 3} cN$
+ -->
+<span class="MATH"><img width="13" height="35" align="MIDDLE" border="0" src="./complexity2_files/img21.png" alt="$ {5\over 3}$"><i>cN</i></span></td>
+<td class="sidebarText" align="CENTER"><!-- MATH
+ \${5^2 \over 3^2} cN$
+ -->
+<span class="MATH"><img width="19" height="41" align="MIDDLE" border="0" src="./complexity2_files/img22.png" alt="$ {5^2 \over 3^2}$"><i>cN</i></span></td>
+<td class="sidebarText" align="LEFT">...</td>
+</tr>
+</tbody></table>
+</div>
+
+<p>
+This time we have the opposite situation: As we go deeper in the tree, the total amount of
+work on the current level increases. As we move one level lower, there will be
+five times that many subproblems, each of them one third of the previous size,
+the processing time is linear in problem size.
+Thus the amount of work increased by the factor <span class="MATH">5/3</span>.
+
+</p><p>
+Again, we want to compute the total amount of work. This time it won't be that easy,
+because the most work is done on the lowest level of the tree. We need to know its depth.
+
+</p><p>
+The lowest level corresponds to problems of size 1. The size of a problem on level <span class="MATH"><i>k</i></span> is
+<span class="MATH"><i>N</i>/3<sup>k</sup></span>. Solving the equation <span class="MATH">1 = <i>N</i>/3<sup>k</sup></span> we get <!-- MATH
+ $k=\log_3 N$
+ -->
+<span class="MATH"><i>k</i> = log<sub>3</sub><i>N</i></span>.
+Note that this time we explicitly state the base of the logarithm, as this time it will be
+important.
+
+</p><p>
+Our recursion tree has <span class="MATH">log<sub>3</sub><i>N</i></span> levels. Each of the levels has five times more vertices
+than the previous one, thus the last level has
+<span class="MATH"><img src="./complexity2_files/new89.png"></span> levels. The total work
+done on this level is then
+<span class="MATH"><img src="./complexity2_files/new90.png"></span>.
+
+</p><p>
+Note that using the trick (3) we may rewrite this as
+<span class="MATH"><img src="./complexity2_files/new91.png"></span>.
+
+</p><p>
+Now we want to sum the work done on all levels of the tree. Again, this is a geometric
+progression. But instead of explicitly computing the sum, we now <b>reverse</b> it.
+Now we have a <b>decreasing</b> geometric progression...and we are already in
+the same situation as in the previous example.
+Using the same reasoning we can show that the sum is asymptotically equal to the largest
+element.
+
+</p><p>
+It follows that the total amount of work in our tree is
+<span class="MATH"><img src="./complexity2_files/new92.png"></span>
+and we are done.
+
+</p><p>
+Note that the base-3 logarithm ends in the exponent, that's why the base is important. If the base was
+different, also the result would be asymptotically different.
+
+</p><p>
+
+<span class="bodySubtitle"><a name="SECTION00080000000000000000">
+The Master Theorem</a>
+</span>
+
+</p><p>
+We already started to see a pattern here. Given a recurrence equation, take the corresponding
+recurrence tree and compute the amounts of work done on each level of the tree. You will
+get a geometric sequence. If it decreases, the total work is proportional to work done in
+the root node. If it increases, the total work is proportional to the number of leaves.
+If it remains the same, the total work is (the work done on one level) times (the number of levels).
+
+</p><p>
+Actually, there are a few ugly cases, but almost often one of these three cases occurs.
+Moreover, it is possible to prove the statements from the previous paragraph formally.
+The formal version of this theorem is known under the name Master Theorem.
+
+</p><p>
+For reference, we give the full formal statement of this theorem. (Note that knowing the
+formal proof is not necessary to <b>apply</b> this theorem on a given recurrence equation.)
+
+</p><p>
+Let <span class="MATH"><i>a</i> <img width="15" height="29" align="MIDDLE" border="0" src="./complexity2_files/img24.png" alt="$ \geq$"> 1</span> and <span class="MATH"><i>b</i> &gt; 1</span> be integer constants. Let <span class="MATH"><i>p</i></span> be a non-negative non-decreasing function.
+Let <span class="MATH"><i>f</i></span> be any solution of the recurrence equation
+
+</p><p>
+</p><div align="CENTER" class="mathdisplay">
+<img src="./complexity2_files/new95.png">
+</div>
+
+<p>
+Then:
+
+</p><p>
+
+</p><ol>
+<li>
+If <span class="MATH"><img src="./complexity2_files/new96.png"></span> for some
+<span class="MATH"><img width="10" height="13" align="BOTTOM" border="0" src="./complexity2_files/img26.png" alt="$ \varepsilon$"> &gt; 0</span> then
+ <span class="MATH"><img src="./complexity2_files/new98.png"></span>
+
+</li><li>
+If <span class="MATH"><img src="./complexity2_files/new99.png"></span>,
+ then <!-- MATH
+ $f(N) = \Theta( p(N) \log N )$
+ -->
+<span class="MATH"><i>f</i> (<i>N</i>) = <img width="15" height="14" align="BOTTOM" border="0" src="./complexity2_files/img1.png" alt="$ \Theta$">(<i>p</i>(<i>N</i>)log&nbsp;<i>N</i>)</span>.
+
+</li><li>
+If <span class="MATH"><img src="./complexity2_files/new101.png"></span> for some
+<span class="MATH"><img width="10" height="13" align="BOTTOM" border="0" src="./complexity2_files/img26.png" alt="$ \varepsilon$"> &gt; 0</span>,
+and if <!-- MATH
+ $a p(N/b) \leq c p(N)$
+ -->
+<span class="MATH"><i>ap</i>(<i>N</i>/<i>b</i>) <img width="15" height="29" align="MIDDLE" border="0" src="./complexity2_files/img15.png" alt="$ \leq$"> <i>cp</i>(<i>N</i>)</span> for some <span class="MATH"><i>c</i> &lt; 1</span> and for almost all <span class="MATH"><i>N</i></span>,
+then <!-- MATH
+ $f(N) = \Theta( p(N) )$
+ -->
+<span class="MATH"><i>f</i> (<i>N</i>) = <img width="15" height="14" align="BOTTOM" border="0" src="./complexity2_files/img1.png" alt="$ \Theta$">(<i>p</i>(<i>N</i>))</span>.
+</li>
+</ol>
+
+<p>
+Case 1 corresponds to our Example 7. Most of the time is spent making the recursive calls and it's
+the number of these calls that counts.
+
+</p><p>
+Case 2 corresponds to our Example 5. The time spent making the calls is roughly equal to the time
+to prepare the calls and process the results. On all levels of the recursion tree we do roughly
+the same amount of work, the depth of the tree is always logarithmic.
+
+</p><p>
+Case 3 corresponds to our Example 6. Most of the time is spent on
+preparing the recursive calls and processing the results. Usually the result will be
+asymptotically equal to the time spent in the root node.
+
+</p><p>
+Note the word "usually" and the extra condition in Case 3. For this result to hold
+we need <span class="MATH"><i>p</i></span> to be somehow "regular" - in the sense that for each node in the recursion tree
+the time spent in the node must be greater than the time spent in its chidren (excluding
+further recursive calls). This is nothing to worry about too much, most probably all
+functions <span class="MATH"><i>p</i></span> you will encounter in practice will satisfy this condition (if they satisfy
+the first condition of Case 3).
+
+</p><p>
+
+<b>Example 8.</b> Let <span class="MATH"><i>f</i> (<i>N</i>)</span> be the time Strassen's fast matrix multiplication algorithm
+needs to multiply two <span class="MATH"><i>N</i> <tt>x</tt> <i>N</i></span> square matrices. This is a recursive algorithm, that
+makes 7 recursive calls, each time multiplying two <!-- MATH
+ $(N/2)\times (N/2)$
+ -->
+<span class="MATH">(<i>N</i>/2) <tt>x</tt> (<i>N</i>/2)</span> square matrices,
+and then computes the answer in <!-- MATH
+ $\Theta(N^2)$
+ -->
+<span class="MATH"><img width="15" height="14" align="BOTTOM" border="0" src="./complexity2_files/img1.png" alt="$ \Theta$">(<i>N</i><sup>2</sup>)</span> time.
+
+</p><p>
+This leads us to the following recurrence equation:
+
+</p><p>
+</p><div align="CENTER" class="mathdisplay">
+<img src="./complexity2_files/new108.png">
+</div>
+
+<p>
+Using the Master Theorem, we see that Case 1 applies. Thus the time complexity of Strassen's
+algorithm is <!-- MATH
+ $\Theta(N^{\log_2 7}) \approx \Theta(N^{2.807})$
+ -->
+<span class="MATH"><img src="./complexity2_files/new109.png"></span>. Note that by implementing
+the definition of matrix multiplication we get only a <!-- MATH
+ $\Theta(N^3)$
+ -->
+<span class="MATH"><img width="15" height="14" align="BOTTOM" border="0" src="./complexity2_files/img1.png" alt="$ \Theta$">(<i>N</i><sup>3</sup>)</span> algorithm.
+
+</p><p>
+
+<b>Example 9.</b> Occasionally we may encounter the situation when the problems in
+the recursive calls are not of the same size. An example may be the "median-of-five" algorithm
+to find the <span class="MATH"><i>k</i></span>-th element of an array. It can be shown that its time complexity satisfies
+the recurrence equation
+
+
+</p><p>
+</p><div align="CENTER" class="mathdisplay">
+<img src="./complexity2_files/new110.png">
+</div>
+
+<p>
+How to solve it? Can the recursion tree be applied also in such asymmetric cases?
+Is there a more general version of Master Theorem that handles also these cases?
+And what should I do with the recurrence <!-- MATH
+ $f(N) = 4f(N/4) + \Theta(N\log N)$
+ -->
+<span class="MATH"><i>f</i> (<i>N</i>) = 4<i>f</i> (<i>N</i>/4) + <img width="15" height="14" align="BOTTOM" border="0" src="./complexity2_files/img1.png" alt="$ \Theta$">(<i>N</i> log&nbsp;<i>N</i>)</span>, where the
+Master Theorem doesn't apply?
+
+</p><p>
+We won't answer these questions here. This article doesn't claim to be the one and
+only reference to computational complexity. If you are already asking these questions,
+you understand the basics you need for programming contests - and if you
+are interested in knowing more, there are good books around that can help you.
+
+</p><p>
+Thanks for reading this far. If you have any questions, comments, bug reports or
+any other feedback, please use the Round tables. I'll do my best to answer.
+
+
+</p><p>&nbsp;</p>
+        </td>
+<!-- Center Column Ends -->
+
+<!-- Right Column Begins -->
+         <td width="170" id="onRight">
+            
+
+
+
+<script type="text/javascript" language="javascript">
+
+</script>
+
+
+
+<div class="rightColContent">
+    <br><br>
+</div>
+
+
+         </td>
+<!-- Right Column Ends -->
+
+<!-- Gutter -->
+         <td width="10"><img src="./complexity2_files/clear.gif" width="10" height="1" border="0"></td>
+<!-- Gutter Ends -->
+    </tr>
+</tbody></table>
+
+<div id="onBottom">
+
+
+
+
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody>
+    <tr>
+        <td width="100%" class="footer">
+            <a href="http://www.topcoder.com/" class="footerLinks">Home</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href="http://www.topcoder.com/aboutus/" class="footerLinks">About TopCoder</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href="http://www.topcoder.com/aboutus/news/" class="footerLinks">Press Room</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href="http://www.topcoder.com/help/template-help/" class="footerLinks">Contact Us</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href="http://www.topcoder.com/aboutus/careers/" class="footerLinks">Careers</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href="http://www.topcoder.com/tc?module=Static&d1=about&d2=privacy" class="footerLinks">Privacy</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href="http://www.topcoder.com/tc?module=Static&d1=about&d2=terms" class="footerLinks">Terms</a>
+            <br>
+            <a href="http://www.topcoder.com/tc" class="footerLinks">Competitions</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href="https://www.topcoder.com/direct/" class="footerLinks">Cockpit</a>        </td>
+    </tr>
+    <tr>
+      <td width="100%" class="copyright">Copyright TopCoder, Inc. 2001-<script type="text/javascript">d=new Date();document.write(d.getFullYear());</script>2011</td></tr>
+</tbody>
+</table>
+
+</div>
+
+
+
+</body></html>

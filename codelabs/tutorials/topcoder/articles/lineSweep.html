@@ -1,0 +1,927 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- saved from url=(0072)http://community.topcoder.com/tc?module=Static&d1=tutorials&d2=lineSweep -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Algorithm Tutorials</title>
+
+
+<script type="text/javascript" async="" src="./lineSweep_files/ga.js"></script><script language="JavaScript" type="text/javascript" src="./lineSweep_files/tcscript.js"></script><link type="image/x-icon" rel="shortcut icon" href="http://community.topcoder.com/i/favicon.ico">
+
+
+
+
+
+
+<link type="text/css" rel="stylesheet" href="./lineSweep_files/style.css">
+<link type="text/css" rel="stylesheet" href="./lineSweep_files/coders.css">
+<link type="text/css" rel="stylesheet" href="./lineSweep_files/tcStyles20080219.css">
+<link type="text/css" rel="stylesheet" href="./lineSweep_files/jobsRemix.css">
+
+
+<script language="JavaScript" src="./lineSweep_files/print.js"></script>
+</head>
+<body>
+<div id="onTop" class="invisible">
+    
+
+
+
+
+
+
+<script type="text/javascript" src="./lineSweep_files/popup.js"></script>
+
+<div id="shortcutBar">
+    <div class="icon"><a href="http://www.topcoder.com/tc"><img src="./lineSweep_files/scHome.png" alt="" onmouseover="postPopUpText(&#39;globalPopupText&#39;,&#39;Home&#39;); popUp(this,&#39;globalPopup&#39;);" onmouseout="popHide()"></a></div>
+    <div class="icon"><a href="javascript:arena();"><img src="./lineSweep_files/scAlgo.png" alt="" onmouseover="postPopUpText(&#39;globalPopupText&#39;,&#39;Algorithm Competitions&#39;); popUp(this,&#39;globalPopup&#39;);" onmouseout="popHide()"></a></div>
+    <div class="icon"><a href="http://www.topcoder.com/tc?module=ActiveContests&pt=23"><img src="./lineSweep_files/scConceptualization.png" alt="" onmouseover="postPopUpText(&#39;globalPopupText&#39;,&#39;Software Conceptualization Competitions&#39;); popUp(this,&#39;globalPopup&#39;);" onmouseout="popHide()"></a></div>
+    <div class="icon"><a href="http://www.topcoder.com/tc?module=ActiveContests&pt=6"><img src="./lineSweep_files/scSpecification.png" alt="" onmouseover="postPopUpText(&#39;globalPopupText&#39;,&#39;Software Specification Competitions&#39;); popUp(this,&#39;globalPopup&#39;);" onmouseout="popHide()"></a></div>
+    <div class="icon"><a href="http://www.topcoder.com/tc?module=ActiveContests&pt=7"><img src="./lineSweep_files/scArchitecture.png" alt="" onmouseover="postPopUpText(&#39;globalPopupText&#39;,&#39;Software Architecture Competitions&#39;); popUp(this,&#39;globalPopup&#39;);" onmouseout="popHide()"></a></div>
+    <div class="icon"><a href="http://www.topcoder.com/tc?module=ViewActiveContests&ph=112"><img src="./lineSweep_files/scDesign.png" alt="" onmouseover="postPopUpText(&#39;globalPopupText&#39;,&#39;Component Design Competitions&#39;); popUp(this,&#39;globalPopup&#39;);" onmouseout="popHide()"></a></div>
+    <div class="icon"><a href="http://www.topcoder.com/tc?module=ViewActiveContests&ph=113"><img src="./lineSweep_files/scDevelopment.png" alt="" onmouseover="postPopUpText(&#39;globalPopupText&#39;,&#39;Component Development Competitions&#39;); popUp(this,&#39;globalPopup&#39;);" onmouseout="popHide()"></a></div>
+
+    <div class="icon"><a href="http://www.topcoder.com/tc?module=ViewAssemblyActiveContests"><img src="./lineSweep_files/scAssembly.png" alt="" onmouseover="postPopUpText(&#39;globalPopupText&#39;,&#39;Software Assembly Competitions&#39;); popUp(this,&#39;globalPopup&#39;);" onmouseout="popHide()"></a></div>
+    <div class="icon"><a href="http://www.topcoder.com/tc?module=ActiveContests&pt=13"><img src="./lineSweep_files/scTesting.png" alt="" onmouseover="postPopUpText(&#39;globalPopupText&#39;,&#39;Testing Competitions&#39;); popUp(this,&#39;globalPopup&#39;);" onmouseout="popHide()"></a></div>
+    <div class="icon"><a href="http://www.topcoder.com/tc?module=ActiveContests&pt=35"><img src="./lineSweep_files/scContentCreation.gif" alt="" onmouseover="postPopUpText(&#39;globalPopupText&#39;,&#39;Content Creation Competitions&#39;); popUp(this,&#39;globalPopup&#39;);" onmouseout="popHide()"></a></div>
+    <div class="icon"><a href="javascript:arena();"><img src="./lineSweep_files/scTCHS.png" alt="" onmouseover="postPopUpText(&#39;globalPopupText&#39;,&#39;High School Competitions&#39;); popUp(this,&#39;globalPopup&#39;);" onmouseout="popHide()"></a></div>
+    <div class="icon"><a href="http://www.topcoder.com/longcontest/?module=ViewActiveContests"><img src="./lineSweep_files/scMarathon.png" alt="" onmouseover="postPopUpText(&#39;globalPopupText&#39;,&#39;Marathon Matches&#39;); popUp(this,&#39;globalPopup&#39;);" onmouseout="popHide()"></a></div>
+    <div class="icon"><a href="http://studio.topcoder.com/?module=ViewActiveContests"><img src="./lineSweep_files/scStudio.png" alt="" onmouseover="postPopUpText(&#39;globalPopupText&#39;,&#39;TopCoder Studio Competitions&#39;); popUp(this,&#39;globalPopup&#39;);" onmouseout="popHide()"></a></div>
+</div>
+
+<div id="globalPopup" class="popUp"><div id="globalPopupText"></div></div>
+
+
+<div style="position: absolute; right:0px; top:31px;"><a href="http://www.topcoder.com/reg/"><img src="./lineSweep_files/register_now.gif" alt="Register Now" style="display:block;"></a></div>
+
+
+<div align="center" style="margin: 0px 290px 0px 280px;">
+   <div id="outerLogo">
+      <div id="innerLogo">
+      <a href="http://www.topcoder.com/"><img src="./lineSweep_files/topcoder.gif" alt="TopCoder" style="display: block;"></a>
+      </div>
+   </div>
+</div>
+
+<div class="memberCountBox">
+Member Count: 316,431 - 
+
+
+October 24, 2011
+
+&nbsp;<a class="gMetal" href="Javascript:tcTime()">[Get Time]</a>
+</div>
+
+<div class="topBar">
+    <div style="float: right; margin: 5px 0px 0px 0px;">
+        
+                <a class="gMetal" href="http://www.topcoder.com/tc?&module=Login">Login</a>
+            
+        
+    </div>
+</div>
+</div>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+    <tbody><tr valign="top">
+        <!-- Left Column Begins-->
+        <td width="180" id="onLeft" class="invisible">
+
+
+
+
+
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+<script language="JavaScript" type="text/javascript" src="./lineSweep_files/arena.js"></script>
+
+
+<script language="JavaScript" type="text/javascript">
+<!--
+function toggleMenu(menuTitle,menuID){
+   var menu = document.getElementById(menuID);
+   if(menu.style.display == 'block') menu.className = 'CLOSED';
+   else if(menu.className == 'OPEN' && menu.style.display != 'none') menu.className = 'CLOSED';
+   else {
+      menu.className = 'OPEN';
+   }
+   if(menuTitle.blur)menuTitle.blur();
+   if(menuTitle.className == 'exp') menuTitle.className = 'exp_ed';
+   else menuTitle.className = 'exp';
+   return;
+}
+function flipMenu(myMenuName){
+   var menuName = document.getElementById(myMenuName);
+   menuName.className = 'exp_ed';
+}
+
+// -->
+</script>
+
+<div style="padding: 0px;"><img src="./lineSweep_files/leftnav_top.gif" alt=""></div>
+<div id="navbar">
+    
+<ul>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_competitions&#39;)">Competitions</a>
+<ul id="m_competitions">
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_competitions_overview&#39;)">Overview</a>
+<ul id="m_competitions_overview">
+<li><a href="http://apps.topcoder.com/wiki/x/MQD9Ag">Reliability</a></li>
+<li><a href="http://apps.topcoder.com/wiki/x/lYE_/">Ratings</a></li>
+<li><a href="http://apps.topcoder.com/wiki/x/aoE_/">How to Get Paid</a></li>
+<li><a href="http://apps.topcoder.com/wiki/x/2gRmAw">Administrative Overview </a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_copilot_opportunities&#39;)">Copilot Opportunities</a>
+<ul id="m_copilot_opportunities">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Copilot+Overview">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_copilot_support&#39;)">Track Information</a>
+<ul id="m_copilot_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Copilot+Opportunities">How to Compete</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Copilot+Opportunities">Documentation</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Copilot+Opportunities">Tutorial</a></li>
+</ul></li>
+<li><a href="http://www.topcoder.com/tc?module=ActiveContests&pt=29">Active Contests</a></li>
+<li><a href="http://www.topcoder.com/tc?module=CompList&ph=140">Past Contests</a></li>
+<li><a href="http://www.topcoder.com/tc?module=ViewCopilotPool&size=20&view=0&sort=12">Copilot Pool</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;competition_design&#39;)">Design</a>
+<ul id="competition_design">
+<li><a href="http://studio.topcoder.com/">Studio</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_conceptualization_competitions&#39;)">Conceptualization</a>
+<ul id="m_conceptualization_competitions">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/TopCoder+Conceptualization+Contests">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_conceptualization_support&#39;)">Track Information</a>
+<ul id="m_conceptualization_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Conceptualization+Competitions">How to Compete</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Conceptualization+Documentation">Documentation</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Conceptualization+Submission+Instructions">Tutorial</a></li>
+</ul></li>
+<li><a href="http://community.topcoder.com/tc?module=ActiveContests&pt=23">Active Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ContestStatus&pt=23">Contest Status</a></li>
+<li><a href="http://community.topcoder.com/tc?module=CompList&ph=134">Past Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ViewReviewProjects&pt=23">Review Opportunities</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ReviewBoard&pt=23">Meet the Review Board</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_specification_competitions&#39;)">Specification</a>
+<ul id="m_specification_competitions">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/TopCoder+Specification+Contests">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_specification_support&#39;)">Track Information</a>
+<ul id="m_specification_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Specification+Competitions">How to Compete</a></li>
+</ul></li>
+<li><a href="http://community.topcoder.com/tc?module=ActiveContests&pt=6">Active Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ContestStatus&pt=6">Contest Status</a></li>
+<li><a href="http://community.topcoder.com/tc?module=CompList&ph=117">Past Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ViewReviewProjects&pt=6">Review Opportunities</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ReviewBoard&pt=6">Meet the Review Board</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_architecture_competitions&#39;)">Architecture</a>
+<ul id="m_architecture_competitions">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Architecture+Overview">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_architecture_support&#39;)">Track Information</a>
+<ul id="m_architecture_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Architecture+Competitions">How to Compete</a></li>
+</ul></li>
+<li><a href="http://community.topcoder.com/tc?module=ActiveContests&pt=7">Active Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ContestStatus&pt=7">Contest Status</a></li>
+<li><a href="http://community.topcoder.com/tc?module=CompList&ph=118">Past Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ViewReviewProjects&pt=7">Review Opportunities</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ReviewBoard&pt=7">Meet the Review Board</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_des_competitions&#39;)">Component Design</a>
+<ul id="m_des_competitions">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Component+Design+Overview">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_des_support&#39;)">Track Information</a>
+<ul id="m_des_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Component+Design+Competitions">How to Compete</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Component+Design+Documentation">Documentation</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ColorChange&ph=112">Recent Color Changes</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Component+Design+Data+Feeds">Data Feeds</a></li>
+</ul></li>
+<li><a href="http://community.topcoder.com/tc?module=ViewActiveContests&ph=112">Active Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ContestStatus&pt=1">Contest Status</a></li>
+<li><a href="http://community.topcoder.com/tc?module=CompList&ph=112">Past Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ViewReviewProjects&pt=1">Review Opportunities</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ReviewBoard&pt=1">Meet the Review Board</a></li>
+</ul></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;competition_dev&#39;)">Development</a>
+<ul id="competition_dev">
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_dev_competitions&#39;)">Component Development</a>
+<ul id="m_dev_competitions">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Component+Development+Competitions">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_dev_support&#39;)">Track Information</a>
+<ul id="m_dev_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Component+Development+Competitions">How to Compete</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Component+Development+Documentation">Documentation</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ColorChange&ph=113">Recent Color Changes</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Component+Development+Data+Feeds">Data Feeds</a></li>
+</ul></li>
+<li><a href="http://community.topcoder.com/tc?module=ViewActiveContests&ph=113">Active Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ContestStatus&pt=2">Contest Status</a></li>
+<li><a href="http://community.topcoder.com/tc?module=CompList&ph=113">Past Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ViewReviewProjects&pt=2">Review Opportunities</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ReviewBoard&pt=2">Meet the Review Board</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_assembly_competitions&#39;)">Assembly</a>
+<ul id="m_assembly_competitions">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Assembly">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_assembly_support&#39;)">Track Information</a>
+<ul id="m_assembly_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Assembly+Competitions">How to Compete</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Assembly+Competition+Tutorial">Tutorial</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Assembly+Competition+Documentation">Documentation</a></li>
+</ul></li>
+<li><a href="http://community.topcoder.com/tc?module=ViewAssemblyActiveContests">Active Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ContestStatus&pt=14">Contest Status</a></li>
+<li><a href="http://community.topcoder.com/tc?module=CompList&ph=125">Past Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ViewReviewProjects&pt=14">Review Opportunities</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ReviewBoard&pt=14">Meet the Review Board</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_test_suites_competitions&#39;)">Test Suites</a>
+<ul id="m_test_suites_competitions">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Test+Scenarios+and+Scripts">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_test_suites_support&#39;)">Track Information</a>
+<ul id="m_test_suites_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Testing+Competitions">How to Compete</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Testing+Competition+Tutorial">Tutorial</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Testing+Competition+Documentation">Documentation</a></li>
+</ul></li>
+<li><a href="http://community.topcoder.com/tc?module=ActiveContests&pt=13">Active Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ContestStatus&pt=13">Contest Status</a></li>
+<li><a href="http://community.topcoder.com/tc?module=CompList&pt=13">Past Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ViewReviewProjects&pt=13">Review Opportunities</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ReviewBoard&pt=13">Meet the Review Board</a></li>
+</ul></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;competition_ui_dev&#39;)">UI Development</a>
+<ul id="competition_ui_dev">
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_ui_prototype_competitions&#39;)">UI Prototype</a>
+<ul id="m_ui_prototype_competitions">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/UI+Prototype+Competitions">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_ui_prototype_support&#39;)">Track Information</a>
+<ul id="m_ui_prototype_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+UI+Prototype+Competitions">How to Compete</a></li>
+</ul></li>
+<li><a href="http://community.topcoder.com/tc?module=ActiveContests&pt=19">Active Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ContestStatus&pt=19">Contest Status</a></li>
+<li><a href="http://community.topcoder.com/tc?module=CompList&pt=19">Past Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ViewReviewProjects&pt=19">Review Opportunities</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ReviewBoard&pt=19">Meet the Review Board</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_ria_build_competitions&#39;)">RIA Build</a>
+<ul id="m_ria_build_competitions">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/RIA+Build+Competitions">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_ria_build_support&#39;)">Track Information</a>
+<ul id="m_ria_build_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+RIA+Builds">How to Compete</a></li>
+</ul></li>
+<li><a href="http://community.topcoder.com/tc?module=ActiveContests&pt=24">Active Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ContestStatus&pt=24">Contest Status</a></li>
+<li><a href="http://community.topcoder.com/tc?module=CompList&pt=24">Past Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ViewReviewProjects&pt=24">Review Opportunities</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ReviewBoard&pt=24">Meet the Review Board</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_content_creation_competitions&#39;)">Content Creation</a>
+<ul id="m_content_creation_competitions">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Content+Contests+Overview">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_content_creation_support&#39;)">Track Information</a>
+<ul id="m_content_creation_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Content+Creation+Competitions">How to Compete</a></li>
+</ul></li>
+<li><a href="http://community.topcoder.com/tc?module=ActiveContests&pt=35">Active Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ContestStatus&pt=35">Contest Status</a></li>
+<li><a href="http://community.topcoder.com/tc?module=CompList&pt=35">Past Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ViewReviewProjects&pt=35">Review Opportunities</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ReviewBoard&pt=35">Meet the Review Board</a></li>
+</ul></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;competition_qa&#39;)">QA and Maintenance</a>
+<ul id="competition_qa">
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_test_scenarios_competitions&#39;)">Test Scenarios</a>
+<ul id="m_test_scenarios_competitions">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Test+Scenarios+and+Scripts">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_test_scenarios_support&#39;)">Track Information</a>
+<ul id="m_test_scenarios_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Testing+Competitions">How to Compete</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Testing+Competition+Tutorial">Tutorial</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Testing+Competition+Documentation">Documentation</a></li>
+</ul></li>
+<li><a href="http://community.topcoder.com/tc?module=ActiveContests&pt=26">Active Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ContestStatus&pt=26">Contest Status</a></li>
+<li><a href="http://community.topcoder.com/tc?module=CompList&pt=26">Past Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ViewReviewProjects&pt=26">Review Opportunities</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ReviewBoard&pt=26">Meet the Review Board</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_bugraces_competitions&#39;)">Bug Race</a>
+<ul id="m_bugraces_competitions">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Bug+Race+Competition+Overview">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_bugraces_support&#39;)">Track Information</a>
+<ul id="m_bugraces_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Bug+Race+Competitions">How to Compete</a></li>
+</ul></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Active+Bug+Race+Competitions">Active Contests</a></li>
+<li><a href="http://apps.topcoder.com/wiki/x/FQG2AQ">Review Opportunities</a></li>
+</ul></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;competition_algo&#39;)">Algorithm</a>
+<ul id="competition_algo">
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_algo_competitions&#39;)">Single Round Matches (SRM)</a>
+<ul id="m_algo_competitions">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Algorithm+Overview">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_algo_support&#39;)">Track Information</a>
+<ul id="m_algo_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+SRM+Algorithm+Competitions">How to Compete</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/SRM+Algorithm+Competition+FAQs">FAQs</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Algorithm+Competition+Rating+System">Rating System</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Write+Problems+for+TopCoder">Write Problems</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_algo_stats&#39;)">Statistics</a>
+<ul id="m_algo_stats">
+<li><a href="http://community.topcoder.com/tc?module=MatchList">Match Archive</a></li>
+<li><a href="http://community.topcoder.com/stat?c=round_overview">Match Overviews</a></li>
+<li><a href="http://community.topcoder.com/tc?module=SrmDivisionWins">Match Winners</a></li>
+<li><a href="http://community.topcoder.com/stat?c=last_match">Match Results</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Algorithm+Problem+Set+Analysis">Match Editorials</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ProblemArchive">Problem Archive</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ColorChange&ratid=1">Recent Color Changes</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Algorithm+Data+Feeds">Data Feeds</a></li>
+</ul></li>
+<li><a href="javascript:arena();">Launch Arena</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_long_contests&#39;)">Marathon Match</a>
+<ul id="m_long_contests">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Marathon+Match+Overview">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_long_support&#39;)">Track Information</a>
+<ul id="m_long_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Marathon+Match+Events">How to Compete</a></li>
+<li><a href="http://community.topcoder.com/longcontest/?module=Static&d1=support&d2=ratings">Rating System</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_long_stats&#39;)">Statistics</a>
+<ul id="m_long_stats">
+<li><a href="http://community.topcoder.com/longcontest/stats/?module=MatchList">Match Archive</a></li>
+<li><a href="http://community.topcoder.com/longcontest/stats/?module=ViewOverview">Match Overview</a></li>
+<li><a href="http://community.topcoder.com/longcontest/stats/?module=MatchWinners">Match Winners</a></li>
+<li><a href="http://community.topcoder.com/longcontest/?module=Static&d1=match_editorials&d2=archive">Match Editorials</a></li>
+<li><a href="http://community.topcoder.com/longcontest/?module=Static&d1=support&d2=dataFeed">Data Feeds</a></li>
+</ul></li>
+<li><a href="http://community.topcoder.com/longcontest/?module=ViewActiveContests">Active Contests</a></li>
+<li><a href="http://community.topcoder.com/longcontest/?module=ViewPractice">Practice</a></li>
+<li><a href="http://community.topcoder.com/longcontest/?module=ViewQueue">Queue Status</a></li>
+</ul></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_hs_competitions&#39;)">High School</a>
+<ul id="m_hs_competitions">
+<li><a href="http://community.topcoder.com/tc?module=Static&d1=hs&d2=home">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_hs_stats&#39;)">Statistics</a>
+<ul id="m_hs_stats">
+<li><a href="http://community.topcoder.com/tc?module=HSRoundOverview">Match Overview</a></li>
+<li><a href="http://community.topcoder.com/tc?module=HSRoundStatsTeam">Match Results (Team)</a></li>
+<li><a href="http://community.topcoder.com/tc?module=HSRoundStatsInd">Match Results (Indiv.)</a></li>
+<li><a href="http://community.topcoder.com/tc?module=Static&d1=hs&d2=match_editorials&d3=archive">Match Editorials</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ColorChange&ratid=2">Recent Color Changes</a></li>
+<li><a href="http://community.topcoder.com/tc?module=Static&d1=hs&d2=support&d3=dataFeed">Data Feeds</a></li>
+</ul></li>
+<li><a href="http://community.topcoder.com/tc?module=Static&d1=hs&d2=spotlightSessions">Spotlight Sessions</a></li>
+<li><a href="javascript:arena();">Launch Arena</a></li>
+</ul></li>
+<li><a href="http://community.topcoder.com/dr">The Digital Run</a></li>
+<li><a href="http://software.topcoder.com/review">Submit &amp; Review</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_topcoder_networks&#39;)">TopCoder Networks</a>
+<ul id="m_topcoder_networks">
+<li><a href="http://community.topcoder.com/alcatel/">Alcatel Lucent</a></li>
+<li><a href="http://community.topcoder.com/amdapp/">AMD OpenCL</a></li>
+<li><a href="http://community.topcoder.com/darpacs/">DARPA CS-STEM</a></li>
+<li><a href="http://community.topcoder.com/ntl/">NASA Tournament Lab</a></li>
+<li><a href="http://community.topcoder.com/x/">PayPalX</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_events&#39;)">Events</a>
+<ul id="m_events">
+<li><a href="http://community.topcoder.com/tc?module=Static&d1=calendar&d2=thisMonth">Event Calendar</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_tournaments&#39;)">Tournaments</a>
+<ul id="m_tournaments">
+<li><a href="http://community.topcoder.com/tc?module=Static&d1=tournaments&d2=home">TopCoder</a></li>
+<li><a href="http://community.topcoder.com/pl/">Powered by TopCoder</a></li>
+<li><a href="http://community.topcoder.com/tc?module=CRPFStatic&d1=crpf&d2=crpf_overview">Charity</a></li>
+</ul></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_stats&#39;)">Statistics</a>
+<ul id="m_stats">
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_competitor_stats&#39;)">The Tops</a>
+<ul id="m_competitor_stats">
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_top_rated_competitors&#39;)">Top Ranked</a>
+<ul id="m_top_rated_competitors">
+<li><a href="http://community.topcoder.com/tc?module=AlgoRank">Algorithm</a></li>
+<li><a href="http://community.topcoder.com/tc?module=HSRank">High School</a></li>
+<li><a href="http://community.topcoder.com/longcontest/stats/?module=CoderRank">Marathon Match</a></li>
+<li><a href="http://community.topcoder.com/stat?c=top_conceptors">Conceptualization</a></li>
+<li><a href="http://community.topcoder.com/stat?c=top_specificators">Specification</a></li>
+<li><a href="http://community.topcoder.com/stat?c=top_architects">Architecture</a></li>
+<li><a href="http://community.topcoder.com/stat?c=top_designers">Design</a></li>
+<li><a href="http://community.topcoder.com/stat?c=top_developers">Development</a></li>
+<li><a href="http://community.topcoder.com/stat?c=top_assemblers">Assembly</a></li>
+<li><a href="http://community.topcoder.com/stat?c=top_testers">Test Suites</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_recordbook&#39;)">Record Book</a>
+<ul id="m_recordbook">
+<li><a href="http://community.topcoder.com/tc?module=Static&d1=statistics&d2=recordbook_home">Algorithm</a></li>
+<li><a href="http://community.topcoder.com/tc?module=Static&d1=compstats&d2=comp_recordbook_home">Component</a></li>
+<li><a href="http://community.topcoder.com/longcontest/?module=Static&d1=stats&d2=recordbook_home">Marathon Match</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_com&#39;)">Coder of the Month</a>
+<ul id="m_com">
+<li><a href="http://community.topcoder.com/tc?module=COMHistory&achtid=5">Algorithm</a></li>
+<li><a href="http://community.topcoder.com/tc?module=COMHistory&achtid=6">Design</a></li>
+<li><a href="http://community.topcoder.com/tc?module=COMHistory&achtid=7">Development</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li class="exp_ed"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_edu_content&#39;)">Tutorials</a>
+<ul id="m_edu_content" class="OPEN">
+<li><a href="http://community.topcoder.com/tc?module=Static&d1=education&d2=overview">Overview</a></li>
+<li class="highlight"><a href="http://community.topcoder.com/tc?module=Static&d1=tutorials&d2=alg_index">Algorithm Tutorials</a></li>
+<li><a href="http://community.topcoder.com/tc?module=Static&d1=tutorials&d2=comp_index">Component Tutorials</a></li>
+<li><a href="http://community.topcoder.com/tc?module=Static&d1=tutorials&d2=mm_index">Marathon Tutorials</a></li>
+<li><a href="http://apps.topcoder.com/wiki/dashboard.action">Wiki</a></li>
+</ul></li>
+<li><a href="http://forums.topcoder.com/">Forums</a></li>
+<li><a href="http://community.topcoder.com/tc?&module=SurveyList">Surveys</a></li>
+<li><a href="http://community.topcoder.com/tc?module=MyHome">My TopCoder</a></li>
+<li><a href="http://www.topcoder.com/help">Help Center</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_about_tc&#39;)">About TopCoder</a>
+<ul id="m_about_tc">
+<li><a href="http://www.topcoder.com/aboutus/">Overview</a></li>
+<li><a href="http://www.topcoder.com/aboutus/">Why Join TopCoder?</a></li>
+<li><a href="http://www.topcoder.com/aboutus/careers/">Working at TopCoder</a></li>
+<li><a href="http://www.topcoder.com/aboutus/management/">Leadership</a></li>
+<li><a href="http://www.topcoder.com/aboutus/news/">Press Room</a></li>
+</ul></li></ul>
+
+    <div style="float: left; padding: 10px 0px 0px 17px;">
+        
+        <a href="http://www.topcoder.com/tc?module=LinkTracking&link=http://apps.topcoder.com/wiki/x/L4TD&refer=leftnav"><img src="./lineSweep_files/umlTool.png" alt="UML Tool"></a>
+
+        
+        
+        
+        
+    </div>
+    
+
+<div id="navbarSearch">
+<b>Member Search:</b>
+<form action="http://www.topcoder.com/tc" method="get" name="simpleSearchForm" class="noSpace" id="simpleSearchForm">
+   <input class="noSpace" type="hidden" name="module" value="SimpleSearch">
+   <input class="noSpace" type="text" name="ha" value="Handle:" size="12" maxlength="15" onfocus="javascript: if (document.simpleSearchForm.ha.value==&#39;Handle:&#39;) document.simpleSearchForm.ha.value = &#39;&#39;;" onblur="javascript:if (document.simpleSearchForm.ha.value == &#39;&#39;)document.simpleSearchForm.ha.value = &#39;Handle:&#39;;">
+   <a class="gMetal" href="javascript:void document.simpleSearchForm.submit();">Go</a><br>
+   <a class="gMetal" href="http://www.topcoder.com/tc?module=ViewAdvanced">Advanced Search</a>
+</form>
+</div>
+</div>
+<div style="float: left; clear:left; padding: 0px 0px 23px 0px;"><img src="./lineSweep_files/leftnav_bottom.gif" alt=""></div>
+
+
+    <div align="center" style="float: left; clear:left; width: 170px; margin: 0px;">
+        <img src="./lineSweep_files/brackets.png" alt="" style="margin-bottom: 23px;">
+    </div>
+
+
+
+
+        </td>
+        <!-- Left Column Ends -->
+        <!-- Center Column Begins -->
+        <td width="100%" align="center"><div class="tutorBodyFull">
+            
+
+
+
+
+<table cellspacing="0" cellpadding="0" class="pageTitleTable">
+    <tbody><tr>
+        <td width="100%" class="pageTitle"><img border="0" src="./lineSweep_files/header_alg_tut.gif" alt="alg_tut"></td>
+        <td align="right" class="pageSubtitle">&nbsp;&nbsp;</td>
+    </tr>
+</tbody></table>
+
+
+            <div class="linkBox"> <a href="http://community.topcoder.com/tc?module=Static&d1=tutorials&d2=alg_index">Archive</a><br>
+                <span id="printableLink" class="invisible"><a href="Javascript:makeInvisible();">Printable view</a><br>
+                </span> <span id="navigableLink" class=""><a href="Javascript:makeNavigable();">Normal view</a><br>
+                </span>
+                <a href="http://forums.topcoder.com/?module=ThreadList&forumID=515054">Discuss this article</a><br>
+                <a href="http://community.topcoder.com/tc?module=Static&d1=help&d2=writeForTC">Write for TopCoder</a>
+            </div>
+            
+            <span class="bigTitle">Line Sweep Algorithms</span>
+            <br><br>
+
+            <div class="authorPhoto">
+                <img src="./lineSweep_files/bmerry_big2.jpg" alt="Author">
+            </div>
+
+            <div class="authorText"> By&nbsp;<a href="http://www.topcoder.com/tc?module=MemberProfile&cr=251074&tab=alg" class="coderTextRed">bmerry</a><br>
+                <em>TopCoder Member</em>
+            </div>
+
+            <br clear="all">
+
+<p>A previous series of <a href="http://community.topcoder.com/tc?module=Static&d1=tutorials&d2=geometry1">articles</a>
+        covered the basic tools of computational geometry. In this
+        article I'll explore some more advanced algorithms that can
+        be built from these basic tools. They are all based on the
+        simple but powerful idea of a sweep line: a vertical line that is
+        conceptually “swept” across the plane. In
+        practice, of course, we cannot simulate all points in time and
+        so we consider only some discrete points.</p>
+
+        <p>In several places I'll refer to the Euclidean and Manhattan
+        distances. The Euclidean distance is the normal, everyday distance
+        given by Pythagoras' Theorem. The Manhattan distance between
+        points (x<sub>1</sub>, y<sub>1</sub>) and (x<sub>2</sub>,
+        y<sub>2</sub>) is the distance that must be travelled while
+        moving only horizontally or vertically, namely 
+        |x<sub>1</sub> &#8722; x<sub>2</sub>| + |y<sub>1</sub> &#8722;
+        y<sub>2</sub>|. It is called the Manhattan distance because
+        the roads in Manhattan are laid out in a grid and so
+        the Manhattan distance is the distance that must be travelled
+        by road (it is also called the "taxicab distance," or more
+        formally the L<sub>1</sub> metric).</p>
+
+        <p>In addition, a <a href="http://community.topcoder.com/tc?module=Static&d1=tutorials&d2=binarySearchRedBlack">balanced
+            binary tree</a> is used in some of the
+        algorithms. Generally you can just use a <code>set</code>
+        in C++ or a <code>TreeSet</code> in Java, but in some cases
+        this is insufficient because it is necessary to store extra
+        information in the internal nodes.</p>
+
+        <p><span class="bodySubtitle">Closest pair</span><br>
+        Given a set of points, find the pair that is closest
+        (with either metric). Of course, this can be solved in
+        O(N<sup>2</sup>) time by considering all the pairs, but a line
+        sweep can reduce this to O(N&nbsp;log&nbsp;N).</p>
+
+        <p>Suppose that we have processed points 1 to
+        N&nbsp;&#8722;&nbsp;1 (ordered by X) and the shortest distance
+        we have found so far is h. We now process point N and try to
+        find a point closer to it than h. We maintain a set of all
+        already-processed points whose X coordinates are within h of
+        point N, as shown in the light grey rectangle. As each point
+        is processed, it is added to the set, and when we move on to
+        the next point or when h is decreased, points are removed from
+        the set. The set is ordered by y coordinate. A balanced binary
+        tree is suitable for this, and accounts for the log N
+        factor.</p>
+
+        <div align="center"><img src="./lineSweep_files/closest.png" alt="Closest points" border="0" style="margin-top: 10px 10px 0px 10px;"></div>
+
+        <p>To search for points closer than h to point N, we need only
+        consider points in the active set, and furthermore we need
+        only consider points whose y coordinates are in the range
+        y<sub>N</sub>&nbsp;&#8722;&nbsp;h to y<sub>N</sub>&nbsp;+&nbsp;h
+        (those in the dark grey rectangle). This range can be
+        extracted from the sorted set in O(log N) time, but more
+        importantly the number of elements is O(1) (the exact maximum
+        will depend on the metric used), because the separation
+        between any two points in the set is at least h. It follows
+        that the search for each point requires O(log N) time, giving
+        a total of O(N&nbsp;log&nbsp;N).</p>
+
+        <p><span class="bodySubtitle">Line segment intersections</span><br>
+        We'll start by considering the problem of returning all
+        intersections in a set of horizontal and vertical line
+        segments. Since horizontal lines don't have a single X
+        coordinate, we have to abandon the idea of sorting objects by
+        X. Instead, we have the idea of an <dfn>event</dfn>: an X
+        coordinate at which something interesting happens. In this
+        case, the three types of events are: start of a horizontal line,
+        end of a horizontal line, and a vertical line. As the sweep line
+        moves, we'll keep an <dfn>active set</dfn> of horizontal
+        lines cut by the sweep line, sorted by Y value (the red lines
+        in the figure).</p>
+
+        <div align="center"><img src="./lineSweep_files/linesvh.png" alt="Intersections of horizontal and vertical lines" border="0" style="margin-top: 10px 10px 0px 10px;"></div>
+
+        <p>To handle either of the horizontal line events, we simply
+        need to add or remove an element from the set. Again, we can
+        use a balanced binary tree to guarantee O(log N) time for
+        these operations. When we hit a vertical line, a range search
+        immediately gives all the horizontal lines that it cuts. If
+        horizontal or vertical segments can overlap there is some
+        extra work required, and we must also consider whether lines
+        with coincident endpoints are considered to intersect, but
+        none of this affects the computational complexity.</p>
+
+        <p>If the intersections themselves are required, this takes
+        O(N&nbsp;log&nbsp;N + I) time for I intersections. By augmenting the
+        binary tree structure (specifically, by storing the size
+        of each sub-tree in the root of that sub-tree), it is possible
+        to count the intersections in O(N&nbsp;log&nbsp;N) time.</p>
+
+        <p>In the more general case, lines need not be horizontal or
+        vertical, so lines in the
+        active set can exchange places when they intersect. Instead of
+        having all the events pre-sorted, we have to use a priority
+        queue and dynamically add and remove intersection events. At
+        any point in time, the priority queue contains events for the
+        end-points of line-segments, but also for the intersection
+        points of <em>adjacent</em> elements of the active set
+        (providing they are in the future). Since there are O(N + I)
+        events that will be reached, and each requires O(log N) time
+        to update the active set and the priority queue, this
+        algorithm takes O(N&nbsp;log&nbsp;N + I log N) time. The figure below
+        shows the future events in the priority queue (blue dots);
+        note that <em>not</em> all future intersections are in the
+        queue, either because one of the lines isn't yet active, or
+        because the two lines are not yet adjacent in the active list.</p>
+
+        <div align="center"><img src="./lineSweep_files/lines.png" alt="Intersections of lines" border="0" style="margin-top: 10px 10px 0px 10px;"></div>
+
+        <p><span class="bodySubtitle">Area of the union of rectangles</span><br>
+        Given a set of axis-aligned rectangles, what is the area of
+        their union? Like the line-intersection problem, we can handle
+        this by dealing with events and active sets. Each rectangle
+        has two events: left edge and right edge. When we cross the
+        left edge, the rectangle is added to the active set. When we
+        cross the right edge, it is removed from the active set.</p>
+
+        <div align="center"><img src="./lineSweep_files/rects.png" alt="Union of rectangles" border="0" style="margin-top: 10px 10px 0px 10px;"></div>
+
+        <p>We now know which rectangles are cut by the sweep line (red
+        in the diagram), but we actually want to know the length of
+        sweep line that is cut (the total length of the solid blue
+        segments). Multiplying this length by the horizontal distance
+        between events gives the area swept out between those two
+        events.</p>
+
+        <p>We can determine the cut length by running the same
+        algorithm in an inner loop, but rotated 90 degrees. Ignore the
+        inactive rectangles, and consider a horizontal sweep line that
+        moves top-down. The events are now the horizontal edges of the
+        active rectangles, and every time we cross one, we can simply
+        increment or decrement a counter that says how many rectangles
+        overlap at the current point. The cut length increases as long
+        as the counter is non-zero. Of course, we do not increase it
+        continuously, but rather while moving from one event to the
+        next.</p>
+
+        <p>With the right data structures, this can be implemented in
+        O(N<sup>2</sup>) time (hint: use a boolean array to store the
+        active set rather than a balanced binary tree, and pre-sort
+        the entire set of horizontal edges). In fact the
+        inner line sweep can be replaced by some clever binary tree
+        manipulation to reduce the overall time to O(N&nbsp;log&nbsp;N), but
+        that is more a problem in data structures than in
+        geometry, and is left as an exercise for the reader. The
+        algorithm can also be adapted to answer similar questions,
+        such as the total perimeter length of the union or the maximum
+        number of rectangles that overlap at any point.</p>
+
+        <p><span class="bodySubtitle">Convex hull</span><br>
+        The <dfn>convex hull</dfn> of a set of points is the
+        smallest convex polygon that surrounds the entire set, and has
+        a number of practical applications. An efficient method that
+        is often used in contests is the Graham scan [2], which
+        requires a sort by angle. This isn't as easy as it looks at
+        first, since computing the actual angles is expensive and
+        introduces problems with numeric error. A simpler yet equally
+        efficient algorithm is due to Andrew [1], and requires only a
+        sort by X for a line sweep (although Andrew's original paper
+        sorts by Y and has a few optimizations I won't discuss here).</p>
+
+        <p>Andrew's algorithm splits the convex hull into two parts,
+        the upper and lower hull. Usually these meet at the ends, but
+        if more than one points has minimal (or maximal) X coordinate,
+        then they are joined by a vertical line segment. We'll
+        describe just how to construct the upper hull; the lower hull
+        can be constructed in similar fashion, and in fact can be
+        built in the same loop.</p>
+
+        <p>To build the upper hull, we start with the point with
+        minimal X coordinate, breaking ties by taking the largest Y
+        coordinate. After this, points are added in order of X
+        coordinate (always taking the largest Y value when multiple
+        points have the same X value). Of course, sometimes this will
+        cause the hull to become concave instead of convex:</p>
+
+        <div align="center"><img src="./lineSweep_files/uhull.png" alt="Upper hull" border="0" style="margin-top: 10px 10px 0px 10px;"></div>
+
+        <p>The black path shows the current hull. After adding point
+        7, we check whether the last triangle (5, 6, 7) is convex. In
+        this case it isn't, so we delete the second-last point, namely
+        6. The process is repeated until a convex triangle is found.
+        In this case we also examine (4, 5, 7) and delete 5 before
+        examining (1, 4, 7) and finding that it is convex, before
+        proceeding to the next point. This is essentially the same
+        procedure that is used in the Graham scan, but proceeding in
+        order of X coordinate rather than in order of the angle made
+        with the starting point. It may at first appear that this
+        process is O(N<sup>2</sup>) because of the inner backtracking
+        loop, but since no point can be deleted more than once it is
+        in fact O(N). The algorithm over-all is O(N&nbsp;log&nbsp;N), because
+        the points must initially be sorted by X coordinate.</p>
+
+        <p><span class="bodySubtitle">Manhattan minimum spanning tree</span><br>
+        We can create even more powerful algorithms by combining a
+        line sweep with a divide-and-conquer algorithm. One example is
+        computing the minimum spanning tree of a set of points, where
+        the distance between any pair of points is the Manhattan
+        distance. This is essentially the algorithm presented by
+        Guibas and Stolfi [3].</p>
+
+        <p>We first break this down into a simpler problem.  Standard
+        MST algorithms for general graphs (e.g., Prim's algorithm) can
+        compute the MST in O((E + N) log N) time for E edges. If we
+        can exploit geometric properties to reduce the number of edges
+        to O(N), then this is merely O(N&nbsp;log N). In fact we can
+        consider, for each point P, only its nearest neighbors in
+        each of the 8 octants of the plane (see the figure below). The
+        figure shows the situation in just one of the octants, the
+        West-Northwest one. Q is the closest neighbour (with the
+        dashed line indicating points at the same Manhattan distance
+        as Q), and R is some other point in the octant. If PR is an
+        edge in a spanning tree, then it can be removed and replaced
+        by either PQ or QR to produce a better spanning tree, because
+        the shape of the octant guarantees that |QR| &#8804; |PR|. Thus,
+        we do not need to consider PR when building the spanning
+        tree.</p>
+
+        <div align="center"><img src="./lineSweep_files/octants.png" alt="Octants" border="0" style="margin-top: 10px 10px 0px 10px;"></div>
+
+        <p>This reduces the problem to that of finding the nearest
+        neighbour in each octant. We'll just consider the octant
+        shown; the others are no different and can be handled by
+        symmetry. It should be clear that within this octant, finding
+        the nearest neighbour is equivalent to just finding the point
+        with the largest value of x&nbsp;&#8722;&nbsp;y, subject to an
+        upper bound on x&nbsp;+&nbsp;y and a lower bound on y, and
+        this is the form in which we'll consider the problem.</p>
+
+        <p>Now imagine for the moment that the lower bound on y did
+        not exist. In this case we could solve the problem for every P
+        quite easily: sweep through the points in increasing order of
+        x&nbsp;+&nbsp;y, and Q will be the point with the largest
+        x&nbsp;&#8722;&nbsp;y value of those seen so far. This is
+        where the divide-and-conquer principle comes into play: we
+        partition the point set into two halves with a horizontal
+        line, and recursively solve the problem for each half. For
+        points P in the upper half, nothing further needs to be done,
+        because points in the bottom half cannot play Q to their P.
+        For the bottom half, we have to consider that by ignoring the
+        upper half so far we may have missed some closer points.
+        However, we can take these points into account in a similar
+        manner as before: walk through all the points in
+        x&nbsp;+&nbsp;y order, keeping track of the best point in the
+        top half (largest x&nbsp;&#8722;&nbsp;y value), and for each
+        point in the bottom half, checking whether this best top-half
+        point is better than the current neighbour.</p>
+
+        <p>So far I have blithely assumed that any set of points can
+        be efficiently partitioned on Y and also walked in
+        x&nbsp;+&nbsp;y order without saying how this should be done.
+        In fact, one of the most beautiful aspects of this class of
+        divide-and-conquer plus line-sweep algorithms is that it has
+        essentially the same structure as a merge sort, to the point
+        that a merge-sort by x&nbsp;+&nbsp;y can be folded into the
+        algorithm in such a way that each subset is sorted on
+        x&nbsp;+&nbsp;y just when this is needed (the points initially
+        all being sorted on Y). This gives the algorithm a running
+        time of O(N&nbsp;log&nbsp;N).</p>
+
+        <p>The idea of finding the closest point within an angle range
+        can also be used to solve the Euclidean MST problem, but the
+        O(N&nbsp;log&nbsp;N) running time is no longer guaranteed in the worst
+        cases, because the distance is no longer a linear equation.
+        It is actually possible to compute the Euclidean MST in
+        O(N&nbsp;log&nbsp;N) time, because it is a subset of the Delaunay
+        triangulation.</p>
+
+        <p><span class="bodySubtitle">Sample problems</span>
+        </p><dl>
+            <dt><a href="http://community.topcoder.com/stat?c=problem_statement&pm=4463&rd=6536">BoxUnion</a></dt>
+            <dd>This is the union of area of rectangles problem above.
+            In this instance there are at most three rectangles which
+            makes simpler solutions feasible, but you can still use
+            this to practice.</dd>
+            <dt><a href="http://community.topcoder.com/stat?c=problem_statement&pm=3996&rd=7224">CultureGrowth</a></dt>
+            <dd>While written in a misleading fashion, the task is
+            just to compute the area of
+            the convex hull of a set of points.</dd>
+            <dt><a href="http://community.topcoder.com/stat?c=problem_statement&pm=5969">PowerSupply</a></dt>
+            <dd>For each power line orientation, sweep the power line
+            in the perpendicular direction. Consumers are added D
+            units ahead of the sweep and dropped D units behind the
+            sweep. In fact, the low constraints mean that the
+            connected set can be computed from scratch for each
+            event.</dd>
+            <dt><a href="http://community.topcoder.com/stat?c=problem_statement&pm=4559&rd=7225">ConvexPolygons</a></dt>
+            <dd>The events of interest are the vertices of the two
+            polygons, and the intersection points of their edges.
+            Between consecutive events, the section cut by the sweep line
+            varies linearly. Thus, we can sample the cut area at the
+            mid-point X value of each of these regions to get the
+            average for the whole region. Sampling at these mid-points
+            also eliminates a lot of special-case handling, because the
+            sweep line is guaranteed not to pass anywhere near a
+            vertex. Unlike the solution proposed in the <a href="http://community.topcoder.com/tc?module=Static&d1=match_editorials&d2=srm250">match
+                editorial</a>, the only geometric tool required is
+            line-line intersection.</dd>
+        </dl>
+
+        <p><span class="bodySubtitle">Conclusion</span><br>
+        Like dynamic programming, the sweep line is an extremely
+        powerful tool in an algorithm competitor's toolkit because it
+        is not simply an algorithm: it is an algorithm pattern that
+        can be tailored to solve a wide variety of problems, including
+        other textbooks problems that I have not discussed here
+        (Delaunay triangulations, for example), but also novel
+        problems that may have been created specifically for a
+        contest. In TopCoder the small constraints often mean that one
+        can take shortcuts (such as processing each event from scratch
+        rather than incrementally, and in arbitrary order), but the
+        concept of the sweep line is still useful in finding a
+        solution.</p>
+
+        <p><span class="bodySubtitle">References</span>
+        </p><ol>
+            <li>A. M. Andrew. 1979. <em>Another efficient algorithm for
+                convex hulls in two dimensions</em>. Information
+            Processing Letters 9(5) pp 216-219.</li>
+            <li>R. L. Graham. 1972. <em>An efficient algorithm for
+                determining the convex hull of a finite planar
+                set</em>. Information Processing Letters 1(4) pp
+            132-133.</li>
+            <li>Leonidas J. Guibas and Jorge Stolfi. 1983. <em>On computing
+                all north-east nearest neighbors in the L<sub>1</sub>
+                metric</em>. Information Processing Letters 17(4)
+            pp 219-223.</li>
+        </ol>
+<p></p>
+
+            <p>&nbsp; </p>
+            <br>
+            <br>
+        </div></td>
+        <!-- Center Column Ends -->
+        <!-- Right Column Begins -->
+        <td width="170" id="onRight" class="invisible">
+
+
+
+<script type="text/javascript" language="javascript">
+
+</script>
+
+
+
+<div class="rightColContent">
+    <br><br>
+</div>
+
+
+        </td>
+        <!-- Right Column Ends -->
+        <!-- Gutter -->
+        <td width="10"><img src="./lineSweep_files/clear.gif" width="10" height="1" border="0"></td>
+        <!-- Gutter Ends -->
+    </tr>
+</tbody></table>
+<div id="onBottom" class="invisible">
+    
+
+
+
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody>
+    <tr>
+        <td width="100%" class="footer">
+            <a href="http://www.topcoder.com/" class="footerLinks">Home</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href="http://www.topcoder.com/aboutus/" class="footerLinks">About TopCoder</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href="http://www.topcoder.com/aboutus/news/" class="footerLinks">Press Room</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href="http://www.topcoder.com/help/template-help/" class="footerLinks">Contact Us</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href="http://www.topcoder.com/aboutus/careers/" class="footerLinks">Careers</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href="http://www.topcoder.com/tc?module=Static&d1=about&d2=privacy" class="footerLinks">Privacy</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href="http://www.topcoder.com/tc?module=Static&d1=about&d2=terms" class="footerLinks">Terms</a>
+            <br>
+            <a href="http://www.topcoder.com/tc" class="footerLinks">Competitions</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href="https://www.topcoder.com/direct/" class="footerLinks">Cockpit</a>        </td>
+    </tr>
+    <tr>
+      <td width="100%" class="copyright">Copyright TopCoder, Inc. 2001-<script type="text/javascript">d=new Date();document.write(d.getFullYear());</script>2011</td></tr>
+</tbody>
+</table>
+
+</div>
+
+
+</body></html>

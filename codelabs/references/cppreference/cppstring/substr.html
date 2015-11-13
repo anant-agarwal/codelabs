@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Linux/x86 (vers 1 September 2005), see www.w3.org">
+
+  <title>substr</title>
+  <link href="../cppreference.css" rel="stylesheet" type="text/css">
+  <link href="../prettify.css" type="text/css" rel="stylesheet" />
+  <script type="text/javascript" src="../prettify.js"></script>
+</head>
+
+<body onload="prettyPrint()">
+<table>
+  <tr>
+  <td>
+  <div class="body-content">
+
+  <div class="header-box">
+    <a href="../index.html">cppreference.com</a> &gt; <a href=
+    "index.html">C++ Strings</a> &gt; <a href="substr.html">substr</a>
+  </div>
+
+  <div class="name-format">
+    substr
+  </div>
+
+  <div class="syntax-name-format">
+    Syntax:
+  </div>
+  <pre class="syntax-box">
+  #include &lt;string&gt;
+  string substr( <strong>size_type</strong> index, <strong>size_type</strong> length = npos );
+</pre>
+
+  <p>The substr() function returns a substring of the current string,
+  starting at <em>index</em>, and <em>length</em> characters long. If
+  <em>length</em> is omitted, it will default to string::npos, and the
+  substr() function will simply return the remainder of the string
+  starting at <em>index</em>.</p>
+
+  <p>For example:</p>
+<pre class="prettyprint">
+   string s(&quot;What we have here is a failure to communicate&quot;);
+   string sub = s.substr(21);
+   cout &lt;&lt; &quot;The original string is &quot; &lt;&lt; s &lt;&lt; endl;
+   cout &lt;&lt; &quot;The substring is &quot; &lt;&lt; sub &lt;&lt; endl;              
+</pre>
+
+  <p>displays</p>
+<pre class="prettyprint">
+   The original string is What we have here is a failure to communicate
+   The substring is a failure to communicate            
+</pre>
+
+  <div class="related-name-format">
+    Related topics:
+  </div>
+
+  <div class="related-content">
+    <a href="copy.html">copy</a>
+  </div>
+  </div>
+  </td>
+  
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-2828341-1";
+urchinTracker();
+</script>
+  </tr>
+  </table>
+</body></html>

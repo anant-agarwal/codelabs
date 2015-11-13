@@ -1,0 +1,936 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- saved from url=(0079)http://community.topcoder.com/tc?module=Static&d1=tutorials&d2=tenBestQuestions -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Algorithm Tutorials</title>
+
+
+<script type="text/javascript" async="" src="./tenBestQuestions_files/ga.js"></script><script language="JavaScript" type="text/javascript" src="./tenBestQuestions_files/tcscript.js"></script><link type="image/x-icon" rel="shortcut icon" href="http://community.topcoder.com/i/favicon.ico">
+
+
+
+
+
+
+<link type="text/css" rel="stylesheet" href="./tenBestQuestions_files/style.css">
+<link type="text/css" rel="stylesheet" href="./tenBestQuestions_files/coders.css">
+<link type="text/css" rel="stylesheet" href="./tenBestQuestions_files/tcStyles20080219.css">
+<link type="text/css" rel="stylesheet" href="./tenBestQuestions_files/jobsRemix.css">
+
+
+<script language="JavaScript" src="./tenBestQuestions_files/print.js"></script>
+<style type="text/css">
+.math
+{
+   font-family: times, times new roman, serif;
+   font-weight: normal;
+   font-style: italic;
+   font-size: 15px;
+}
+.code
+{
+   width: 500;
+   padding: 10px;
+   margin: 20px;
+   font-size: 13px;
+   font-weight: normal;
+   line-height: 14px;
+}
+</style>
+</head>
+<body>
+<div id="onTop" class="invisible">
+    
+
+
+
+
+
+
+<script type="text/javascript" src="./tenBestQuestions_files/popup.js"></script>
+
+<div id="shortcutBar">
+    <div class="icon"><a href="http://www.topcoder.com/tc"><img src="./tenBestQuestions_files/scHome.png" alt="" onmouseover="postPopUpText(&#39;globalPopupText&#39;,&#39;Home&#39;); popUp(this,&#39;globalPopup&#39;);" onmouseout="popHide()"></a></div>
+    <div class="icon"><a href="javascript:arena();"><img src="./tenBestQuestions_files/scAlgo.png" alt="" onmouseover="postPopUpText(&#39;globalPopupText&#39;,&#39;Algorithm Competitions&#39;); popUp(this,&#39;globalPopup&#39;);" onmouseout="popHide()"></a></div>
+    <div class="icon"><a href="http://www.topcoder.com/tc?module=ActiveContests&pt=23"><img src="./tenBestQuestions_files/scConceptualization.png" alt="" onmouseover="postPopUpText(&#39;globalPopupText&#39;,&#39;Software Conceptualization Competitions&#39;); popUp(this,&#39;globalPopup&#39;);" onmouseout="popHide()"></a></div>
+    <div class="icon"><a href="http://www.topcoder.com/tc?module=ActiveContests&pt=6"><img src="./tenBestQuestions_files/scSpecification.png" alt="" onmouseover="postPopUpText(&#39;globalPopupText&#39;,&#39;Software Specification Competitions&#39;); popUp(this,&#39;globalPopup&#39;);" onmouseout="popHide()"></a></div>
+    <div class="icon"><a href="http://www.topcoder.com/tc?module=ActiveContests&pt=7"><img src="./tenBestQuestions_files/scArchitecture.png" alt="" onmouseover="postPopUpText(&#39;globalPopupText&#39;,&#39;Software Architecture Competitions&#39;); popUp(this,&#39;globalPopup&#39;);" onmouseout="popHide()"></a></div>
+    <div class="icon"><a href="http://www.topcoder.com/tc?module=ViewActiveContests&ph=112"><img src="./tenBestQuestions_files/scDesign.png" alt="" onmouseover="postPopUpText(&#39;globalPopupText&#39;,&#39;Component Design Competitions&#39;); popUp(this,&#39;globalPopup&#39;);" onmouseout="popHide()"></a></div>
+    <div class="icon"><a href="http://www.topcoder.com/tc?module=ViewActiveContests&ph=113"><img src="./tenBestQuestions_files/scDevelopment.png" alt="" onmouseover="postPopUpText(&#39;globalPopupText&#39;,&#39;Component Development Competitions&#39;); popUp(this,&#39;globalPopup&#39;);" onmouseout="popHide()"></a></div>
+
+    <div class="icon"><a href="http://www.topcoder.com/tc?module=ViewAssemblyActiveContests"><img src="./tenBestQuestions_files/scAssembly.png" alt="" onmouseover="postPopUpText(&#39;globalPopupText&#39;,&#39;Software Assembly Competitions&#39;); popUp(this,&#39;globalPopup&#39;);" onmouseout="popHide()"></a></div>
+    <div class="icon"><a href="http://www.topcoder.com/tc?module=ActiveContests&pt=13"><img src="./tenBestQuestions_files/scTesting.png" alt="" onmouseover="postPopUpText(&#39;globalPopupText&#39;,&#39;Testing Competitions&#39;); popUp(this,&#39;globalPopup&#39;);" onmouseout="popHide()"></a></div>
+    <div class="icon"><a href="http://www.topcoder.com/tc?module=ActiveContests&pt=35"><img src="./tenBestQuestions_files/scContentCreation.gif" alt="" onmouseover="postPopUpText(&#39;globalPopupText&#39;,&#39;Content Creation Competitions&#39;); popUp(this,&#39;globalPopup&#39;);" onmouseout="popHide()"></a></div>
+    <div class="icon"><a href="javascript:arena();"><img src="./tenBestQuestions_files/scTCHS.png" alt="" onmouseover="postPopUpText(&#39;globalPopupText&#39;,&#39;High School Competitions&#39;); popUp(this,&#39;globalPopup&#39;);" onmouseout="popHide()"></a></div>
+    <div class="icon"><a href="http://www.topcoder.com/longcontest/?module=ViewActiveContests"><img src="./tenBestQuestions_files/scMarathon.png" alt="" onmouseover="postPopUpText(&#39;globalPopupText&#39;,&#39;Marathon Matches&#39;); popUp(this,&#39;globalPopup&#39;);" onmouseout="popHide()"></a></div>
+    <div class="icon"><a href="http://studio.topcoder.com/?module=ViewActiveContests"><img src="./tenBestQuestions_files/scStudio.png" alt="" onmouseover="postPopUpText(&#39;globalPopupText&#39;,&#39;TopCoder Studio Competitions&#39;); popUp(this,&#39;globalPopup&#39;);" onmouseout="popHide()"></a></div>
+</div>
+
+<div id="globalPopup" class="popUp"><div id="globalPopupText"></div></div>
+
+
+<div style="position: absolute; right:0px; top:31px;"><a href="http://www.topcoder.com/reg/"><img src="./tenBestQuestions_files/register_now.gif" alt="Register Now" style="display:block;"></a></div>
+
+
+<div align="center" style="margin: 0px 290px 0px 280px;">
+   <div id="outerLogo">
+      <div id="innerLogo">
+      <a href="http://www.topcoder.com/"><img src="./tenBestQuestions_files/topcoder.gif" alt="TopCoder" style="display: block;"></a>
+      </div>
+   </div>
+</div>
+
+<div class="memberCountBox">
+Member Count: 316,431 - 
+
+
+October 24, 2011
+
+&nbsp;<a class="gMetal" href="Javascript:tcTime()">[Get Time]</a>
+</div>
+
+<div class="topBar">
+    <div style="float: right; margin: 5px 0px 0px 0px;">
+        
+                <a class="gMetal" href="http://www.topcoder.com/tc?&module=Login">Login</a>
+            
+        
+    </div>
+</div>
+</div>
+
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+   <tbody><tr valign="top">
+<!-- Left Column Begins-->
+        <td width="180" id="onLeft" class="invisible">
+         
+
+
+
+
+
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+<script language="JavaScript" type="text/javascript" src="./tenBestQuestions_files/arena.js"></script>
+
+
+<script language="JavaScript" type="text/javascript">
+<!--
+function toggleMenu(menuTitle,menuID){
+   var menu = document.getElementById(menuID);
+   if(menu.style.display == 'block') menu.className = 'CLOSED';
+   else if(menu.className == 'OPEN' && menu.style.display != 'none') menu.className = 'CLOSED';
+   else {
+      menu.className = 'OPEN';
+   }
+   if(menuTitle.blur)menuTitle.blur();
+   if(menuTitle.className == 'exp') menuTitle.className = 'exp_ed';
+   else menuTitle.className = 'exp';
+   return;
+}
+function flipMenu(myMenuName){
+   var menuName = document.getElementById(myMenuName);
+   menuName.className = 'exp_ed';
+}
+
+// -->
+</script>
+
+<div style="padding: 0px;"><img src="./tenBestQuestions_files/leftnav_top.gif" alt=""></div>
+<div id="navbar">
+    
+<ul>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_competitions&#39;)">Competitions</a>
+<ul id="m_competitions">
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_competitions_overview&#39;)">Overview</a>
+<ul id="m_competitions_overview">
+<li><a href="http://apps.topcoder.com/wiki/x/MQD9Ag">Reliability</a></li>
+<li><a href="http://apps.topcoder.com/wiki/x/lYE_/">Ratings</a></li>
+<li><a href="http://apps.topcoder.com/wiki/x/aoE_/">How to Get Paid</a></li>
+<li><a href="http://apps.topcoder.com/wiki/x/2gRmAw">Administrative Overview </a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_copilot_opportunities&#39;)">Copilot Opportunities</a>
+<ul id="m_copilot_opportunities">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Copilot+Overview">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_copilot_support&#39;)">Track Information</a>
+<ul id="m_copilot_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Copilot+Opportunities">How to Compete</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Copilot+Opportunities">Documentation</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Copilot+Opportunities">Tutorial</a></li>
+</ul></li>
+<li><a href="http://www.topcoder.com/tc?module=ActiveContests&pt=29">Active Contests</a></li>
+<li><a href="http://www.topcoder.com/tc?module=CompList&ph=140">Past Contests</a></li>
+<li><a href="http://www.topcoder.com/tc?module=ViewCopilotPool&size=20&view=0&sort=12">Copilot Pool</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;competition_design&#39;)">Design</a>
+<ul id="competition_design">
+<li><a href="http://studio.topcoder.com/">Studio</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_conceptualization_competitions&#39;)">Conceptualization</a>
+<ul id="m_conceptualization_competitions">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/TopCoder+Conceptualization+Contests">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_conceptualization_support&#39;)">Track Information</a>
+<ul id="m_conceptualization_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Conceptualization+Competitions">How to Compete</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Conceptualization+Documentation">Documentation</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Conceptualization+Submission+Instructions">Tutorial</a></li>
+</ul></li>
+<li><a href="http://community.topcoder.com/tc?module=ActiveContests&pt=23">Active Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ContestStatus&pt=23">Contest Status</a></li>
+<li><a href="http://community.topcoder.com/tc?module=CompList&ph=134">Past Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ViewReviewProjects&pt=23">Review Opportunities</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ReviewBoard&pt=23">Meet the Review Board</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_specification_competitions&#39;)">Specification</a>
+<ul id="m_specification_competitions">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/TopCoder+Specification+Contests">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_specification_support&#39;)">Track Information</a>
+<ul id="m_specification_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Specification+Competitions">How to Compete</a></li>
+</ul></li>
+<li><a href="http://community.topcoder.com/tc?module=ActiveContests&pt=6">Active Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ContestStatus&pt=6">Contest Status</a></li>
+<li><a href="http://community.topcoder.com/tc?module=CompList&ph=117">Past Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ViewReviewProjects&pt=6">Review Opportunities</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ReviewBoard&pt=6">Meet the Review Board</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_architecture_competitions&#39;)">Architecture</a>
+<ul id="m_architecture_competitions">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Architecture+Overview">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_architecture_support&#39;)">Track Information</a>
+<ul id="m_architecture_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Architecture+Competitions">How to Compete</a></li>
+</ul></li>
+<li><a href="http://community.topcoder.com/tc?module=ActiveContests&pt=7">Active Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ContestStatus&pt=7">Contest Status</a></li>
+<li><a href="http://community.topcoder.com/tc?module=CompList&ph=118">Past Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ViewReviewProjects&pt=7">Review Opportunities</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ReviewBoard&pt=7">Meet the Review Board</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_des_competitions&#39;)">Component Design</a>
+<ul id="m_des_competitions">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Component+Design+Overview">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_des_support&#39;)">Track Information</a>
+<ul id="m_des_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Component+Design+Competitions">How to Compete</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Component+Design+Documentation">Documentation</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ColorChange&ph=112">Recent Color Changes</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Component+Design+Data+Feeds">Data Feeds</a></li>
+</ul></li>
+<li><a href="http://community.topcoder.com/tc?module=ViewActiveContests&ph=112">Active Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ContestStatus&pt=1">Contest Status</a></li>
+<li><a href="http://community.topcoder.com/tc?module=CompList&ph=112">Past Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ViewReviewProjects&pt=1">Review Opportunities</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ReviewBoard&pt=1">Meet the Review Board</a></li>
+</ul></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;competition_dev&#39;)">Development</a>
+<ul id="competition_dev">
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_dev_competitions&#39;)">Component Development</a>
+<ul id="m_dev_competitions">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Component+Development+Competitions">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_dev_support&#39;)">Track Information</a>
+<ul id="m_dev_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Component+Development+Competitions">How to Compete</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Component+Development+Documentation">Documentation</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ColorChange&ph=113">Recent Color Changes</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Component+Development+Data+Feeds">Data Feeds</a></li>
+</ul></li>
+<li><a href="http://community.topcoder.com/tc?module=ViewActiveContests&ph=113">Active Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ContestStatus&pt=2">Contest Status</a></li>
+<li><a href="http://community.topcoder.com/tc?module=CompList&ph=113">Past Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ViewReviewProjects&pt=2">Review Opportunities</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ReviewBoard&pt=2">Meet the Review Board</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_assembly_competitions&#39;)">Assembly</a>
+<ul id="m_assembly_competitions">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Assembly">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_assembly_support&#39;)">Track Information</a>
+<ul id="m_assembly_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Assembly+Competitions">How to Compete</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Assembly+Competition+Tutorial">Tutorial</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Assembly+Competition+Documentation">Documentation</a></li>
+</ul></li>
+<li><a href="http://community.topcoder.com/tc?module=ViewAssemblyActiveContests">Active Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ContestStatus&pt=14">Contest Status</a></li>
+<li><a href="http://community.topcoder.com/tc?module=CompList&ph=125">Past Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ViewReviewProjects&pt=14">Review Opportunities</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ReviewBoard&pt=14">Meet the Review Board</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_test_suites_competitions&#39;)">Test Suites</a>
+<ul id="m_test_suites_competitions">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Test+Scenarios+and+Scripts">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_test_suites_support&#39;)">Track Information</a>
+<ul id="m_test_suites_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Testing+Competitions">How to Compete</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Testing+Competition+Tutorial">Tutorial</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Testing+Competition+Documentation">Documentation</a></li>
+</ul></li>
+<li><a href="http://community.topcoder.com/tc?module=ActiveContests&pt=13">Active Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ContestStatus&pt=13">Contest Status</a></li>
+<li><a href="http://community.topcoder.com/tc?module=CompList&pt=13">Past Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ViewReviewProjects&pt=13">Review Opportunities</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ReviewBoard&pt=13">Meet the Review Board</a></li>
+</ul></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;competition_ui_dev&#39;)">UI Development</a>
+<ul id="competition_ui_dev">
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_ui_prototype_competitions&#39;)">UI Prototype</a>
+<ul id="m_ui_prototype_competitions">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/UI+Prototype+Competitions">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_ui_prototype_support&#39;)">Track Information</a>
+<ul id="m_ui_prototype_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+UI+Prototype+Competitions">How to Compete</a></li>
+</ul></li>
+<li><a href="http://community.topcoder.com/tc?module=ActiveContests&pt=19">Active Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ContestStatus&pt=19">Contest Status</a></li>
+<li><a href="http://community.topcoder.com/tc?module=CompList&pt=19">Past Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ViewReviewProjects&pt=19">Review Opportunities</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ReviewBoard&pt=19">Meet the Review Board</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_ria_build_competitions&#39;)">RIA Build</a>
+<ul id="m_ria_build_competitions">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/RIA+Build+Competitions">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_ria_build_support&#39;)">Track Information</a>
+<ul id="m_ria_build_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+RIA+Builds">How to Compete</a></li>
+</ul></li>
+<li><a href="http://community.topcoder.com/tc?module=ActiveContests&pt=24">Active Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ContestStatus&pt=24">Contest Status</a></li>
+<li><a href="http://community.topcoder.com/tc?module=CompList&pt=24">Past Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ViewReviewProjects&pt=24">Review Opportunities</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ReviewBoard&pt=24">Meet the Review Board</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_content_creation_competitions&#39;)">Content Creation</a>
+<ul id="m_content_creation_competitions">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Content+Contests+Overview">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_content_creation_support&#39;)">Track Information</a>
+<ul id="m_content_creation_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Content+Creation+Competitions">How to Compete</a></li>
+</ul></li>
+<li><a href="http://community.topcoder.com/tc?module=ActiveContests&pt=35">Active Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ContestStatus&pt=35">Contest Status</a></li>
+<li><a href="http://community.topcoder.com/tc?module=CompList&pt=35">Past Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ViewReviewProjects&pt=35">Review Opportunities</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ReviewBoard&pt=35">Meet the Review Board</a></li>
+</ul></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;competition_qa&#39;)">QA and Maintenance</a>
+<ul id="competition_qa">
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_test_scenarios_competitions&#39;)">Test Scenarios</a>
+<ul id="m_test_scenarios_competitions">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Test+Scenarios+and+Scripts">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_test_scenarios_support&#39;)">Track Information</a>
+<ul id="m_test_scenarios_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Testing+Competitions">How to Compete</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Testing+Competition+Tutorial">Tutorial</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Testing+Competition+Documentation">Documentation</a></li>
+</ul></li>
+<li><a href="http://community.topcoder.com/tc?module=ActiveContests&pt=26">Active Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ContestStatus&pt=26">Contest Status</a></li>
+<li><a href="http://community.topcoder.com/tc?module=CompList&pt=26">Past Contests</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ViewReviewProjects&pt=26">Review Opportunities</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ReviewBoard&pt=26">Meet the Review Board</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_bugraces_competitions&#39;)">Bug Race</a>
+<ul id="m_bugraces_competitions">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Bug+Race+Competition+Overview">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_bugraces_support&#39;)">Track Information</a>
+<ul id="m_bugraces_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Bug+Race+Competitions">How to Compete</a></li>
+</ul></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Active+Bug+Race+Competitions">Active Contests</a></li>
+<li><a href="http://apps.topcoder.com/wiki/x/FQG2AQ">Review Opportunities</a></li>
+</ul></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;competition_algo&#39;)">Algorithm</a>
+<ul id="competition_algo">
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_algo_competitions&#39;)">Single Round Matches (SRM)</a>
+<ul id="m_algo_competitions">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Algorithm+Overview">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_algo_support&#39;)">Track Information</a>
+<ul id="m_algo_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+SRM+Algorithm+Competitions">How to Compete</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/SRM+Algorithm+Competition+FAQs">FAQs</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Algorithm+Competition+Rating+System">Rating System</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Write+Problems+for+TopCoder">Write Problems</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_algo_stats&#39;)">Statistics</a>
+<ul id="m_algo_stats">
+<li><a href="http://community.topcoder.com/tc?module=MatchList">Match Archive</a></li>
+<li><a href="http://community.topcoder.com/stat?c=round_overview">Match Overviews</a></li>
+<li><a href="http://community.topcoder.com/tc?module=SrmDivisionWins">Match Winners</a></li>
+<li><a href="http://community.topcoder.com/stat?c=last_match">Match Results</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Algorithm+Problem+Set+Analysis">Match Editorials</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ProblemArchive">Problem Archive</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ColorChange&ratid=1">Recent Color Changes</a></li>
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Algorithm+Data+Feeds">Data Feeds</a></li>
+</ul></li>
+<li><a href="javascript:arena();">Launch Arena</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_long_contests&#39;)">Marathon Match</a>
+<ul id="m_long_contests">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/Marathon+Match+Overview">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_long_support&#39;)">Track Information</a>
+<ul id="m_long_support">
+<li><a href="http://apps.topcoder.com/wiki/display/tc/How+to+Compete+in+Marathon+Match+Events">How to Compete</a></li>
+<li><a href="http://community.topcoder.com/longcontest/?module=Static&d1=support&d2=ratings">Rating System</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_long_stats&#39;)">Statistics</a>
+<ul id="m_long_stats">
+<li><a href="http://community.topcoder.com/longcontest/stats/?module=MatchList">Match Archive</a></li>
+<li><a href="http://community.topcoder.com/longcontest/stats/?module=ViewOverview">Match Overview</a></li>
+<li><a href="http://community.topcoder.com/longcontest/stats/?module=MatchWinners">Match Winners</a></li>
+<li><a href="http://community.topcoder.com/longcontest/?module=Static&d1=match_editorials&d2=archive">Match Editorials</a></li>
+<li><a href="http://community.topcoder.com/longcontest/?module=Static&d1=support&d2=dataFeed">Data Feeds</a></li>
+</ul></li>
+<li><a href="http://community.topcoder.com/longcontest/?module=ViewActiveContests">Active Contests</a></li>
+<li><a href="http://community.topcoder.com/longcontest/?module=ViewPractice">Practice</a></li>
+<li><a href="http://community.topcoder.com/longcontest/?module=ViewQueue">Queue Status</a></li>
+</ul></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_hs_competitions&#39;)">High School</a>
+<ul id="m_hs_competitions">
+<li><a href="http://community.topcoder.com/tc?module=Static&d1=hs&d2=home">Overview</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_hs_stats&#39;)">Statistics</a>
+<ul id="m_hs_stats">
+<li><a href="http://community.topcoder.com/tc?module=HSRoundOverview">Match Overview</a></li>
+<li><a href="http://community.topcoder.com/tc?module=HSRoundStatsTeam">Match Results (Team)</a></li>
+<li><a href="http://community.topcoder.com/tc?module=HSRoundStatsInd">Match Results (Indiv.)</a></li>
+<li><a href="http://community.topcoder.com/tc?module=Static&d1=hs&d2=match_editorials&d3=archive">Match Editorials</a></li>
+<li><a href="http://community.topcoder.com/tc?module=ColorChange&ratid=2">Recent Color Changes</a></li>
+<li><a href="http://community.topcoder.com/tc?module=Static&d1=hs&d2=support&d3=dataFeed">Data Feeds</a></li>
+</ul></li>
+<li><a href="http://community.topcoder.com/tc?module=Static&d1=hs&d2=spotlightSessions">Spotlight Sessions</a></li>
+<li><a href="javascript:arena();">Launch Arena</a></li>
+</ul></li>
+<li><a href="http://community.topcoder.com/dr">The Digital Run</a></li>
+<li><a href="http://software.topcoder.com/review">Submit &amp; Review</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_topcoder_networks&#39;)">TopCoder Networks</a>
+<ul id="m_topcoder_networks">
+<li><a href="http://community.topcoder.com/alcatel/">Alcatel Lucent</a></li>
+<li><a href="http://community.topcoder.com/amdapp/">AMD OpenCL</a></li>
+<li><a href="http://community.topcoder.com/darpacs/">DARPA CS-STEM</a></li>
+<li><a href="http://community.topcoder.com/ntl/">NASA Tournament Lab</a></li>
+<li><a href="http://community.topcoder.com/x/">PayPalX</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_events&#39;)">Events</a>
+<ul id="m_events">
+<li><a href="http://community.topcoder.com/tc?module=Static&d1=calendar&d2=thisMonth">Event Calendar</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_tournaments&#39;)">Tournaments</a>
+<ul id="m_tournaments">
+<li><a href="http://community.topcoder.com/tc?module=Static&d1=tournaments&d2=home">TopCoder</a></li>
+<li><a href="http://community.topcoder.com/pl/">Powered by TopCoder</a></li>
+<li><a href="http://community.topcoder.com/tc?module=CRPFStatic&d1=crpf&d2=crpf_overview">Charity</a></li>
+</ul></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_stats&#39;)">Statistics</a>
+<ul id="m_stats">
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_competitor_stats&#39;)">The Tops</a>
+<ul id="m_competitor_stats">
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_top_rated_competitors&#39;)">Top Ranked</a>
+<ul id="m_top_rated_competitors">
+<li><a href="http://community.topcoder.com/tc?module=AlgoRank">Algorithm</a></li>
+<li><a href="http://community.topcoder.com/tc?module=HSRank">High School</a></li>
+<li><a href="http://community.topcoder.com/longcontest/stats/?module=CoderRank">Marathon Match</a></li>
+<li><a href="http://community.topcoder.com/stat?c=top_conceptors">Conceptualization</a></li>
+<li><a href="http://community.topcoder.com/stat?c=top_specificators">Specification</a></li>
+<li><a href="http://community.topcoder.com/stat?c=top_architects">Architecture</a></li>
+<li><a href="http://community.topcoder.com/stat?c=top_designers">Design</a></li>
+<li><a href="http://community.topcoder.com/stat?c=top_developers">Development</a></li>
+<li><a href="http://community.topcoder.com/stat?c=top_assemblers">Assembly</a></li>
+<li><a href="http://community.topcoder.com/stat?c=top_testers">Test Suites</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_recordbook&#39;)">Record Book</a>
+<ul id="m_recordbook">
+<li><a href="http://community.topcoder.com/tc?module=Static&d1=statistics&d2=recordbook_home">Algorithm</a></li>
+<li><a href="http://community.topcoder.com/tc?module=Static&d1=compstats&d2=comp_recordbook_home">Component</a></li>
+<li><a href="http://community.topcoder.com/longcontest/?module=Static&d1=stats&d2=recordbook_home">Marathon Match</a></li>
+</ul></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_com&#39;)">Coder of the Month</a>
+<ul id="m_com">
+<li><a href="http://community.topcoder.com/tc?module=COMHistory&achtid=5">Algorithm</a></li>
+<li><a href="http://community.topcoder.com/tc?module=COMHistory&achtid=6">Design</a></li>
+<li><a href="http://community.topcoder.com/tc?module=COMHistory&achtid=7">Development</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li class="exp_ed"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_edu_content&#39;)">Tutorials</a>
+<ul id="m_edu_content" class="OPEN">
+<li><a href="http://community.topcoder.com/tc?module=Static&d1=education&d2=overview">Overview</a></li>
+<li class="highlight"><a href="http://community.topcoder.com/tc?module=Static&d1=tutorials&d2=alg_index">Algorithm Tutorials</a></li>
+<li><a href="http://community.topcoder.com/tc?module=Static&d1=tutorials&d2=comp_index">Component Tutorials</a></li>
+<li><a href="http://community.topcoder.com/tc?module=Static&d1=tutorials&d2=mm_index">Marathon Tutorials</a></li>
+<li><a href="http://apps.topcoder.com/wiki/dashboard.action">Wiki</a></li>
+</ul></li>
+<li><a href="http://forums.topcoder.com/">Forums</a></li>
+<li><a href="http://community.topcoder.com/tc?&module=SurveyList">Surveys</a></li>
+<li><a href="http://community.topcoder.com/tc?module=MyHome">My TopCoder</a></li>
+<li><a href="http://www.topcoder.com/help">Help Center</a></li>
+<li class="exp"><a href="javascript:void(0)" onclick="Javascript:toggleMenu(this.parentNode,&#39;m_about_tc&#39;)">About TopCoder</a>
+<ul id="m_about_tc">
+<li><a href="http://www.topcoder.com/aboutus/">Overview</a></li>
+<li><a href="http://www.topcoder.com/aboutus/">Why Join TopCoder?</a></li>
+<li><a href="http://www.topcoder.com/aboutus/careers/">Working at TopCoder</a></li>
+<li><a href="http://www.topcoder.com/aboutus/management/">Leadership</a></li>
+<li><a href="http://www.topcoder.com/aboutus/news/">Press Room</a></li>
+</ul></li></ul>
+
+    <div style="float: left; padding: 10px 0px 0px 17px;">
+        
+        <a href="http://www.topcoder.com/tc?module=LinkTracking&link=http://apps.topcoder.com/wiki/x/L4TD&refer=leftnav"><img src="./tenBestQuestions_files/umlTool.png" alt="UML Tool"></a>
+
+        
+        
+        
+        
+    </div>
+    
+
+<div id="navbarSearch">
+<b>Member Search:</b>
+<form action="http://www.topcoder.com/tc" method="get" name="simpleSearchForm" class="noSpace" id="simpleSearchForm">
+   <input class="noSpace" type="hidden" name="module" value="SimpleSearch">
+   <input class="noSpace" type="text" name="ha" value="Handle:" size="12" maxlength="15" onfocus="javascript: if (document.simpleSearchForm.ha.value==&#39;Handle:&#39;) document.simpleSearchForm.ha.value = &#39;&#39;;" onblur="javascript:if (document.simpleSearchForm.ha.value == &#39;&#39;)document.simpleSearchForm.ha.value = &#39;Handle:&#39;;">
+   <a class="gMetal" href="javascript:void document.simpleSearchForm.submit();">Go</a><br>
+   <a class="gMetal" href="http://www.topcoder.com/tc?module=ViewAdvanced">Advanced Search</a>
+</form>
+</div>
+</div>
+<div style="float: left; clear:left; padding: 0px 0px 23px 0px;"><img src="./tenBestQuestions_files/leftnav_bottom.gif" alt=""></div>
+
+
+    <div align="center" style="float: left; clear:left; width: 170px; margin: 0px;">
+        <img src="./tenBestQuestions_files/brackets.png" alt="" style="margin-bottom: 23px;">
+    </div>
+
+
+
+
+        </td>
+<!-- Left Column Ends -->
+
+<!-- Center Column Begins -->
+         <td width="100%" align="center">
+
+         <div class="tutorBodyFull">
+
+
+
+
+
+
+<table cellspacing="0" cellpadding="0" class="pageTitleTable">
+    <tbody><tr>
+        <td width="100%" class="pageTitle"><img border="0" src="./tenBestQuestions_files/header_alg_tut.gif" alt="alg_tut"></td>
+        <td align="right" class="pageSubtitle">&nbsp;&nbsp;</td>
+    </tr>
+</tbody></table>
+
+
+
+<div class="linkBox">
+    <a href="http://community.topcoder.com/tc?module=Static&d1=tutorials&d2=alg_index">Archive</a><br>
+    <span id="printableLink" class="invisible"><a href="Javascript:makeInvisible();">Printable view</a><br></span>
+    <span id="navigableLink" class=""><a href="Javascript:makeNavigable();">Normal view</a><br></span>
+    <a href="http://forums.topcoder.com/?module=ThreadList&forumID=518480">Discuss this article</a><br>
+    <a href="http://community.topcoder.com/tc?module=Static&d1=help&d2=writeForTC">Write for TopCoder</a>
+</div>
+ 
+<span class="bigTitle">The Best Questions for Would-be C++ Programmers, Part 1</span>
+<br><br>
+
+<div class="authorPhoto">
+    <img src="./tenBestQuestions_files/nophoto.jpg" alt="Author">
+</div>
+<div class="authorText">
+  By&nbsp;<a href="http://www.topcoder.com/tc?module=MemberProfile&cr=22630158&tab=alg" class="coderTextGray">zmij</a><br>
+      <em>TopCoder Member</em>
+</div>
+
+<br clear="all">
+
+<p>It seems that an almost obligatory and very important part of the recruitment process is "the test." "The test" can provide information both for the interviewer and the candidate. The interviewer is provided with a means to test the candidate's practical know-how and particular programming language understanding; the candidate can get an indication of the technologies used for the job and the level of proficiency the company expects and even decide if he still wants (and is ready for) the job in question.</p>
+<p>I've had my fair share of interviews, more or less successful, and I would like to share with you my experience regarding some questions I had to face. I also asked for feedback from three of the top rated TopCoder members: <a href="http://www.topcoder.com/tc?module=MemberProfile&cr=251074&tab=alg" class="coderTextRed">bmerry</a>, <a href="http://www.topcoder.com/tc?module=MemberProfile&cr=152342&tab=alg" class="coderTextYellow">kyky</a> and <a href="http://www.topcoder.com/tc?module=MemberProfile&cr=275640&tab=alg" class="coderTextRed">sql_lall</a> , who were kind enough to correct me where I was not accurate (or plain wrong) and suggest some other questions (that I tried to answer to my best knowledge). Of course every question might have alternative answers that I did not manage to cover, but I tried to maintain the dynamics of an interview and to let you also dwell on them (certainly I'm not the man that knows all the answers).  So, pencils up everyone and "let's identify potential C++ programmers or C++ programmers with potential."</p>
+<ol>
+    <li><strong>What is a class?</strong>
+        <ul>
+            <li>A <strong>class</strong> is a way of encapsulating data, defining abstract data types along with initialization conditions and operations allowed on that data; a way of hiding the implementation (hiding the guts &amp; exposing the skin); a way of sharing behavior and characteristics</li>
+        </ul>
+    </li>
+    <li><strong>What are the differences between a C struct and a C++ struct?</strong>
+        <ul>
+            <li>A C <strong>struct</strong> is just a way of combining data together; it only has characteristics (the data) and does not include behavior (functions may use the structure but are not tied up to it)</li>
+            <li>Typedefed names are not automatically generated for C structure tags; e.g.,:
+                <pre><font color="green">// a C struct</font>
+<font color="blue">struct</font> my_struct {
+    <font color="blue">int</font> someInt;
+    <font color="blue">char*</font> someString;
+};
+
+<font color="green">// you declare a variable of type my_struct in C</font>
+<font color="blue">struct</font> my_struct someStructure;
+
+<font color="green">// in C you have to typedef the name to easily
+// declare the variable</font>
+<font color="blue">typedef</font> my_struct MyStruct;
+MyStruct someOtherStuct;
+
+<font color="green">// a C++ struct</font>
+<font color="blue">struct</font> MyCppStruct {
+    int someInt;
+    char* someString;
+};
+
+<font color="green">// you declare a variable of type MyCppStruct in C++</font>
+MyCppStruct someCppStruct;
+<font color="green">// as you can see the name is automatically typedefed</font></pre></li>
+            <li>But what's more important is that a C <strong>struct</strong> does not provide enablement for OOP concepts like encapsulation or polymorphism. Also <strong>"C structs can't have static members or member functions"</strong>, [<a href="http://www.topcoder.com/tc?module=MemberProfile&cr=251074&tab=alg" class="coderTextRed">bmerry</a>]. A C++ <strong>struct</strong> is actually a <strong>class</strong>, the difference being that the default member and base class access specifiers are different: <strong>class</strong> defaults to private whereas <strong>struct</strong> defaults to public.</li>
+        </ul>
+    </li>
+    <li><strong>What does the keyword const mean and what are its advantages over #define?</strong>
+        <ul>
+            <li>In short and by far not complete, <strong>const</strong> means <strong>"read-only"</strong>! A named constant (declared with <strong>const</strong>) it's like a normal variable, except that its value cannot be changed. Any data type, user-defined or built-in, may be defined as a <strong>const</strong>, e.g.,:
+                <pre><font color="green">// myInt is a constant (read-only) integer</font>
+<font color="blue">const int</font> myInt = 26; 
+
+<font color="green">// same as the above (just to illustrate const is
+// right and also left associative)</font>
+<font color="blue">int const</font> myInt = 26; 
+
+<font color="green">// a pointer to a constant instance of custom 
+// type MyClass</font>
+<font color="blue">const</font> MyClass* myObject = <font color="blue">new</font> MyObject();
+
+<font color="green">// a constant pointer to an instance of custom 
+// type MyClass</font>
+MyClass* <font color="blue">const</font> myObject = <font color="blue">new</font> MyObject();
+
+<font color="green">// myInt is a constant pointer to a constant integer</font>
+<font color="blue">const int</font> someInt = 26;
+<font color="blue">const int</font>* <font color="blue">const</font> myInt = &amp;someInt;</pre></li>
+            <li><strong>#define</strong> is error prone as it is not enforced by the compiler like <strong>const</strong> is. It merely declares a substitution that the preprocessor will perform without any checks; that is <strong>const</strong> ensures the correct type is used, whereas <strong>#define</strong> does not. "Defines" are harder to debug as they are not placed in the symbol table.</li>
+            <li>A constant has a scope in C++, just like a regular variable, as opposed to "defined" names that are globally available and may clash. A constant must also be defined at the point of declaration (must have a value) whereas "defines" can be "empty."</li>
+            <li>Code that uses <strong>const</strong> is inherently protected by the compiler against inadvertent changes: e.g., to a class' internal state (<strong>const</strong> member variables cannot be altered, <strong>const</strong> member functions do not alter the class state); to parameters being used in methods (<strong>const</strong> arguments do not have their values changed within methods) [<a href="http://www.topcoder.com/tc?module=MemberProfile&cr=275640&tab=alg" class="coderTextRed">sql_lall</a>]. A named constant is also subject for compiler optimizations.</li>
+            <li>In conclusion, you will have fewer bugs and headaches by preferring <strong>const</strong> to <strong>#define</strong>.</li>
+        </ul>
+    </li>
+    <li><strong>Can you explain the private, public and protected access specifiers?</strong>
+        <ul>
+            <li><strong>public</strong>: member variables and methods with this access specifier can be directly accessed from outside the class</li>
+            <li><strong>private</strong>: member variables and methods with this access specifier cannot be directly accessed from outside the class</li>
+            <li><strong>protected</strong>: member variables and methods with this access specifier cannot be directly accessed from outside the class with the exception of child classes</li>
+            <li>These access specifiers are also used in inheritance (that's a whole other story, see next question). You can inherit publicly, privately or protected (though I must confess, I cannot see the benefits of the latter).</li>
+        </ul>
+    </li>
+    <li><strong>Could you explain public and private inheritance?[<a href="http://www.topcoder.com/tc?module=MemberProfile&cr=152342&tab=alg" class="coderTextYellow">kyky</a>, <a href="http://www.topcoder.com/tc?module=MemberProfile&cr=275640&tab=alg" class="coderTextRed">sql_lall</a>]</strong>
+        <ul>
+            <li>Public inheritance is the "default" inheritance mechanism in C++ and it is realized by specifying the public keyword before the base class
+                <pre><font color="blue">class</font> B : <font color="blue">public</font> A
+{
+};</pre></li>
+            <li>Private inheritance is realized by specifying the private keyword before the base class or omitting it completely, as private is the default specifier in C++
+                <pre><font color="blue">class</font> B : <font color="blue">private</font> A 
+{
+};
+or
+<font color="blue">class</font> B : A 
+{
+};</pre></li>
+            <li>The public keyword in the inheritance syntax means that the publicly/protected/privately accessible members inherited from the base class stay public/protected/private in the derived class; in other words, the members maintain their access specifiers. The private keyword in the inheritance syntax means that all the base class members, regardless of their access specifiers, become private in the derived class; in other words, private inheritance degrades the access of the base class' members - you won't be able to access public members of the base class through the derived one (in other languages, e.g., Java, the compiler won't let you do such a thing).</li>
+            <li>From the relationship between the base and derived class point of view, 
+                <pre><font color="blue">class</font> B : <font color="blue">public</font> A {}; B <strong>"is a"</strong> A but <font color="blue">class</font> B : private A {};</pre> means B <strong>"is implemented in terms of"</strong> A.</li>
+            <li>Public inheritance creates subtypes of the base type. If we have <font color="blue">class</font> B : <font color="blue">public</font> A {}; then any B object is substituteable by its base calls object (through means of pointers and references) so you can safely write
+                <pre>A* aPointer = <font color="blue">new</font> B();</pre> Private inheritance, on the other hand, <font color="blue">class</font> B : <font color="blue">private</font> A {};, does not create subtypes making the base type inaccessible and is a form of object composition. The following illustrates that:
+                <pre><font color="blue">class</font> A 
+{
+<font color="blue">public</font>:
+    A();
+    ~A();
+    <font color="blue">void</font> doSomething();
+};
+
+<font color="blue">void</font> A :: doSomething()
+{
+
+}
+
+<font color="blue">class</font> B : <font color="blue">private</font> A 
+{
+public:
+    B();
+    ~B();
+};
+B* beePointer = <font color="blue">new</font> B();
+
+<font color="red">// ERROR! compiler complains that the 
+// method is not accessible</font>
+beePointer-&gt;doSomething();
+<font color="red">// ERROR! compiler complains that the 
+// conversion from B* to A* exists but
+// is not accessible</font>
+A* aPointer = <font color="blue">new</font> B();
+<font color="red">// ! for the following two the standard
+// stipulates the behavior as undefined;
+// the compiler should generate an error at least
+// for the first one saying that B is not a
+// polymorphic type</font>
+A* aPointer2 = dynamic_cast&lt;A*&gt;(beePointer);
+A* aPointer3 = reinterpret_cast&lt;A*&gt;(beePointer);</pre></li>
+        </ul>
+    </li>
+    <li><strong>Is the "friend" keyword really your friend?[<a href="http://www.topcoder.com/tc?module=MemberProfile&cr=275640&tab=alg" class="coderTextRed">sql_lall</a>]</strong>
+        <ul>
+            <li>The <strong>friend</strong> keyword provides a convenient way to let specific nonmember functions or classes to access the private members of a class</li>
+            <li>friends are part of the class interface and may appear anywhere in the class (class access specifiers do not apply to friends); friends must be explicitly declared in the declaration of the class; e.g., :
+                <pre><font color="blue">class</font> Friendly;
+
+<font color="green">// class that will be the friend</font>
+<font color="blue">class</font> Friend 
+{
+<font color="blue">public</font>:
+    <font color="blue">void</font> doTheDew(Friendly&amp; obj);
+};
+
+<font color="blue">class</font> Friendly 
+{
+    <font color="red">// friends: class  and function; may appear
+    // anywhere but it's 
+    // better to group them toghether;
+    // the default private access specifier does
+    // not affect friends</font>
+    <font color="blue">friend class</font> Friend;
+    <font color="blue">friend void</font> friendAction(Friendly&amp; obj);
+<font color="blue">public</font>:
+    Friendly(){ };
+    ~Friendly(){ };
+<font color="blue">private</font>:
+    <font color="blue">int</font> friendlyInt;
+};
+
+<font color="red">// the methods in this class can access
+// private members of the class that declared
+// to accept this one as a friend</font>
+<font color="blue">void</font> Friend :: doTheDew(Friendly&amp; obj) {
+    obj.friendlyInt = 1;
+}
+
+<font color="red">// notice how the friend function is defined
+// as any regular function</font>
+<font color="blue">void</font> friendAction(Friendly&amp; obj)
+{
+    <font color="red">// access the private member</font>
+    <font color="blue">if</font>(1 == obj.friendlyInt)
+    {
+        obj.friendlyInt++;
+    } <font color="blue">else</font> {
+        obj.friendlyInt = 1;
+    }
+}</pre></li>
+            <li>"friendship isn't inherited, transitive or reciprocal," that is, your father's best friend isn't your friend; your best friend's friend isn't necessarily yours; if you consider me your friend, I do not necessarily consider you my friend.</li>
+            <li>Friends provide some degree of freedom in a class' interface design. Also in some situations friends are syntactically better, e.g., operator overloading - binary infix arithmetic operators, a function that implements a set of calculations (same algorithm) for two related classes, depending on both (instead of duplicating the code, the function is declared a friend of both; classic example is Matrix * Vector multiplication).</li>
+            <li>And to really answer the question, yes, <strong>friend</strong> keyword is indeed our friend but always "prefer member functions over nonmembers for operations that need access to the representation."[Stroustrup]</li>
+        </ul>
+    </li>
+    <li><strong>For a class MyFancyClass { }; what default methods will the compiler generate?</strong>
+        <ul>
+            <li>The default constructor with no parameters</li>
+            <li>The destructor</li>
+            <li>The copy constructor and the assignment operator</li>
+            <li>All of those generated methods will be generated with the <strong>public</strong> access specifier</li>
+            <li>E.g. MyFancyClass{ }; would be equivalent to the following :
+                <pre><font color="blue">class</font> MyFancyClass 
+{
+<font color="blue">public</font>:
+    <font color="green">// default constructor</font>
+    MyFancyClass(); 
+    <font color="green">// copy constructor</font>
+    MyFancyClass(<font color="blue">const</font> MyFancyClass&amp;); 
+    <font color="green">// destructor</font>
+    ~MyFancyClass(); 
+
+    
+    <font color="green">// assignment operator</font>
+    MyFancyClass&amp; <font color="blue">operator</font>=(<font color="blue">const</font> MyFancyClass&amp;); 
+};
+</pre></li>
+            <li>All of these methods are generated only if needed</li>
+            <li>The default copy constructor and assignment operator perform <strong>memberwise</strong> copy construction/assignment of the non-static data members of the class; if references or constant data members are involved in the definition of the class the assignment operator is not generated (you would have to define and declare your own, if you want your objects to be assignable)</li>
+            <li>I was living under the impression that the unary &amp; (address of operator) is as any built-in operator - works for built-in types; why should the built-in operator know how to take the address of your home-brewed type? I thought that there's no coincidence that the "&amp;" operator is also available for overloading (as are +, -, &gt;, &lt; etc.) and it's true is not so common to overload it, as you can live with the one generated by the compiler that looks like the following:
+            <pre><font color="blue">inline</font> SomeClass* SomeClass::<font color="blue">operator</font>&amp;() 
+{
+    <font color="blue">return this</font>;
+}</pre></li>
+        </ul>
+        <p>Thanks to <a href="http://www.topcoder.com/tc?module=MemberProfile&cr=251074&tab=alg" class="coderTextRed">bmerry</a> for making me doubt what seemed the obvious. I found out the following:</p>
+        <p><strong>From the ISO C++ standard:</strong><br>
+        Clause 13.5/6 [over.oper] states that operator =, (unary) &amp; and , (comma) have a predefined meaning for each type. Clause 5.3.1/2 [expr.unary.op] describes the meaning of the address-of operator. No special provisions are mode for class-type objects (unlike in the description of the assignment expression). Clause 12/1 [special] lists all the special member functions, and states that these will be implicitly declared if needed. The address-of operator is not in the list.<br>
+        <strong>From Stroustrup's The C++ Programming Language - Special 3rd Edition:</strong><br>
+        "Because of historical accident, the operators = (assignment), &amp; (address-of), and , (sequencing) have predefined meanings when applied to class objects. These predefined meanings can be made inaccessible to general users by making them private:... Alternatively, they can be given new meanings by suitable definitions."<br>
+        <strong>From the second edition of Meyer's Effective C++:</strong><br>
+        "A class declaring no operator&amp; function(s) does NOT have them implicitly declared. Rather, compilers use the built-in address-of operator whenever "&amp;" is applied to an object of that type. This behavior, in turn, is technically  not an application of a global operator&amp; function.  Rather, it is a use of a built-in operator." In the errata <a target="_blank" href="http://www.aristeia.com/BookErrata/ec++2e-errata_frames.html">http://www.aristeia.com/BookErrata/ec++2e-errata_frames.html</a></p>
+    </li>
+    <li><strong>How can you force the compiler not to generate the above mentioned methods?</strong>
+        <ul>
+            <li>Declare and define them yourself - the ones that make sense in your class' context. The default no-parameters constructor will not be generated if the class has at least one constructor with parameters declared and defined.</li>
+            <li>Declare them private - disallow calls from the outside of the class and DO NOT define them (do not provide method bodies for them) - disallow calls from member and friend functions; such a call will generate a linker error.</li>
+        </ul>
+    </li>
+    <li><strong>What is a constructor initialization list?</strong>
+        <ul>
+            <li>A <strong>special</strong> initialization point in a constructor of a class (initially developed for use in inheritance).</li>
+            <li>Occurs only in the definition of the constructor and is a list of constructor calls separated by commas.</li>
+            <li>The initialization the constructor initialization list performs occurs before any of the constructor's code is executed - very important point, as you'll have access to fully constructed member variables in the constructor!</li>
+            <li>For example:
+                <pre><font color="green">// a simple base class just for illustration purposes</font>
+<font color="blue">class</font> SimpleBase
+{
+<font color="blue">public</font>:
+    SimpleBase(string&amp;);
+    ~SimpleBase();
+<font color="blue">private</font>:
+    string&amp; m_name;
+};
+
+<font color="green">// example of initializer list with a call to the
+// data member constructor</font>
+SimpleBase :: SimpleBase(string&amp; name) : m_name(name)
+{
+
+}
+
+<font color="green">// a class publicly derived from SimpleBase just for 
+// illustration purposes</font>
+<font color="blue">class</font> MoreComplex : <font color="blue">public</font> SimpleBase
+{
+<font color="blue">public</font>:
+    MoreComplex(string&amp;, vector&lt;<font color="blue">int</font>&gt;*, <font color="blue">long</font>);
+    ~MoreComplex();
+<font color="blue">private</font>:
+    vector&lt;int&gt;* m_data;
+    <font color="green">const long</font> m_counter;
+};
+
+
+<font color="green">// example of initializer list with calls to the base 
+// class constructor and data member constructor;
+// you can see that built-in types can also be
+// constructed here</font>
+MoreComplex :: MoreComplex(string &amp;name, 
+    vector&lt;<font color="blue">int</font>&gt;* someData, <font color="blue">long</font> counter) :
+    SimpleBase(name), m_data(someData),
+    m_counter(counter)
+{
+    
+}</pre></li>
+            <li>As you saw in the above example, built-in types can also be constructed as part of the constructor initialization list.</li>
+            <li>Of course you do not have to use the initialization list all the time (see the next question for situations that absolutely require an initialization list) and there are situations that are not suitable for that: e.g., you have to test one of the constructor's arguments before assigning it to your internal member variable and throw if not appropriate.</li>
+            <li>It is recommended that the initialization list has a consistent form: first the call to the base class(es) constructor(s), and then calls to constructors of data members in the order they were specified in the class' declaration .  Note that this is just a matter of coding style: you declare your member variables in a certain order and it will look good and consistent to initialize them in the same order in the initialization list.</li>
+        </ul>
+    </li>
+    <li><strong>When "must" you use a constructor initialization list?</strong>
+        <ul>
+            <li><strong>Constant</strong> and <strong>reference</strong> data members of a class may only be initialized, never assigned, so you <strong>must</strong> use a constructor initialization list to properly construct (initialize) those members.</li>
+            <li>In inheritance, when the base class does not have a default constructor or you want to change a default argument in a default constructor, you have to explicitly call the base class' constructor in the initialization list.</li>
+            <li>For reasons of correctness - any calls you make to member functions of sub-objects (used in composition) go to initialized objects.</li>
+            <li>For reasons of efficiency. Looking at the previous question example we could rewrite the SimpleBase constructor as follows:
+                <pre>SimpleBase :: SimpleBase(string &amp;name)
+{
+    m_name = name;
+}</pre></li>
+        </ul>
+        <p>The above will generate a call to the default string constructor to construct the class member m_name and then the assignment operator of the string class to assign the name argument to the m_name member. So you will end up with two calls before the data member m_name is fully constructed and initialized.</p>
+            <pre>SimpleBase :: SimpleBase(string &amp;name) : m_name(name)
+{
+
+}</pre>
+        <p>The above will only generate a single call, which is to the copy constructor of the string class, thus being more efficient.</p>
+    </li>
+</ol>
+
+<p>That's it for the first part of this installment. Stay tuned for the <a href="http://community.topcoder.com/tc?module=Static&d1=tutorials&d2=tenBestQuestions2">second one</a>, as we're going to go deeper into the language features. Good luck on those interviews!</p>
+<br>
+
+<h3>References</h3>
+<p>[1] - Bjarne Stroustrup - The C++ Programming Language Special 3rd Edition<br>
+[2] - Stanley B. Lippman, Josee Lajoie, Barbara E. Moo   - C++ Primer<br>
+[3] - <a target="_blank" href="http://www.parashift.com/c++-faq-lite/">C++ FAQ Lite</a><br>
+[4] Herb Sutter - Exceptional C++: 47 Engineering Puzzles, Programming Problems, and Solutions<br>
+[5] Scott Meyers - Effective C++: 55 Specific Ways to Improve Your Programs and Designs<br>
+[6] Scott Meyers - More Effective C++: 35 New Ways to Improve Your Programs and Designs<br>
+[7] Bruce Eckel - Thinking in C++, Volume 1: Introduction to Standard C++</p>
+
+
+<p>&nbsp; </p>
+
+        </div></td>
+<!-- Center Column Ends -->
+
+<!-- Right Column Begins -->
+         <td width="170" id="onRight" class="invisible">
+            
+
+
+
+<script type="text/javascript" language="javascript">
+
+</script>
+
+
+
+<div class="rightColContent">
+    <br><br>
+</div>
+
+
+         </td>
+<!-- Right Column Ends -->
+
+<!-- Gutter -->
+         <td width="10"><img src="./tenBestQuestions_files/clear.gif" width="10" height="1" border="0"></td>
+<!-- Gutter Ends -->
+    </tr>
+</tbody></table>
+
+<div id="onBottom" class="invisible">
+
+
+
+
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody>
+    <tr>
+        <td width="100%" class="footer">
+            <a href="http://www.topcoder.com/" class="footerLinks">Home</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href="http://www.topcoder.com/aboutus/" class="footerLinks">About TopCoder</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href="http://www.topcoder.com/aboutus/news/" class="footerLinks">Press Room</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href="http://www.topcoder.com/help/template-help/" class="footerLinks">Contact Us</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href="http://www.topcoder.com/aboutus/careers/" class="footerLinks">Careers</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href="http://www.topcoder.com/tc?module=Static&d1=about&d2=privacy" class="footerLinks">Privacy</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href="http://www.topcoder.com/tc?module=Static&d1=about&d2=terms" class="footerLinks">Terms</a>
+            <br>
+            <a href="http://www.topcoder.com/tc" class="footerLinks">Competitions</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href="https://www.topcoder.com/direct/" class="footerLinks">Cockpit</a>        </td>
+    </tr>
+    <tr>
+      <td width="100%" class="copyright">Copyright TopCoder, Inc. 2001-<script type="text/javascript">d=new Date();document.write(d.getFullYear());</script>2011</td></tr>
+</tbody>
+</table>
+</div>
+
+
+
+
+
+</body></html>
